@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { GraduationCap, Compass, Headphones, Workflow } from "lucide-react"
+import { GraduationCap, Compass, Headphones, Workflow, Clock } from "lucide-react"
 import { ServiceCard } from "@/components/marketing/service-card"
 import { CTASection } from "@/components/marketing/cta-section"
 import { PageHeader } from "@/components/marketing/page-header"
@@ -111,6 +111,36 @@ export default function ServicesPage() {
             <ServiceCard key={service.title} {...service} />
           ))}
         </AnimatedServicesGrid>
+      </section>
+
+      {/* À la carte / hourly */}
+      <section className="pb-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="rounded-lg border border-slate-200 bg-slate-50 p-6 md:p-8">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="flex items-start gap-4">
+                <div className="mt-1 shrink-0 text-primary">
+                  <Clock size={24} />
+                </div>
+                <div>
+                  <p className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+                    À la carte
+                  </p>
+                  <h3 className="text-lg font-semibold text-slate-900">
+                    Need something smaller?
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    One-off advisory calls, quick audits, pair-coding sessions, or workshop facilitation. Billed by the hour.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 md:flex-col md:items-end md:gap-1">
+                <span className="text-2xl font-semibold text-primary">$200</span>
+                <span className="text-xs text-slate-500">per hour</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* How It Works */}
