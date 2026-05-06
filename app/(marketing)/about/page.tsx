@@ -40,18 +40,18 @@ export default function AboutPage() {
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <div className="border-l-4 border-primary pl-8">
-              <h2 className="mb-6 text-3xl font-semibold">Why We Exist</h2>
+              <h2 className="mb-6 text-3xl font-semibold">Why Rubicon Exists</h2>
               <p className="mb-4 leading-relaxed text-slate-700">
                 Most AI initiatives die in the pilot. They&apos;re led by people
                 who&apos;ve never used the tools. Adoption is everything.
               </p>
               <p className="mb-4 leading-relaxed text-slate-700">
-                We adopted AI tools before anyone asked us to. The productivity
-                impact was immediate. Now we help portfolio companies get the same
+                I adopted AI tools before anyone asked me to. The productivity
+                impact was immediate. Now I help portfolio companies get the same
                 results in weeks, not quarters.
               </p>
               <p className="leading-relaxed text-slate-700">
-                We show up, set up the tools, train your teams, and stay until it
+                I show up, set up the tools, train your teams, and stay until it
                 works.
               </p>
             </div>
