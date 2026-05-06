@@ -26,6 +26,7 @@ const services = [
     ],
     timeline: "1-2 weeks per program",
     price: "From $5,000",
+    scoped: true,
   },
   {
     icon: <Compass size={32} />,
@@ -40,6 +41,7 @@ const services = [
     ],
     timeline: "2-4 weeks",
     price: "From $8,000",
+    scoped: true,
   },
   {
     icon: <Headphones size={32} />,
@@ -54,6 +56,7 @@ const services = [
     ],
     timeline: "Ongoing monthly",
     price: "From $2,500/mo",
+    scoped: true,
   },
   {
     icon: <Workflow size={32} />,
@@ -68,6 +71,7 @@ const services = [
     ],
     timeline: "4-8 weeks per engagement",
     price: "From $15,000",
+    scoped: true,
   },
 ]
 

@@ -11,6 +11,7 @@ interface ServiceCardProps {
   scope: string[]
   timeline?: string
   price?: string
+  scoped?: boolean
   animateIcon?: boolean
 }
 
@@ -22,7 +23,7 @@ function useIsTouchDevice() {
   return isTouch
 }
 
-function DesktopCard({ icon, title, description, scope, timeline, price }: ServiceCardProps) {
+function DesktopCard({ icon, title, description, scope, timeline, price, scoped }: ServiceCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [rotateX, setRotateX] = useState(0)
   const [rotateY, setRotateY] = useState(0)
@@ -65,12 +66,12 @@ function DesktopCard({ icon, title, description, scope, timeline, price }: Servi
       <h3 className="mb-3 text-xl font-semibold">{title}</h3>
       <p className="mb-6 leading-relaxed text-slate-700">{description}</p>
       <CardScope scope={scope} />
-      <CardBadges price={price} timeline={timeline} />
+      <CardBadges price={price} timeline={timeline} scoped={scoped} />
     </motion.div>
   )
 }
 
-function MobileCard({ icon, title, description, scope, timeline, price }: ServiceCardProps) {
+function MobileCard({ icon, title, description, scope, timeline, price, scoped }: ServiceCardProps) {
   return (
     <div className="rounded-lg border border-slate-200 bg-white p-6">
       {/* Badges at top on mobile so price is always visible */}
@@ -86,6 +87,11 @@ function MobileCard({ icon, title, description, scope, timeline, price }: Servic
           </span>
         )}
       </div>
+      {scoped && (
+        <p className="mb-4 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+          Scoped per engagement
+        </p>
+      )}
       <div className="mb-3 text-primary">{icon}</div>
       <h3 className="mb-2 text-lg font-semibold">{title}</h3>
       <p className="mb-5 text-sm leading-relaxed text-slate-700">{description}</p>
@@ -110,18 +116,25 @@ function CardScope({ scope }: { scope: string[] }) {
   )
 }
 
-function CardBadges({ price, timeline }: { price?: string; timeline?: string }) {
+function CardBadges({ price, timeline, scoped }: { price?: string; timeline?: string; scoped?: boolean }) {
   return (
-    <div className="mt-6 flex flex-wrap items-center gap-3">
-      {price && (
-        <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-          {price}
-        </span>
-      )}
-      {timeline && (
-        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">
-          {timeline}
-        </span>
+    <div className="mt-6">
+      <div className="flex flex-wrap items-center gap-3">
+        {price && (
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            {price}
+          </span>
+        )}
+        {timeline && (
+          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">
+            {timeline}
+          </span>
+        )}
+      </div>
+      {scoped && (
+        <p className="mt-3 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+          Scoped per engagement
+        </p>
       )}
     </div>
   )
