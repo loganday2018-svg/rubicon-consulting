@@ -31,8 +31,8 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        title="About Us"
-        description="We're operators, not theorists. Every recommendation we make comes from tools we use ourselves, every day."
+        title="About"
+        description="I'm an operator, not a theorist. Every recommendation comes from tools I use myself, every day."
       />
 
       {/* Why We Exist — with left accent bar */}
@@ -63,7 +63,7 @@ export default function AboutPage() {
       <section className="bg-slate-50 py-16">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="mb-12 text-center text-3xl font-semibold">
-            Meet the Team
+            Founder
           </h2>
           <AnimatedTeam>
             {team.map((member) => (
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
       <CTASection
         heading="Want to Work With Us?"
-        description="Pick a portfolio company. We'll analyze it live on the call and show you where AI moves the needle."
+        description="Pick a portfolio company. I'll analyze it live on the call and show you where AI moves the needle."
         secondaryLabel="See what we do →"
         secondaryHref="/services"
       />
