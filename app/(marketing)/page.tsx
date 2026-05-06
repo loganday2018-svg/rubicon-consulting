@@ -10,7 +10,7 @@ import { VideoDemo } from "@/components/marketing/video-demo"
 export const metadata: Metadata = {
   title: "AI Implementation for PE Portfolio Companies",
   description:
-    "Logan & Matt deploy Claude, Codex, and Copilot at PE-backed portfolio companies. Training, setup, and support that sticks.",
+    "Logan deploys Claude, Codex, and Copilot at PE-backed portfolio companies. Training, setup, and support that sticks.",
 }
 
 const VALUE_PROPS = [

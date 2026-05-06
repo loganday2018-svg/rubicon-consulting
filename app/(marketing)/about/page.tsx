@@ -8,13 +8,13 @@ import { AnimatedTeam } from "@/components/marketing/animated-team"
 
 export const metadata: Metadata = {
   title: "About",
-  description: `Meet Logan & Matt. Operators who deploy AI tools at PE-backed portfolio companies.`,
+  description: `Meet Logan. An operator who deploys AI tools at PE-backed portfolio companies.`,
 }
 
 const team = [
   {
     name: "Logan Day",
-    title: "Co-Founder",
+    title: "Founder",
     credentials: [
       "MBA - UVA Darden School of Business",
       "Walmart Finance Leadership Development Program",
@@ -24,19 +24,6 @@ const team = [
     initials: "LD",
     imageSrc: "/images/logan.jpg",
     linkedIn: "https://linkedin.com/in/loganday1",
-  },
-  {
-    name: "Matt Horrigan",
-    title: "Co-Founder",
-    credentials: [
-      "MBA - UVA Darden School of Business (Strategy & Finance)",
-      "WEX, Strategy & Finance",
-      "Comcast, Corporate Strategy",
-    ],
-    bio: "Strategy and finance at WEX. Corporate strategy at Comcast. Darden MBA. Connects AI tools to the metrics that matter and builds the business case that gets operators and partners aligned.",
-    initials: "MH",
-    imageSrc: "/images/matt.jpg",
-    linkedIn: "https://linkedin.com/in/matthew-horrigan",
   },
 ]
 
