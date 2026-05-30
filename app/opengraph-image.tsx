@@ -89,7 +89,7 @@ export default function Image() {
             color: "#94a3b8",
           }}
         >
-          <div>Logan Day &nbsp;·&nbsp; Matt Horrigan</div>
+          <div>Logan Day</div>
           <div>{BRAND.domain}</div>
         </div>
       </div>

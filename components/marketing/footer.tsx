@@ -52,14 +52,6 @@ export function Footer() {
               >
                 Logan on LinkedIn
               </a>
-              <a
-                href="https://linkedin.com/in/matthew-horrigan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 transition-colors hover:text-white"
-              >
-                Matt on LinkedIn
-              </a>
             </div>
           </div>
         </div>
