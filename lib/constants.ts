@@ -22,3 +22,9 @@ export const CTA = {
     href: 'https://cal.com/logan-rubicon',
   },
 } as const
+
+export const SOCIAL = [
+  { label: 'YouTube', href: 'https://www.youtube.com/@Rubicon-AI' },
+  { label: 'Newsletter', href: 'https://logandayai.substack.com' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/loganday1' },
+] as const

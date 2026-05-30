@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { BRAND, NAV_LINKS } from "@/lib/constants"
+import { BRAND, NAV_LINKS, SOCIAL } from "@/lib/constants"
 
 export function Footer() {
   return (
@@ -44,14 +44,17 @@ export function Footer() {
               Connect
             </p>
             <div className="flex flex-col gap-3 text-sm">
-              <a
-                href="https://linkedin.com/in/loganday1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 transition-colors hover:text-white"
-              >
-                Logan on LinkedIn
-              </a>
+              {SOCIAL.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 transition-colors hover:text-white"
+                >
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>
