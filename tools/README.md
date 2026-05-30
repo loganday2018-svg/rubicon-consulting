@@ -1,4 +1,4 @@
-# Day Horrigan — Pitch Deck System
+# Rubicon AI Consulting — Pitch Deck System
 
 ## What this is
 
@@ -21,7 +21,7 @@ A plug-and-play system for generating bespoke pitch decks for PE firms. Each dec
 - Texture: `dot_grid.png` (subtle dot grid for dark slide backgrounds)
 
 ### Vercel Pages
-- `/natural-capital` — Live at dayhorrigan.vercel.app/natural-capital. Source: `app/(marketing)/natural-capital/page.tsx`. Same content as the deck but as a scrollable web page. Includes a PowerPoint download button.
+- `/natural-capital` — Live at rubiconaiconsulting.com/natural-capital (firm-specific page, set to `noindex`). Source: `app/(marketing)/natural-capital/page.tsx`. Same content as the deck but as a scrollable web page. Includes a PowerPoint download button.
 - No Vercel page for Great Range Capital yet.
 
 ## How to generate a new deck
@@ -73,8 +73,8 @@ Key fields:
 ### 4. Generate
 
 ```bash
-cd ~/Projects/lj-consulting/tools
-python3 generate_deck.py --config firms/firm_name.json --output ~/Desktop/DH_x_FirmName.pptx
+cd tools
+python3 generate_deck.py --config firms/firm_name.json --output ~/Desktop/Rubicon_x_FirmName.pptx
 ```
 
 ### 5. Optionally create a Vercel page
@@ -85,7 +85,7 @@ python3 generate_deck.py --config firms/firm_name.json --output ~/Desktop/DH_x_F
 
 ## Slide structure (10 slides)
 
-1. **Title** — "Day Horrigan" + "Turn AI into EBITDA." + firm logo on dark pill + "Prepared for [Firm]"
+1. **Title** — "Rubicon" + "Turn AI into EBITDA." + firm logo on dark pill + "Prepared for [Firm]"
 2. **Pitch** — "Companies are struggling to realize the full value of AI..."
 3. **Big Stat** — "[X] portfolio companies. [$X] invested. How many are using AI beyond chat?"
 4. **Divider** — "Your portfolio. Some questions."
@@ -93,8 +93,8 @@ python3 generate_deck.py --config firms/firm_name.json --output ~/Desktop/DH_x_F
 6. **Divider** — "What we've seen."
 7. **Randy's Timeline** — Visual timeline: Week 1 → Week 12 showing adoption milestones
 8. **Pull Quote** — Full-slide COO quote from Randy's Worldwide
-9. **Who We Are** — Logan (Darden MBA, Army Captain, Walmart) + Matt (Darden MBA, Strategy & Finance, WEX)
-10. **CTA** — "30 minutes." + logan.day2018@gmail.com + website link + PowerPoint download
+9. **Who We Are** — Logan (Darden MBA, Army Captain, Walmart finance, AI tools daily)
+10. **CTA** — "30 minutes." + loganday@rubiconaiconsulting.com + website link + PowerPoint download
 
 ## Design decisions
 
@@ -123,6 +123,5 @@ pip3 install python-pptx Pillow
 
 ## Contacts
 
-- Logan Day — logan.day2018@gmail.com
-- Matt Horrigan — co-founder
-- Website: dayhorrigan.vercel.app
+- Logan Day — loganday@rubiconaiconsulting.com
+- Website: rubiconaiconsulting.com

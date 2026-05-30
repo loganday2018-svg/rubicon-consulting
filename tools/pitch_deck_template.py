@@ -85,7 +85,7 @@ slide.shapes.add_picture(
 )
 
 add_text_box(slide, Inches(0.8), Inches(0.6), Inches(8), Inches(1.2),
-             "Day Horrigan", 44, DARK, True, PP_ALIGN.LEFT)
+             "Rubicon", 44, DARK, True, PP_ALIGN.LEFT)
 add_text_box(slide, Inches(0.8), Inches(1.6), Inches(8), Inches(0.8),
              "Turn AI into EBITDA.", 24, ACCENT, False, PP_ALIGN.LEFT)
 
@@ -98,7 +98,7 @@ add_text_box(slide, Inches(0.8), Inches(4.6), Inches(11), Inches(0.6),
              "AI Implementation & Automation for the Heartland", 16, MUTED, False)
 
 add_text_box(slide, Inches(0.8), Inches(6.2), Inches(11), Inches(0.6),
-             "dayhorrigan.vercel.app", 14, ACCENT, False)
+             "rubiconaiconsulting.com", 14, ACCENT, False)
 
 # ═══════════════════════════════════════════
 # SLIDE 2: THE PITCH
@@ -285,7 +285,7 @@ add_shape(slide, Inches(6.0), Inches(5.0), Inches(1.3), Inches(0.05), ACCENT)
 add_text_box(slide, Inches(2.0), Inches(5.4), Inches(9.3), Inches(0.6),
              "COO, Randy's Worldwide", 18, MUTED, False, PP_ALIGN.CENTER)
 add_text_box(slide, Inches(2.0), Inches(5.9), Inches(9.3), Inches(0.5),
-             "After 8 weeks of working with Day Horrigan", 14, MUTED, False, PP_ALIGN.CENTER)
+             "After 8 weeks of working with Rubicon", 14, MUTED, False, PP_ALIGN.CENTER)
 
 # ═══════════════════════════════════════════
 # SLIDE 9: WHO WE ARE
@@ -298,27 +298,16 @@ add_shape(slide, Inches(0), Inches(0), Inches(13.333), Inches(1.4), CREAM)
 add_text_box(slide, Inches(0.8), Inches(0.3), Inches(11), Inches(0.8),
              "Who we are", 32, DARK, True)
 
-# Logan
-add_shape(slide, Inches(0.8), Inches(2.0), Inches(5.5), Inches(4.5), RGBColor(0x3A, 0x3A, 0x3A))
-add_shape(slide, Inches(0.8), Inches(2.0), Inches(0.08), Inches(4.5), ACCENT)
-tf = add_text_box(slide, Inches(1.3), Inches(2.3), Inches(4.5), Inches(4.0),
+# Logan — single centered card (solo practice)
+add_shape(slide, Inches(3.92), Inches(2.0), Inches(5.5), Inches(4.5), RGBColor(0x3A, 0x3A, 0x3A))
+add_shape(slide, Inches(3.92), Inches(2.0), Inches(0.08), Inches(4.5), ACCENT)
+tf = add_text_box(slide, Inches(4.42), Inches(2.3), Inches(4.5), Inches(4.0),
              "Logan Day", 24, WHITE, True)
 add_para(tf, "Darden MBA • U.S. Army Captain", 14, LIGHT_ACCENT)
 add_para(tf, "", 10, WHITE)
 add_para(tf, "Finance at Walmart by day, where I build AI tools and automation for executive teams. Built the dashboards and AI workflows at Randy's Worldwide.", 15, LIGHT_GRAY)
 add_para(tf, "", 10, WHITE)
-add_para(tf, "This is a focused side practice — we do this because we're genuinely good at it and the demand found us.", 15, LIGHT_GRAY)
-
-# Matt
-add_shape(slide, Inches(7.0), Inches(2.0), Inches(5.5), Inches(4.5), RGBColor(0x3A, 0x3A, 0x3A))
-add_shape(slide, Inches(7.0), Inches(2.0), Inches(0.08), Inches(4.5), ACCENT)
-tf = add_text_box(slide, Inches(7.5), Inches(2.3), Inches(4.5), Inches(4.0),
-             "Matt Horrigan", 24, WHITE, True)
-add_para(tf, "Darden MBA • Strategy & Finance", 14, LIGHT_ACCENT)
-add_para(tf, "", 10, WHITE)
-add_para(tf, "Strategy and finance at WEX, with corporate strategy experience at Comcast.", 15, LIGHT_GRAY)
-add_para(tf, "", 10, WHITE)
-add_para(tf, "Brings the strategic lens — he sees the portco P&L the way your partners do.", 15, LIGHT_GRAY)
+add_para(tf, "This is a focused side practice — I do it because I'm genuinely good at it and the demand found me.", 15, LIGHT_GRAY)
 
 # ═══════════════════════════════════════════
 # SLIDE 10: CTA
@@ -342,12 +331,12 @@ add_text_box(slide, Inches(2.0), Inches(3.5), Inches(9.3), Inches(0.6),
              "That's all it takes to find the quick wins.", 20, MUTED, False, PP_ALIGN.CENTER)
 
 tf = add_text_box(slide, Inches(2.0), Inches(4.5), Inches(9.3), Inches(2.5),
-             "logan.day2018@gmail.com", 22, DARK, True, PP_ALIGN.CENTER)
+             "loganday@rubiconaiconsulting.com", 22, DARK, True, PP_ALIGN.CENTER)
 add_para(tf, "", 14, DARK)
-add_para(tf, "dayhorrigan.vercel.app", 16, ACCENT, False, Pt(12), PP_ALIGN.CENTER)
+add_para(tf, "rubiconaiconsulting.com", 16, ACCENT, False, Pt(12), PP_ALIGN.CENTER)
 add_para(tf, "", 10, DARK)
-add_para(tf, "Logan Day  •  Matt Horrigan", 16, MUTED, False, Pt(12), PP_ALIGN.CENTER)
+add_para(tf, "Logan Day", 16, MUTED, False, Pt(12), PP_ALIGN.CENTER)
 
-out = "/Users/loganday/Desktop/LJ_Consulting_x_Natural_Capital.pptx"
+out = "/Users/loganday/Desktop/Rubicon_x_Natural_Capital.pptx"
 prs.save(out)
 print(f"Saved to {out}")

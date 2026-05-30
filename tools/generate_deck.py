@@ -1,5 +1,5 @@
 """
-Day Horrigan — Pitch Deck Generator
+Rubicon AI Consulting — Pitch Deck Generator
 
 Usage:
     python3 generate_deck.py --firm "Firm Name" --config firms/firm_name.json
@@ -111,7 +111,7 @@ def generate_deck(config_path, output_path=None):
 
     if output_path is None:
         safe_name = firm.replace(" ", "_")
-        output_path = f"Day_Horrigan_x_{safe_name}.pptx"
+        output_path = f"Rubicon_x_{safe_name}.pptx"
 
     prs = Presentation()
     prs.slide_width = Inches(13.333)
@@ -129,7 +129,7 @@ def generate_deck(config_path, output_path=None):
         slide.shapes.add_picture(logo_path, Inches(9.5), Inches(0.55), Inches(3.2), Inches(1.39))
 
     add_text_box(slide, Inches(0.8), Inches(0.6), Inches(8), Inches(1.2),
-                 "Day Horrigan", 44, DARK, True)
+                 "Rubicon", 44, DARK, True)
     add_text_box(slide, Inches(0.8), Inches(1.6), Inches(8), Inches(0.8),
                  "Turn AI into EBITDA.", 24, ACCENT)
     add_shape(slide, Inches(0.8), Inches(3.5), Inches(1.5), Inches(0.06), ACCENT)
@@ -138,7 +138,7 @@ def generate_deck(config_path, output_path=None):
     add_text_box(slide, Inches(0.8), Inches(4.6), Inches(11), Inches(0.6),
                  "AI Implementation & Automation for the Heartland", 16, MUTED)
     add_text_box(slide, Inches(0.8), Inches(6.2), Inches(11), Inches(0.6),
-                 "dayhorrigan.vercel.app", 14, ACCENT)
+                 "rubiconaiconsulting.com", 14, ACCENT)
 
     # ── SLIDE 2: PITCH ──
     slide = prs.slides.add_slide(prs.slide_layouts[6])
@@ -265,7 +265,7 @@ def generate_deck(config_path, output_path=None):
     add_text_box(slide, Inches(2.0), Inches(5.4), Inches(9.3), Inches(0.6),
                  "COO, Randy's Worldwide", 18, MUTED, False, PP_ALIGN.CENTER)
     add_text_box(slide, Inches(2.0), Inches(5.9), Inches(9.3), Inches(0.5),
-                 "After 8 weeks of working with Day Horrigan", 14, MUTED, False, PP_ALIGN.CENTER)
+                 "After 8 weeks of working with Rubicon", 14, MUTED, False, PP_ALIGN.CENTER)
 
     # ── SLIDE 9: WHO WE ARE ──
     slide = prs.slides.add_slide(prs.slide_layouts[6])
@@ -275,21 +275,15 @@ def generate_deck(config_path, output_path=None):
     add_text_box(slide, Inches(0.8), Inches(0.3), Inches(11), Inches(0.8),
                  "Who we are", 32, DARK, True)
 
-    for name, sub, bio, left in [
-        ("Logan Day", "Darden MBA • U.S. Army Captain",
-         "Finance at Walmart by day, where I build AI tools and automation for executive teams. Built the dashboards and AI workflows at Randy's Worldwide.\n\nThis is a focused side practice — we do this because we're genuinely good at it and the demand found us.",
-         Inches(0.8)),
-        ("Matt Horrigan", "Darden MBA • Strategy & Finance",
-         "Strategy and finance at WEX, with corporate strategy experience at Comcast.\n\nBrings the strategic lens — he sees the portco P&L the way your partners do.",
-         Inches(7.0)),
-    ]:
-        add_shape(slide, left, Inches(2.0), Inches(5.5), Inches(4.5), RGBColor(0x3A, 0x3A, 0x3A))
-        add_shape(slide, left, Inches(2.0), Inches(0.08), Inches(4.5), ACCENT)
-        tf = add_text_box(slide, left + Inches(0.5), Inches(2.3), Inches(4.5), Inches(4.0),
-                     name, 24, WHITE, True)
-        add_para(tf, sub, 14, LIGHT_ACCENT)
-        add_para(tf, "", 10, WHITE)
-        add_para(tf, bio, 15, LIGHT_GRAY)
+    # Single centered card for Logan (solo practice).
+    left = Inches(3.92)  # centers a 5.5"-wide card on the 13.333" slide
+    add_shape(slide, left, Inches(2.0), Inches(5.5), Inches(4.5), RGBColor(0x3A, 0x3A, 0x3A))
+    add_shape(slide, left, Inches(2.0), Inches(0.08), Inches(4.5), ACCENT)
+    tf = add_text_box(slide, left + Inches(0.5), Inches(2.3), Inches(4.5), Inches(4.0),
+                 "Logan Day", 24, WHITE, True)
+    add_para(tf, "Darden MBA • U.S. Army Captain", 14, LIGHT_ACCENT)
+    add_para(tf, "", 10, WHITE)
+    add_para(tf, "Finance at Walmart by day, where I build AI tools and automation for executive teams. Built the dashboards and AI workflows at Randy's Worldwide.\n\nThis is a focused side practice — I do it because I'm genuinely good at it and the demand found me.", 15, LIGHT_GRAY)
 
     # ── SLIDE 10: CTA ──
     slide = prs.slides.add_slide(prs.slide_layouts[6])
@@ -302,18 +296,18 @@ def generate_deck(config_path, output_path=None):
     add_text_box(slide, Inches(2.0), Inches(3.5), Inches(9.3), Inches(0.6),
                  "That's all it takes to find the quick wins.", 20, MUTED, False, PP_ALIGN.CENTER)
     tf = add_text_box(slide, Inches(2.0), Inches(4.5), Inches(9.3), Inches(2.5),
-                 "logan.day2018@gmail.com", 22, DARK, True, PP_ALIGN.CENTER)
+                 "loganday@rubiconaiconsulting.com", 22, DARK, True, PP_ALIGN.CENTER)
     add_para(tf, "", 14, DARK)
-    add_para(tf, "dayhorrigan.vercel.app", 16, ACCENT, False, Pt(12), PP_ALIGN.CENTER)
+    add_para(tf, "rubiconaiconsulting.com", 16, ACCENT, False, Pt(12), PP_ALIGN.CENTER)
     add_para(tf, "", 10, DARK)
-    add_para(tf, "Logan Day  •  Matt Horrigan", 16, MUTED, False, Pt(12), PP_ALIGN.CENTER)
+    add_para(tf, "Logan Day", 16, MUTED, False, Pt(12), PP_ALIGN.CENTER)
 
     prs.save(output_path)
     print(f"Saved to {output_path}")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate Day Horrigan pitch deck for a PE firm")
+    parser = argparse.ArgumentParser(description="Generate Rubicon pitch deck for a PE firm")
     parser.add_argument("--config", required=True, help="Path to firm config JSON")
     parser.add_argument("--output", help="Output .pptx path")
     args = parser.parse_args()
