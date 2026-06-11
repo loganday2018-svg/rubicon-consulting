@@ -154,3 +154,87 @@
 .animate-ticker {
   animation: ticker 25s linear infinite;
 }
+
+/* Pause the marquee while the reader inspects it */
+.ticker-track:hover .animate-ticker {
+  animation-play-state: paused;
+}
+
+/* Hero dot-grid drift — one full cell every ~6s, registers as "alive" */
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 24px 24px;
+  }
+}
+
+.animate-grid-drift {
+  animation: grid-drift 14s linear infinite;
+}
+
+/* CTA shine — a light sweep across the primary button on hover */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-18deg);
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    oklch(1 0 0 / 0.35) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.btn-shine:hover::after {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(120%) skewX(-18deg);
+}
+
+/* Value-prop card: top accent line draws across on hover */
+.card-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-accent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    oklch(from var(--primary) l c h / 0.25)
+  );
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-accent:hover::before {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker,
+  .animate-grid-drift {
+    animation: none;
+  }
+  .btn-shine::after {
+    display: none;
+  }
+  .card-accent::before {
+    transition: none;
+  }
+}

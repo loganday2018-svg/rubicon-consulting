@@ -6,6 +6,7 @@ import { ValueProps } from "@/components/marketing/value-props"
 import { EbitdaCalculator } from "@/components/marketing/ebitda-calculator"
 import { AdoptionCurve } from "@/components/marketing/adoption-curve"
 import { VideoDemo } from "@/components/marketing/video-demo"
+import { SectionHeading } from "@/components/marketing/motion-kit"
 
 export const metadata: Metadata = {
   title: "AI Implementation for PE Portfolio Companies",
@@ -68,15 +69,10 @@ export default function HomePage() {
       {/* Value Propositions */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <h2 className="text-3xl font-semibold text-foreground md:text-4xl">
-              What Changes When AI Actually Works
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-700">
-              Not theory. These are the workflows we set up at real portfolio
-              companies.
-            </p>
-          </div>
+          <SectionHeading
+            title="What Changes When AI Actually Works"
+            copy="Not theory. These are the workflows we set up at real portfolio companies."
+          />
 
           <ValueProps items={VALUE_PROPS} />
         </div>
@@ -85,14 +81,10 @@ export default function HomePage() {
       {/* Adoption Curve */}
       <section className="border-t border-slate-200 bg-slate-50 py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6">
-          <div className="text-center">
-            <h2 className="text-3xl font-semibold text-foreground md:text-4xl">
-              Months of Fumbling vs. Weeks to Full Adoption
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-700">
-              Most teams watch a few demos, then adoption stalls. We compress the curve — weeks, not quarters.
-            </p>
-          </div>
+          <SectionHeading
+            title="Months of Fumbling vs. Weeks to Full Adoption"
+            copy="Most teams watch a few demos, then adoption stalls. We compress the curve — weeks, not quarters."
+          />
           <div className="mt-12">
             <AdoptionCurve />
           </div>
@@ -104,15 +96,10 @@ export default function HomePage() {
       {/* EBITDA Calculator */}
       <section className="border-t border-slate-200 bg-slate-50 py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6">
-          <div className="text-center">
-            <h2 className="text-3xl font-semibold text-foreground md:text-4xl">
-              See the Impact on Your EBITDA
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-700">
-              Plug in your portfolio company&apos;s financials. See what AI could mean
-              for margins and enterprise value.
-            </p>
-          </div>
+          <SectionHeading
+            title="See the Impact on Your EBITDA"
+            copy="Plug in your portfolio company's financials. See what AI could mean for margins and enterprise value."
+          />
           <div className="mt-12">
             <EbitdaCalculator />
           </div>

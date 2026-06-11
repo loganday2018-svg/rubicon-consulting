@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { CTA } from "@/lib/constants"
 import { cn } from "@/lib/utils"
+import { RollingDollars } from "@/components/marketing/motion-kit"
 
 function formatDollars(value: number): string {
   if (value >= 1_000_000) {
@@ -358,7 +359,10 @@ export function EbitdaCalculator() {
           <div className="mb-8 rounded-lg bg-slate-100 p-4 text-center sm:p-6">
             <p className="text-sm font-medium text-slate-500">Current EBITDA</p>
             <p className="mt-1 text-2xl font-bold text-foreground sm:text-3xl">
-              {formatDollars(results[0].currentEbitda)}
+              <RollingDollars
+                value={results[0].currentEbitda}
+                format={formatDollars}
+              />
             </p>
             <p className="mt-1 text-xs text-slate-500 sm:text-sm">
               {formatPercent(results[0].currentMargin)} margin on {formatDollars(revenue)} revenue

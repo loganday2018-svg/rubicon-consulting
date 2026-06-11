@@ -17,7 +17,7 @@ export function LogoTicker() {
       <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
         Tools we deploy
       </p>
-      <div className="relative">
+      <div className="ticker-track relative">
         {/* Fade edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-slate-50" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-slate-50" />
