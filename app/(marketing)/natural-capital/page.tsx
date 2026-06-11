@@ -159,21 +159,10 @@ export default function NaturalCapitalPage() {
                 Darden MBA &bull; U.S. Army Captain
               </p>
               <p className="text-[#bbb] text-sm leading-relaxed">
-                Finance at Walmart, where I build AI tools for executive
+                Enterprise finance, where I build AI tools for executive
                 teams. Built the dashboards and workflows at Randy&apos;s
                 Worldwide. We do this because we&apos;re good at it and the
                 demand found us.
-              </p>
-            </div>
-            <div className="bg-[#2c2c2c] rounded-xl p-8">
-              <h3 className="text-white text-xl font-bold">Matt Horrigan</h3>
-              <p className="text-[#8A9E8A] text-sm mt-1 mb-4">
-                Darden MBA &bull; Strategy &amp; Finance
-              </p>
-              <p className="text-[#bbb] text-sm leading-relaxed">
-                Strategy and finance at WEX, with corporate strategy
-                experience at Comcast. Brings the strategic lens &mdash;
-                he sees the portco P&amp;L the way your partners do.
               </p>
             </div>
           </div>
