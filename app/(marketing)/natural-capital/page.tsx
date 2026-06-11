@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Rubicon × Natural Capital",
   description:
     "Turning AI into EBITDA for Natural Capital's portfolio companies.",
+  robots: { index: false, follow: false },
 }
 
 export default function NaturalCapitalPage() {
@@ -152,7 +153,7 @@ export default function NaturalCapitalPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-10">
             Who we are
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="max-w-2xl">
             <div className="bg-[#2c2c2c] rounded-xl p-8">
               <h3 className="text-white text-xl font-bold">Logan Day</h3>
               <p className="text-[#8A9E8A] text-sm mt-1 mb-4">
@@ -161,8 +162,8 @@ export default function NaturalCapitalPage() {
               <p className="text-[#bbb] text-sm leading-relaxed">
                 Enterprise finance, where I build AI tools for executive
                 teams. Built the dashboards and workflows at Randy&apos;s
-                Worldwide. We do this because we&apos;re good at it and the
-                demand found us.
+                Worldwide. I do this because I&apos;m good at it and the
+                demand found me.
               </p>
             </div>
           </div>
@@ -208,10 +209,10 @@ export default function NaturalCapitalPage() {
           </p>
           <p className="mt-8">
             <a
-              href="mailto:logan.day2018@gmail.com"
+              href="mailto:loganday@rubiconaiconsulting.com"
               className="text-white text-lg font-semibold border-b-2 border-[#5A6E5A] pb-1 hover:text-[#8A9E8A] transition-colors"
             >
-              logan.day2018@gmail.com
+              loganday@rubiconaiconsulting.com
             </a>
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -222,7 +223,7 @@ export default function NaturalCapitalPage() {
               rubiconaiconsulting.com
             </Link>
             <a
-              href="/LJ_Consulting_x_Natural_Capital.pptx"
+              href="/Rubicon_x_Natural_Capital.pptx"
               download
               className="inline-flex items-center gap-2 rounded-lg bg-[#5A6E5A] px-5 py-2.5 text-white text-sm font-medium hover:bg-[#4a5e4a] transition-colors"
             >
@@ -231,7 +232,7 @@ export default function NaturalCapitalPage() {
             </a>
           </div>
           <p className="text-[#6b6b6b] mt-8 text-sm">
-            Logan Day &nbsp;&bull;&nbsp; Matt Horrigan
+            Logan Day
           </p>
         </div>
       </section>

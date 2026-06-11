@@ -22,8 +22,8 @@ export default function DemoPage() {
       </section>
 
       <CTASection
-        heading="Want Us to Build This for Your Portfolio?"
-        description="Pick a portfolio company. We'll analyze it live on the call and show you what's possible."
+        heading="Ready to See This Live on Your Data?"
+        description="Book a call and pick the format that works — a quick intro, a deep dive, or a full live demo."
         secondaryLabel="See our services →"
         secondaryHref="/services"
       />

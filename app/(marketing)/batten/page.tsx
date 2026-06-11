@@ -186,7 +186,7 @@ export default function BattenPage() {
             <h2 className="mb-6 text-center text-3xl font-semibold">
               Who We Are
             </h2>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="mx-auto max-w-sm">
               <div className="rounded-lg border border-slate-200 bg-white p-6 text-center">
                 <Image
                   src="/images/logan.jpg"
@@ -200,21 +200,6 @@ export default function BattenPage() {
                 <p className="mt-3 text-sm leading-relaxed text-slate-700">
                   Builds AI tools daily. Created a training curriculum from
                   real deployments. Gets teams productive in under 3 months.
-                </p>
-              </div>
-              <div className="rounded-lg border border-slate-200 bg-white p-6 text-center">
-                <Image
-                  src="/images/matt.jpg"
-                  alt="Matt Horrigan"
-                  width={120}
-                  height={120}
-                  className="mx-auto rounded-full object-cover"
-                />
-                <h3 className="mt-4 text-lg font-semibold">Matt Horrigan</h3>
-                <p className="mt-1 text-sm text-primary">Darden MBA</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-700">
-                  Strategy and finance. Builds the business case for AI
-                  adoption and finds where automation delivers the most leverage.
                 </p>
               </div>
             </div>
