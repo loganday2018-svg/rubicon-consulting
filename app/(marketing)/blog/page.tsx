@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { PageHeader } from "@/components/marketing/page-header"
-import { BLOG_POSTS } from "@/lib/blog"
+import { getAllPosts } from "@/lib/posts"
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
+  const posts = getAllPosts()
+
   return (
     <>
       <PageHeader
@@ -22,7 +24,7 @@ export default function BlogPage() {
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6">
           <div className="space-y-6">
-            {BLOG_POSTS.map((post) => (
+            {posts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
@@ -33,7 +35,7 @@ export default function BlogPage() {
                     {post.category}
                   </span>
                   <span className="text-slate-400">|</span>
-                  <time className="text-slate-500">{post.date}</time>
+                  <time className="text-slate-500">{post.displayDate}</time>
                   <span className="text-slate-400">|</span>
                   <span className="text-slate-500">{post.readTime}</span>
                 </div>

@@ -1,0 +1,40 @@
+name: Sync Substack posts
+
+# Pulls new Substack posts into content/blog/*.md and commits them.
+# Vercel auto-deploys on the resulting push. Runs daily + on demand.
+
+on:
+  schedule:
+    - cron: "0 15 * * *" # 15:00 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Import new Substack posts
+        run: node scripts/import-substack.mjs
+
+      - name: Commit new posts
+        run: |
+          if [ -n "$(git status --porcelain content/blog)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add content/blog
+            git commit -m "content: sync new Substack post(s) [skip ci]"
+            git push
+          else
+            echo "No new posts."
+          fi
