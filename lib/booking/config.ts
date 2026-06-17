@@ -43,13 +43,13 @@ export type WeeklyAvailability = Record<number, [string, string][]>
 export const AVAILABILITY = {
   /** Host timezone. Overridable at runtime via BOOKING_TIMEZONE. */
   defaultTimezone: "America/Chicago",
-  /** Mon–Fri, 9:00–17:00 by default. Edit freely. */
+  /** Mon–Fri, 8:00–18:00. Edit freely. */
   weekly: {
-    1: [["09:00", "17:00"]],
-    2: [["09:00", "17:00"]],
-    3: [["09:00", "17:00"]],
-    4: [["09:00", "17:00"]],
-    5: [["09:00", "17:00"]],
+    1: [["08:00", "18:00"]],
+    2: [["08:00", "18:00"]],
+    3: [["08:00", "18:00"]],
+    4: [["08:00", "18:00"]],
+    5: [["08:00", "18:00"]],
   } as WeeklyAvailability,
   /** Gap kept clear on both sides of an existing event, in minutes. */
   bufferMin: 15,
