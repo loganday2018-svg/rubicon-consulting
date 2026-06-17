@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "3 Claude Features That 10x Your Team's Output",
   description:
-    "Skills, mobile Dispatch, and multi-agent workflows: the features that fundamentally change how PE-backed teams operate.",
+    "Skills, mobile Dispatch, and multi-agent workflows: the features that fundamentally change how teams operate.",
 }
 
 export default function BlogPost() {
@@ -120,9 +120,9 @@ export default function BlogPost() {
               </div>
 
               <PullQuote>
-                Every portfolio company has deliverables that take hours of
+                Every company has deliverables that take hours of
                 formatting for minutes of actual thinking. Skills kill that
-                ratio. Across 8 portcos, we&apos;re talking hundreds of hours
+                ratio. Across 8 companies, we&apos;re talking hundreds of hours
                 per quarter back to real work.
               </PullQuote>
             </section>
@@ -189,9 +189,9 @@ export default function BlogPost() {
               </p>
 
               <PullQuote>
-                For PE operators who spend half their life between portfolio
-                companies: start an analysis before a board meeting, review the
-                results in the car. Your AI keeps working when you can&apos;t.
+                For operators who spend half their life on the road: start an
+                analysis before a board meeting, review the results in the car.
+                Your AI keeps working when you can&apos;t.
               </PullQuote>
             </section>
 
@@ -260,16 +260,16 @@ export default function BlogPost() {
               <BlogHeading>The Bottom Line</BlogHeading>
               <p className="leading-relaxed text-slate-700">
                 These aren&apos;t experimental features or things that
-                &quot;might be useful someday.&quot; We deploy them at PE
-                portfolio companies every week. Skills kill the formatting
+                &quot;might be useful someday.&quot; We deploy them at companies
+                every week. Skills kill the formatting
                 tax. Dispatch means your AI doesn&apos;t stop when you leave
                 your desk. Multi-agent workflows compress serial work into
                 parallel execution.
               </p>
               <p className="leading-relaxed text-slate-700">
                 The teams that adopt these first don&apos;t just save time.
-                They get more done with the people they already have. In PE,
-                that shows up directly on the P&L.
+                They get more done with the people they already have. For a
+                lean team, that shows up directly on the P&L.
               </p>
             </section>
 
@@ -325,7 +325,7 @@ export default function BlogPost() {
 
       <CTASection
         heading="Want Us to Deploy These for Your Team?"
-        description="We set up Skills, Dispatch, and multi-agent workflows for PE portfolio companies — then train your teams to actually use them."
+        description="We set up Skills, Dispatch, and multi-agent workflows for companies — then train your teams to actually use them."
       />
     </>
   )

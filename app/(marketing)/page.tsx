@@ -9,9 +9,9 @@ import { VideoDemo } from "@/components/marketing/video-demo"
 import { SectionHeading } from "@/components/marketing/motion-kit"
 
 export const metadata: Metadata = {
-  title: "AI Implementation for PE Portfolio Companies",
+  title: "AI Implementation for Companies",
   description:
-    "Logan deploys Claude, Codex, and Copilot at PE-backed portfolio companies. Training, setup, and support that sticks.",
+    "Logan deploys Claude, Codex, and Copilot at companies. Training, setup, and support that sticks.",
 }
 
 const VALUE_PROPS = [
@@ -71,7 +71,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
             title="What Changes When AI Actually Works"
-            copy="Not theory. These are the workflows we set up at real portfolio companies."
+            copy="Not theory. These are the workflows we set up at real companies."
           />
 
           <ValueProps items={VALUE_PROPS} />
@@ -98,7 +98,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
             title="See the Impact on Your EBITDA"
-            copy="Plug in your portfolio company's financials. See what AI could mean for margins and enterprise value."
+            copy="Plug in your company's financials. See what AI could mean for margins and enterprise value."
           />
           <div className="mt-12">
             <EbitdaCalculator />

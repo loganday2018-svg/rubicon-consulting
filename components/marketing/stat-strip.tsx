@@ -36,7 +36,7 @@ export function StatStrip() {
             className="px-8 text-center"
           >
             <p className="text-2xl font-bold text-foreground md:text-4xl">2</p>
-            <p className="mt-2 text-sm text-slate-500">Portfolio companies onboarded</p>
+            <p className="mt-2 text-sm text-slate-500">Companies onboarded</p>
           </motion.div>
         </div>
       </div>

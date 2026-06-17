@@ -9,7 +9,7 @@ import { AnimatedSteps } from "@/components/marketing/animated-steps"
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI training, tool selection, retainer support, and workflow acceleration for PE-backed portfolio companies.",
+    "AI training, tool selection, retainer support, and workflow acceleration for companies.",
 }
 
 const services = [

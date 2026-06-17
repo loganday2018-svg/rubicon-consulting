@@ -63,7 +63,7 @@ export default function Image() {
               maxWidth: "900px",
             }}
           >
-            AI Implementation for PE Portfolio Companies
+            AI Implementation for Companies
           </div>
           <div
             style={{

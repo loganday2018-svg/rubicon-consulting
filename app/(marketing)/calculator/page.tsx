@@ -7,7 +7,7 @@ import { CTASection } from "@/components/marketing/cta-section"
 export const metadata: Metadata = {
   title: "AI Impact Calculator",
   description:
-    "See how AI implementation could improve your portfolio company's EBITDA and enterprise value. Input your financials, get scenario-based projections.",
+    "See how AI implementation could improve your company's EBITDA and enterprise value. Input your financials, get scenario-based projections.",
 }
 
 export default function CalculatorPage() {
@@ -15,7 +15,7 @@ export default function CalculatorPage() {
     <>
       <PageHeader
         title="AI Impact on EBITDA"
-        description="Plug in your portfolio company's financials. See what AI implementation could mean for margins and enterprise value."
+        description="Plug in your company's financials. See what AI implementation could mean for margins and enterprise value."
       />
 
       <section className="py-16">
@@ -32,7 +32,7 @@ export default function CalculatorPage() {
 
       <CTASection
         heading="Like What You See?"
-        description="These are estimates. Book a free analysis and we'll run the real numbers on one of your portfolio companies, live."
+        description="These are estimates. Book a free analysis and we'll run the real numbers on your company, live."
         secondaryLabel="Learn about our services →"
         secondaryHref="/services"
       />

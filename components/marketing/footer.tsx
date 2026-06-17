@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <p className="text-lg font-bold text-white">{BRAND.name}</p>
             <p className="text-sm leading-relaxed text-slate-400">
-              AI deployment &amp; adoption for PE portfolio companies.
+              AI deployment &amp; adoption for companies.
             </p>
             <a
               href={`mailto:${BRAND.email}`}

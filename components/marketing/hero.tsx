@@ -65,7 +65,7 @@ export function HeroSection() {
             transition={{ duration: 1.1, ease: EASE }}
             className="mb-4 text-sm font-semibold uppercase tracking-widest text-slate-400"
           >
-            AI Implementation for PE Portfolio Companies
+            AI Implementation for Companies
           </motion.p>
 
           <motion.div
@@ -82,8 +82,8 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.45, ease: EASE }}
             className="mt-6 max-w-2xl text-lg text-slate-300 md:text-xl"
           >
-            I&apos;m Logan. I deploy Claude, Codex, and Copilot at PE-backed
-            teams and make sure they stick.
+            I&apos;m Logan. I deploy Claude, Codex, and Copilot at companies
+            and make sure they stick.
           </motion.p>
 
           <motion.div

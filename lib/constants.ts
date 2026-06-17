@@ -1,8 +1,8 @@
 export const BRAND = {
   name: 'Rubicon',
-  tagline: 'AI Implementation for PE Portfolio Companies',
+  tagline: 'AI Implementation for Companies',
   description:
-    'We help PE-backed portfolio companies deploy AI tools fast -- training, setup, and ongoing support that drives measurable operating leverage.',
+    'We help companies deploy AI tools fast -- training, setup, and ongoing support that drives measurable operating leverage.',
   email: 'loganday@rubiconaiconsulting.com',
   domain: 'rubiconaiconsulting.com',
 } as const

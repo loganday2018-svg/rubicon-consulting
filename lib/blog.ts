@@ -42,7 +42,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "claude-team-features",
     title: "3 Claude Features That 10x Your Team's Output",
     description:
-      "Skills, mobile Dispatch, and multi-agent workflows. The features that fundamentally change how PE-backed teams operate.",
+      "Skills, mobile Dispatch, and multi-agent workflows. The features that fundamentally change how teams operate.",
     date: "March 20, 2026",
     readTime: "7 min read",
     category: "AI Tips",

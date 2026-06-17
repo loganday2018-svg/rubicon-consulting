@@ -224,7 +224,7 @@ export default function BlogPost() {
 
               <PullQuote>
                 For operators who spend half their day between meetings and
-                portfolio companies: start an analysis before a board meeting,
+                on the road: start an analysis before a board meeting,
                 review the results in the car. Your AI keeps working when you
                 can&apos;t sit at your desk.
               </PullQuote>
@@ -390,7 +390,7 @@ export default function BlogPost() {
 
       <CTASection
         heading="Want Us to Set This Up for Your Team?"
-        description="We deploy Claude across PE portfolio companies and train teams to actually use it -- mobile, desktop, and everything in between."
+        description="We deploy Claude across companies and train teams to actually use it -- mobile, desktop, and everything in between."
       />
     </>
   )

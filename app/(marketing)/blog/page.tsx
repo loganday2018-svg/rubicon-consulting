@@ -8,7 +8,7 @@ import { getAllPosts } from "@/lib/posts"
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Practical AI tips, workflows, and strategies for PE-backed portfolio companies.",
+    "Practical AI tips, workflows, and strategies for companies deploying AI.",
 }
 
 export default function BlogPage() {
@@ -18,7 +18,7 @@ export default function BlogPage() {
     <>
       <PageHeader
         title="Blog"
-        description="Practical AI tips and strategies for PE-backed teams. No theory, no fluff."
+        description="Practical AI tips and strategies for teams deploying AI. No theory, no fluff."
       />
 
       <section className="py-16 md:py-24">

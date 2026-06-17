@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Claude Power-User Tips: Plugins, Auto Mode & Scheduled Tasks",
   description:
-    "Three features that turn Claude from a chatbot into a workflow engine for PE-backed portfolio companies.",
+    "Three features that turn Claude from a chatbot into a workflow engine for companies.",
 }
 
 export default function BlogPost() {
@@ -97,7 +97,7 @@ export default function BlogPost() {
                   <p className="font-semibold text-foreground">Operations</p>
                   <p className="mt-1 text-sm text-slate-600">
                     Process automation for warehouse and distribution. If your
-                    portcos move physical product, this is where you&apos;ll
+                    company moves physical product, this is where you&apos;ll
                     feel it first.
                   </p>
                 </div>
@@ -240,7 +240,7 @@ export default function BlogPost() {
               </p>
 
               <PullQuote>
-                Imagine every portfolio company GM getting an automated daily
+                Imagine every GM getting an automated daily
                 KPI summary with exceptions flagged. No dashboard build. No
                 analyst hire.
               </PullQuote>
@@ -350,7 +350,7 @@ export default function BlogPost() {
 
       <CTASection
         heading="Want Us to Set This Up for Your Team?"
-        description="We deploy these tools across PE portfolio companies and train teams to actually use them."
+        description="We deploy these tools across companies and train teams to actually use them."
       />
     </>
   )
