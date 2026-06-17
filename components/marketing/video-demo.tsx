@@ -221,8 +221,8 @@ export function VideoDemo() {
   const active = DEMOS[activeIndex]
 
   return (
-    <section className="border-t border-slate-200 bg-white py-16 md:py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="border-t border-slate-200 bg-white py-12 md:py-16">
+      <div className="mx-auto max-w-6xl px-6">
         {/* Tabs */}
         <div className="mx-auto mb-8 flex max-w-md gap-1 rounded-full border border-slate-200 bg-slate-100 p-1">
           {DEMOS.map((demo, i) => (
@@ -241,20 +241,20 @@ export function VideoDemo() {
         </div>
 
         {/* Header */}
-        <div className="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-slate-50 px-6 py-8 text-center shadow-sm md:px-10 md:py-10">
+        <div className="mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-slate-50 px-6 py-6 text-center shadow-sm md:px-10 md:py-7">
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
             {active.eyebrow}
           </p>
-          <h2 className="mt-3 text-3xl font-semibold text-foreground md:text-4xl">
+          <h2 className="mt-2 text-2xl font-semibold text-foreground md:text-3xl">
             {active.heading}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-slate-700">
+          <p className="mx-auto mt-2.5 max-w-2xl text-slate-700">
             {active.description}
           </p>
         </div>
 
         {/* Video players — render both, show active */}
-        <div className="mt-12">
+        <div className="mt-8">
           {DEMOS.map((demo, i) => (
             <div
               key={demo.id}
