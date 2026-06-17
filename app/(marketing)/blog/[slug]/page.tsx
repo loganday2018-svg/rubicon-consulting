@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react"
 import { CTASection } from "@/components/marketing/cta-section"
 import { ArticleShell } from "@/components/marketing/article-shell"
 import { MarkdownBody } from "@/components/marketing/markdown-body"
+import { ArticleJsonLd } from "@/components/seo/json-ld"
 import { getMarkdownSlugs, getPostBySlug, getRelatedPosts } from "@/lib/posts"
 
 export function generateStaticParams() {
@@ -46,6 +47,7 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <ArticleJsonLd post={post} />
       <ArticleShell>
         <article className="py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-6">
@@ -134,7 +136,7 @@ export default async function BlogPostPage({
         </article>
       </ArticleShell>
 
-      <CTASection />
+      <CTASection secondaryLabel="See our services" secondaryHref="/services" />
     </>
   )
 }

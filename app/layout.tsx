@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono, DM_Serif_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { BRAND } from "@/lib/constants"
+import { OrganizationJsonLd } from "@/components/seo/json-ld"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -55,6 +56,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-foreground min-h-full flex flex-col">
+        <OrganizationJsonLd />
         {children}
         <Analytics />
       </body>
