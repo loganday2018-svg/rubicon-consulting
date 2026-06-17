@@ -63,7 +63,7 @@ export default function Image() {
               maxWidth: "900px",
             }}
           >
-            AI Implementation for Companies
+            AI Implementation that Sticks
           </div>
           <div
             style={{

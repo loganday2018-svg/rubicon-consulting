@@ -65,7 +65,7 @@ export function HeroSection() {
             transition={{ duration: 1.1, ease: EASE }}
             className="mb-4 text-sm font-semibold uppercase tracking-widest text-slate-400"
           >
-            AI Implementation for Companies
+            AI Implementation that Sticks
           </motion.p>
 
           <motion.div

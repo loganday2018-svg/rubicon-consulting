@@ -9,7 +9,7 @@ import { VideoDemo } from "@/components/marketing/video-demo"
 import { SectionHeading } from "@/components/marketing/motion-kit"
 
 export const metadata: Metadata = {
-  title: "AI Implementation for Companies",
+  title: "AI Implementation that Sticks",
   description:
     "Logan deploys Claude, Codex, and Copilot at companies. Training, setup, and support that sticks.",
 }
