@@ -22,14 +22,17 @@ message. Connect the calendar to make it live.
 
 ## 2. Mint a refresh token (one time)
 
-From the repo root:
+Download the client's JSON (the **Download JSON** button shown when the client is
+created, or the download icon on the Clients list). Then, from the repo root:
 
 ```bash
-GOOGLE_CLIENT_ID=xxx GOOGLE_CLIENT_SECRET=yyy node scripts/google-oauth.mjs
+node scripts/google-oauth.mjs path/to/client_secret_xxx.json
 ```
 
 Open the printed URL, approve access with the Google account whose calendar you
-want bookings on, and copy the `GOOGLE_REFRESH_TOKEN` it prints.
+want bookings on. The script prints a ready-to-paste `GOOGLE_CLIENT_ID` /
+`GOOGLE_CLIENT_SECRET` / `GOOGLE_REFRESH_TOKEN` block. (You never type the secret
+by hand — it's read from the JSON.)
 
 ## 3. Set Vercel environment variables
 
