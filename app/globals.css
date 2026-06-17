@@ -53,6 +53,8 @@
   --color-slate-200: oklch(0.929 0.013 255);
   --color-slate-100: oklch(0.968 0.007 247);
   --color-slate-50: oklch(0.984 0.003 247);
+  /* Brand blue accent (matches the video-player glow / dark sidebar) */
+  --color-brand-blue: oklch(0.488 0.243 264);
 }
 
 :root {

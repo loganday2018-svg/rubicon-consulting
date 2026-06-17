@@ -231,8 +231,8 @@ export function VideoDemo() {
               onClick={() => setActiveIndex(i)}
               className={`flex-1 rounded-full px-4 py-2 text-sm font-medium transition-all ${
                 i === activeIndex
-                  ? "bg-white text-slate-900 shadow-sm"
-                  : "text-slate-500 hover:text-slate-700"
+                  ? "bg-white text-brand-blue shadow-sm ring-1 ring-brand-blue/20"
+                  : "text-slate-500 hover:text-brand-blue"
               }`}
             >
               {demo.tab}
