@@ -1,0 +1,156 @@
+- generic [ref=e2]:
+  - heading "AI Proficiency Pyramid" [level=1] [ref=e3]
+  - paragraph [ref=e4]: Four smooth-pyramid layouts, same data. Apex = Level 6 (rare), base = Level 0 (everyone). Pick one and I'll build it as a polished React component for the site.
+  - generic [ref=e5]:
+    - paragraph [ref=e6]: Option A
+    - paragraph [ref=e7]: Fanned leaders — descriptions to the side
+    - paragraph [ref=e8]: Numbers sit inside the pyramid; thin connector lines fan each tier out to its full description. Classic infographic look.
+    - img "AI proficiency pyramid" [ref=e9]:
+      - generic [ref=e12]: "6"
+      - generic [ref=e14]: "5"
+      - generic [ref=e16]: "4"
+      - generic [ref=e18]: "3"
+      - generic [ref=e20]: "2"
+      - generic [ref=e22]: "1"
+      - generic [ref=e24]: "0"
+      - generic [ref=e27]:
+        - generic [ref=e28]: L6
+        - generic [ref=e29]: Created a legitimate agent like OpenClaw or Hermes
+      - generic [ref=e32]:
+        - generic [ref=e33]: L5
+        - generic [ref=e34]: Embedded AI directly into a tool or process
+      - generic [ref=e37]:
+        - generic [ref=e38]: L4
+        - generic [ref=e39]: Deployed apps or websites onto a server
+      - generic [ref=e42]:
+        - generic [ref=e43]: L3
+        - generic [ref=e44]: Used agentic coding tools to create applications
+      - generic [ref=e47]:
+        - generic [ref=e48]: L2
+        - generic [ref=e49]: Used Cowork or agentic coding tools for basic tasks
+      - generic [ref=e52]:
+        - generic [ref=e53]: L1
+        - generic [ref=e54]: Used ChatGPT, Claude, Gemini, or Copilot
+      - generic [ref=e57]:
+        - generic [ref=e58]: L0
+        - generic [ref=e59]: Never touched an AI tool
+  - generic [ref=e60]:
+    - paragraph [ref=e61]: Option B
+    - paragraph [ref=e62]: Split — pyramid left, aligned legend right
+    - paragraph [ref=e63]: Clean two-column split. Each legend row lines up with its tier. No connector lines, very readable.
+    - generic [ref=e64]:
+      - img "AI proficiency pyramid" [ref=e65]:
+        - generic [ref=e68]: "6"
+        - generic [ref=e70]: "5"
+        - generic [ref=e72]: "4"
+        - generic [ref=e74]: "3"
+        - generic [ref=e76]: "2"
+        - generic [ref=e78]: "1"
+        - generic [ref=e80]: "0"
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e84]: LEVEL 6
+          - generic [ref=e85]: Agent architect. Created a legitimate agent like OpenClaw or Hermes
+        - generic [ref=e86]:
+          - generic [ref=e88]: LEVEL 5
+          - generic [ref=e89]: Integrator. Embedded AI directly into a tool or process
+        - generic [ref=e90]:
+          - generic [ref=e92]: LEVEL 4
+          - generic [ref=e93]: Deployer. Deployed apps or websites onto a server
+        - generic [ref=e94]:
+          - generic [ref=e96]: LEVEL 3
+          - generic [ref=e97]: App builder. Used agentic coding tools to create applications
+        - generic [ref=e98]:
+          - generic [ref=e100]: LEVEL 2
+          - generic [ref=e101]: Agentic basics. Used Cowork or agentic coding tools for basic tasks
+        - generic [ref=e102]:
+          - generic [ref=e104]: LEVEL 1
+          - generic [ref=e105]: Chat user. Used ChatGPT, Claude, Gemini, or Copilot
+        - generic [ref=e106]:
+          - generic [ref=e108]: LEVEL 0
+          - generic [ref=e109]: Curious. Never touched an AI tool
+  - generic [ref=e110]:
+    - paragraph [ref=e111]: Option C
+    - paragraph [ref=e112]: Stacked slabs — dimensional tiers
+    - paragraph [ref=e113]: Each level is its own slab with depth and a small gap, like a layered monument. Description sits beside each slab.
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - generic:
+            - generic: "6"
+        - generic [ref=e118]:
+          - generic [ref=e119]: Level 6
+          - text: Created a legitimate agent like OpenClaw or Hermes
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - generic:
+            - generic: "5"
+        - generic [ref=e123]:
+          - generic [ref=e124]: Level 5
+          - text: Embedded AI directly into a tool or process
+      - generic [ref=e125]:
+        - generic [ref=e126]:
+          - generic:
+            - generic: "4"
+            - generic: Deployer
+        - generic [ref=e128]:
+          - generic [ref=e129]: Level 4
+          - text: Deployed apps or websites onto a server
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic:
+            - generic: "3"
+            - generic: App builder
+        - generic [ref=e133]:
+          - generic [ref=e134]: Level 3
+          - text: Used agentic coding tools to create applications
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - generic:
+            - generic: "2"
+            - generic: Agentic basics
+        - generic [ref=e138]:
+          - generic [ref=e139]: Level 2
+          - text: Used Cowork or agentic coding tools for basic tasks
+      - generic [ref=e140]:
+        - generic [ref=e141]:
+          - generic:
+            - generic: "1"
+            - generic: Chat user
+        - generic [ref=e143]:
+          - generic [ref=e144]: Level 1
+          - text: Used ChatGPT, Claude, Gemini, or Copilot
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - generic:
+            - generic: "0"
+            - generic: Curious
+        - generic [ref=e148]:
+          - generic [ref=e149]: Level 0
+          - text: Never touched an AI tool
+  - generic [ref=e150]:
+    - paragraph [ref=e151]: Option D
+    - paragraph [ref=e152]: Minimal — numbers + tags inside
+    - paragraph [ref=e153]: "The pure graphic: number and short tag live inside each band. Compact legend on the right. Smallest footprint."
+    - generic [ref=e154]:
+      - img "AI proficiency pyramid" [ref=e155]:
+        - generic [ref=e158]: "6"
+        - generic [ref=e160]: "5"
+        - generic [ref=e162]: "4"
+        - generic [ref=e163]: DEPLOYER
+        - generic [ref=e165]: "3"
+        - generic [ref=e166]: APP BUILDER
+        - generic [ref=e168]: "2"
+        - generic [ref=e169]: AGENTIC BASICS
+        - generic [ref=e171]: "1"
+        - generic [ref=e172]: CHAT USER
+        - generic [ref=e174]: "0"
+        - generic [ref=e175]: CURIOUS
+      - generic [ref=e176]:
+        - generic [ref=e179]: L6 · Agent architect. Created a legitimate agent like OpenClaw or Hermes
+        - generic [ref=e182]: L5 · Integrator. Embedded AI directly into a tool or process
+        - generic [ref=e185]: L4 · Deployer. Deployed apps or websites onto a server
+        - generic [ref=e188]: L3 · App builder. Used agentic coding tools to create applications
+        - generic [ref=e191]: L2 · Agentic basics. Used Cowork or agentic coding tools for basic tasks
+        - generic [ref=e194]: L1 · Chat user. Used ChatGPT, Claude, Gemini, or Copilot
+        - generic [ref=e197]: L0 · Curious. Never touched an AI tool

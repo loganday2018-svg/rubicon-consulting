@@ -55,4 +55,4 @@ Start teaching your employees how to use these tools effectively (I’m happy to
 
 *Want the video version? I walk through these tools step by step on YouTube: [youtube.com/@Rubicon-AI](https://www.youtube.com/@Rubicon-AI)*
 
-*I’m Logan. I run [Rubicon](https://rubiconaiconsulting.com), where I help companies actually put AI to work in finance and ops.*
+*I’m Logan. I run [Rubicon](https://rubiconaiconsulting.com), where I help companies actually put AI to work, not just talk about it.*
