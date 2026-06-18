@@ -4,7 +4,7 @@ import { bookingTimezone, getMeetingType } from "@/lib/booking/config"
 import { isSlotBookable } from "@/lib/booking/availability"
 import { createEvent, isGoogleConfigured } from "@/lib/booking/google"
 import { signEvent } from "@/lib/booking/token"
-import { sendConfirmation, sendOwnerNotification } from "@/lib/booking/email"
+import { sendConfirmation } from "@/lib/booking/email"
 
 export const dynamic = "force-dynamic"
 
@@ -66,6 +66,7 @@ export async function POST(request: Request) {
       timeZone: tz,
       attendeeEmail: email,
       attendeeName: name,
+      ownerEmail: process.env.BOOKING_OWNER_EMAIL || BRAND.email,
       requestId,
     })
 
@@ -73,25 +74,14 @@ export async function POST(request: Request) {
     const cancelUrl = `https://${BRAND.domain}/book/cancel?token=${encodeURIComponent(token)}`
     const whenLabel = startDt.setZone(tz).toFormat("cccc, LLLL d 'at' h:mm a (ZZZZ)")
 
-    await Promise.allSettled([
-      sendConfirmation({
-        to: email,
-        name,
-        meetingLabel: type.label,
-        whenLabel,
-        meetLink: event.hangoutLink,
-        cancelUrl,
-      }),
-      sendOwnerNotification({
-        bookerName: name,
-        bookerEmail: email,
-        company,
-        notes,
-        meetingLabel: type.label,
-        whenLabel,
-        meetLink: event.hangoutLink,
-      }),
-    ])
+    await sendConfirmation({
+      to: email,
+      name,
+      meetingLabel: type.label,
+      whenLabel,
+      meetLink: event.hangoutLink,
+      cancelUrl,
+    })
 
     return Response.json({
       ok: true,

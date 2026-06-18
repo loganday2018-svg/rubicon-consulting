@@ -102,9 +102,18 @@ export async function createEvent(input: {
   timeZone: string
   attendeeEmail: string
   attendeeName?: string
+  ownerEmail?: string
   requestId: string
 }): Promise<CreatedEvent> {
   const token = await getAccessToken()
+  const attendees: Array<{ email: string; displayName?: string; responseStatus?: string }> = [
+    { email: input.attendeeEmail, displayName: input.attendeeName },
+  ]
+  // Add the owner as a guest so Google emails them a copy too. Skipped if it
+  // matches the booker or the calendar's own account (the organizer isn't emailed).
+  if (input.ownerEmail && input.ownerEmail !== input.attendeeEmail) {
+    attendees.push({ email: input.ownerEmail, responseStatus: "accepted" })
+  }
   const res = await fetch(
     `${CAL_BASE}/calendars/${encodeURIComponent(
       calendarId(),
@@ -120,9 +129,7 @@ export async function createEvent(input: {
         description: input.description,
         start: { dateTime: input.startISO, timeZone: input.timeZone },
         end: { dateTime: input.endISO, timeZone: input.timeZone },
-        attendees: [
-          { email: input.attendeeEmail, displayName: input.attendeeName },
-        ],
+        attendees,
         conferenceData: {
           createRequest: {
             requestId: input.requestId,
