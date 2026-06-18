@@ -42,3 +42,9 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# local debug / MCP scratch artifacts (not part of the site)
+.playwright-mcp/
+mcp-logs.txt
+wa-logs.txt
+pyr-*.png
