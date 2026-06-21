@@ -1,5 +1,13 @@
 import type { Metadata } from "next"
-import { GraduationCap, Compass, Headphones, Workflow, Clock } from "lucide-react"
+import {
+  GraduationCap,
+  Presentation,
+  Newspaper,
+  Compass,
+  Workflow,
+  Bot,
+  Headphones,
+} from "lucide-react"
 import { ServiceCard } from "@/components/marketing/service-card"
 import { CTASection } from "@/components/marketing/cta-section"
 import { PageHeader } from "@/components/marketing/page-header"
@@ -9,69 +17,146 @@ import { AnimatedSteps } from "@/components/marketing/animated-steps"
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI training, tool selection, retainer support, and workflow acceleration for companies.",
+    "AI training, advisory, automation, and custom agents for lean manufacturers and distributors.",
 }
 
-const services = [
+type Service = {
+  icon: React.ReactNode
+  title: string
+  description: string
+  scope: string[]
+  timeline?: string
+  price?: string
+  scoped?: boolean
+}
+
+const education: Service[] = [
+  {
+    icon: <Presentation size={32} />,
+    title: "Executive Training",
+    description:
+      "Strategy for the people who set it. How to actually put AI to work in your business, past the hype.",
+    scope: [
+      "How to think about leveraging AI across your operation",
+      "How to get the most out of your workforce with it",
+      "The trajectory: where this is heading and how fast it is moving",
+      "Built for owners and leadership, not engineers",
+    ],
+    timeline: "Half or full day",
+    price: "$5,000 to $10,000",
+  },
   {
     icon: <GraduationCap size={32} />,
-    title: "AI Training Programs",
+    title: "Team Training",
     description:
-      "We build working tools with your data. After that, your team finds new uses on its own.",
+      "Tactical and hands-on. Which buttons to press, which model to use, on your team's real data.",
     scope: [
-      "Hands-on sessions, not slides or lectures",
-      "Live build session using your team's actual unstructured data",
-      "Custom prompts and workflows tailored to their day-to-day",
-      "Recorded walkthroughs for new hire onboarding",
+      "Hands-on sessions, not slides",
+      "Which model to reach for, for which job",
+      "Workflows built on your team's actual data",
+      "Recorded walkthroughs for onboarding new hires",
     ],
-    timeline: "1-2 weeks per program",
+    timeline: "1-2 weeks",
     price: "From $5,000",
+  },
+  {
+    icon: <Newspaper size={32} />,
+    title: "Weekly AI Update",
+    description:
+      "Short training videos every week as new models and features land, so your team never falls behind.",
+    scope: [
+      "New videos every week, no fluff",
+      "What changed, and whether it matters to you",
+      "One flat price for the whole team",
+      "Cancel anytime",
+    ],
+    timeline: "Monthly",
+    price: "$99/mo",
+  },
+]
+
+const build: Service[] = [
+  {
+    icon: <Workflow size={32} />,
+    title: "Automation + Enablement",
+    description:
+      "Turn manual, repeatable work into something that runs itself, then teach your team to run it.",
+    scope: [
+      "Turn a one-hour report into a two-minute program, set up once and good forever",
+      "Automate the manual, repeatable tasks that eat your week",
+      "Works with your tools: Excel, ERP, Salesforce, whatever you run",
+      "Every build includes a session so your team can run and extend it",
+    ],
+    timeline: "Scoped to the work",
+    price: "Get a quote",
     scoped: true,
   },
   {
-    icon: <Compass size={32} />,
-    title: "AI Tool Selection & Setup",
+    icon: <Bot size={32} />,
+    title: "Custom Agents",
     description:
-      "Claude Code, Codex, Gemini, Copilot, Cursor. We pick the right one and set up your team.",
+      "The premium tier. Systems that reason and decide, not just execute a single task.",
     scope: [
-      "Guidance on which AI tool fits your team's needs",
-      "Hands-on setup and walkthrough for every team member",
-      "Team onboarding and best practices docs",
-      "Ongoing check-ins to make sure adoption sticks",
+      "Knowledge agents: ask your data questions in plain English, no SQL",
+      "Connect a model straight to your data, or layer onto Power BI",
+      "Agents that answer calls and handle the routine asks",
+      "Build fee plus a monthly to run and maintain it",
     ],
-    timeline: "2-4 weeks",
-    price: "From $8,000",
+    timeline: "Scoped to the work",
+    price: "Get a quote",
     scoped: true,
+  },
+]
+
+const support: Service[] = [
+  {
+    icon: <Compass size={32} />,
+    title: "Consulting & Advisory",
+    description:
+      "Audits, tool selection, and a roadmap for where AI should go first.",
+    scope: [
+      "An audit of where AI would pay off fastest",
+      "Straight guidance on which tools fit your shop",
+      "A prioritized roadmap, no 50-page deck",
+      "Available by the hour or as a light monthly",
+    ],
+    timeline: "Flexible",
+    price: "$200/hr or $2,500/mo",
   },
   {
     icon: <Headphones size={32} />,
-    title: "Ongoing Retainer",
+    title: "Ongoing Support",
     description:
-      "AI tools change fast. We track updates so your team doesn't have to.",
+      "AI tools change fast. We track the updates so your team doesn't have to.",
     scope: [
-      "Dedicated Slack/Teams channel with your team",
+      "A dedicated Slack or Teams channel with your team",
       "We track the AI landscape so your team doesn't have to",
-      "Quick-start calls available for new hires at a flat fee",
-      "Troubleshooting when updates break existing workflows",
+      "Troubleshooting when an update breaks a workflow",
+      "Quick-start calls for new hires at a flat fee",
     ],
     timeline: "Ongoing monthly",
     price: "From $2,500/mo",
-    scoped: true,
+  },
+]
+
+const groups = [
+  {
+    id: "education",
+    heading: "Education",
+    sub: "Get your leadership and your team fluent, from strategy down to which buttons to press.",
+    items: education,
   },
   {
-    icon: <Workflow size={32} />,
-    title: "AI-Powered Acceleration",
-    description:
-      "We find where your team spends the most manual hours and automate it.",
-    scope: [
-      "Audit of where your team spends the most manual time",
-      "AI-powered workflows for reports, research, and analysis",
-      "Works with your existing tools: Excel, Salesforce, ERP, whatever you use",
-      "Before-and-after time benchmarks so you can see the difference",
-    ],
-    timeline: "4-8 weeks per engagement",
-    price: "From $15,000",
-    scoped: true,
+    id: "build",
+    heading: "Build",
+    sub: "Scoped to your workflow and quoted after a short call. Every build comes with the training to own it.",
+    items: build,
+  },
+  {
+    id: "support",
+    heading: "Advisory & Support",
+    sub: "Point the effort in the right direction, and keep it running once it is.",
+    items: support,
   },
 ]
 
@@ -80,7 +165,7 @@ const steps = [
     number: 1,
     title: "15-Minute Intro",
     description:
-      "Tell us about your team and where AI could help. We'll tell you if we're a fit.",
+      "Tell us where your team loses the most hours. We'll tell you straight if we can help.",
   },
   {
     number: 2,
@@ -91,8 +176,7 @@ const steps = [
   {
     number: 3,
     title: "Scoped Proposal",
-    description:
-      "Clear scope, timeline, price. No 50-page deck.",
+    description: "Clear scope, timeline, price. No 50-page deck.",
   },
   {
     number: 4,
@@ -107,47 +191,22 @@ export default function ServicesPage() {
     <>
       <PageHeader
         title="What We Do"
-        description="Every engagement is scoped, priced, and built to get your teams using AI."
+        description="Education, automation, and custom agents for lean manufacturers and distributors. Every engagement is scoped, priced, and built to get your team using AI."
       />
 
-      {/* Services Grid */}
-      <section className="py-12">
-        <AnimatedServicesGrid>
-          {services.map((service) => (
-            <ServiceCard key={service.title} {...service} />
-          ))}
-        </AnimatedServicesGrid>
-      </section>
-
-      {/* À la carte / hourly */}
-      <section className="pb-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-6 md:p-8">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <div className="flex items-start gap-4">
-                <div className="mt-1 shrink-0 text-primary">
-                  <Clock size={24} />
-                </div>
-                <div>
-                  <p className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-                    À la carte
-                  </p>
-                  <h3 className="text-lg font-semibold text-slate-900">
-                    Need something smaller?
-                  </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                    One-off advisory calls, quick audits, pair-coding sessions, or workshop facilitation. Billed by the hour.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 md:flex-col md:items-end md:gap-1">
-                <span className="text-2xl font-semibold text-primary">$200</span>
-                <span className="text-xs text-slate-500">per hour</span>
-              </div>
-            </div>
+      {groups.map((group) => (
+        <section key={group.id} className="py-12">
+          <div className="mx-auto mb-8 max-w-6xl px-6">
+            <h2 className="text-3xl font-semibold">{group.heading}</h2>
+            <p className="mt-2 max-w-2xl text-slate-600">{group.sub}</p>
           </div>
-        </div>
-      </section>
+          <AnimatedServicesGrid>
+            {group.items.map((service) => (
+              <ServiceCard key={service.title} {...service} />
+            ))}
+          </AnimatedServicesGrid>
+        </section>
+      ))}
 
       {/* How It Works */}
       <section className="bg-slate-50 py-16">
