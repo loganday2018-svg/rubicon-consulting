@@ -100,20 +100,43 @@ export function UseCaseBreakdown() {
           return (
             <div
               key={fn.label}
-              className="overflow-hidden rounded-lg border border-slate-200 bg-white"
+              className={`rounded-lg border bg-white transition-all duration-300 ${
+                isOpen
+                  ? "border-primary/30 bg-gradient-to-br from-white via-slate-50 to-primary/[0.04] shadow-md"
+                  : "border-slate-200 hover:border-slate-300"
+              }`}
             >
               <button
                 onClick={() => setOpenIndex(isOpen ? null : i)}
-                className="flex w-full items-center gap-4 px-6 py-4 text-left transition-colors hover:bg-slate-50"
+                className="flex w-full items-center gap-4 px-6 py-4 text-left"
               >
-                <fn.icon className="size-5 shrink-0 text-primary" />
+                <span className="flex shrink-0 items-center gap-2.5">
+                  <span
+                    aria-hidden="true"
+                    className={`font-mono text-xs tabular-nums transition-colors duration-300 ${
+                      isOpen ? "text-primary/70" : "text-slate-300"
+                    }`}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <motion.span
+                    animate={
+                      isOpen
+                        ? { scale: [1, 1.2, 1], rotate: [0, -8, 8, 0] }
+                        : { scale: 1, rotate: 0 }
+                    }
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <fn.icon className="size-5 text-primary" />
+                  </motion.span>
+                </span>
                 <div className="flex-1">
                   <span className="font-semibold text-foreground">{fn.label}</span>
                   <span className="ml-3 text-xs text-slate-400">{fn.impact}</span>
                 </div>
                 <ChevronDown
-                  className={`size-4 shrink-0 text-slate-400 transition-transform ${
-                    isOpen ? "rotate-180" : ""
+                  className={`size-4 shrink-0 transition-transform ${
+                    isOpen ? "rotate-180 text-primary" : "text-slate-400"
                   }`}
                 />
               </button>
@@ -125,6 +148,7 @@ export function UseCaseBreakdown() {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.25 }}
+                    className="overflow-hidden"
                   >
                     <ul className="space-y-2 border-t border-slate-100 px-6 py-4">
                       {fn.useCases.map((uc) => (
