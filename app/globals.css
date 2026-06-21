@@ -176,6 +176,26 @@
   animation: grid-drift 14s linear infinite;
 }
 
+/* Rotating-headline progress bar. Pure CSS (scaleX) so the component
+   never re-renders per frame and the headline animation runs cleanly.
+   Duration + play state are set inline; restarts each cycle via key. */
+@keyframes rh-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.rh-progress {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation-name: rh-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
 /* CTA shine — a light sweep across the primary button on hover */
 .btn-shine {
   position: relative;
@@ -232,6 +252,10 @@
   .animate-ticker,
   .animate-grid-drift {
     animation: none;
+  }
+  .rh-progress {
+    animation: none;
+    transform: scaleX(1);
   }
   .btn-shine::after {
     display: none;

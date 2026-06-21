@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const HEADLINES = [
@@ -20,42 +20,17 @@ interface RotatingHeadlineProps {
 export function RotatingHeadline({ className }: RotatingHeadlineProps) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
-  const [progress, setProgress] = useState(0)
-  const startTime = useRef(Date.now())
-  const rafRef = useRef<number>(0)
 
-  const advance = useCallback(() => {
-    setIndex((prev) => (prev + 1) % HEADLINES.length)
-    setProgress(0)
-    startTime.current = Date.now()
-  }, [])
-
+  // Advance on a plain timer. No per-frame state, so the headline's
+  // entrance animation is never interrupted by a re-render (which used to
+  // leave it stuck at opacity 0 on load).
   useEffect(() => {
-    if (paused) {
-      cancelAnimationFrame(rafRef.current)
-      return
-    }
-
-    // Reset start time when unpausing to account for elapsed progress
-    const remaining = INTERVAL * (1 - progress)
-    const resumeStart = Date.now() - (INTERVAL - remaining)
-    startTime.current = resumeStart
-
-    function tick() {
-      const elapsed = Date.now() - startTime.current
-      const pct = Math.min(elapsed / INTERVAL, 1)
-      setProgress(pct)
-
-      if (pct >= 1) {
-        advance()
-        return
-      }
-      rafRef.current = requestAnimationFrame(tick)
-    }
-
-    rafRef.current = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(rafRef.current)
-  }, [paused, advance, progress])
+    if (paused) return
+    const id = setInterval(() => {
+      setIndex((prev) => (prev + 1) % HEADLINES.length)
+    }, INTERVAL)
+    return () => clearInterval(id)
+  }, [paused])
 
   return (
     <div
@@ -80,11 +55,16 @@ export function RotatingHeadline({ className }: RotatingHeadlineProps) {
         </AnimatePresence>
       </h1>
 
-      {/* Progress bar */}
+      {/* Progress bar: a pure CSS scaleX animation, restarted each cycle
+          via the key. Pauses on hover with the parent. */}
       <div className="mt-6 h-0.5 w-full max-w-md overflow-hidden rounded-full bg-white/10">
-        <motion.div
-          className="h-full bg-gradient-to-r from-white/60 to-white/30 rounded-full"
-          style={{ width: `${progress * 100}%` }}
+        <div
+          key={index}
+          className="rh-progress h-full w-full rounded-full bg-gradient-to-r from-white/60 to-white/30"
+          style={{
+            animationDuration: `${INTERVAL}ms`,
+            animationPlayState: paused ? "paused" : "running",
+          }}
         />
       </div>
     </div>

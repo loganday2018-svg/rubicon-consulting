@@ -10,7 +10,7 @@ export const BRAND = {
 export const NAV_LINKS = [
   { label: 'Services', href: '/services' },
   { label: 'Demo', href: '/demo' },
-  { label: 'ROI Calculator', href: '/calculator' },
+  { label: 'Margin Calculator', href: '/calculator' },
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
 ] as const
