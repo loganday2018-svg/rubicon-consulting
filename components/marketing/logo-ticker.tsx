@@ -2,6 +2,7 @@
 
 const TOOLS = [
   { name: "Claude", icon: "/logos/claude.svg" },
+  { name: "Gemini", icon: "/logos/gemini.svg" },
   { name: "GitHub Copilot", icon: "/logos/copilot.svg" },
   { name: "Cursor", icon: "/logos/cursor.svg" },
   { name: "Codex", icon: "/logos/codex.svg" },
