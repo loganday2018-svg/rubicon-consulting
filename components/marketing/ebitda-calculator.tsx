@@ -155,17 +155,17 @@ export function EbitdaCalculator() {
 
   return (
     <div>
-      <p className="mb-6 text-center text-xs text-slate-400">
+      <p className="mb-4 text-center text-xs text-slate-400">
         Illustrative estimates based on industry benchmarks. Actual impact varies by company and implementation scope.
       </p>
 
       {/* Industry presets */}
-      <div className="mb-8 flex flex-wrap justify-center gap-3">
+      <div className="mb-5 flex flex-wrap justify-center gap-2">
         {PRESETS.map((p, i) => (
           <button
             key={p.label}
             onClick={() => applyPreset(i)}
-            className={`rounded-full border px-5 py-2 text-sm font-medium transition-all ${
+            className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all ${
               activePreset === i
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-slate-200 bg-white text-slate-600 hover:border-primary/40 hover:text-foreground"
@@ -178,7 +178,7 @@ export function EbitdaCalculator() {
       </div>
 
       {/* Your numbers */}
-      <div className="mx-auto max-w-lg space-y-6">
+      <div className="mx-auto max-w-lg space-y-4">
         <p className="text-sm font-semibold uppercase tracking-wide text-slate-400">
           Your numbers
         </p>
