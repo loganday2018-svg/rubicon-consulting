@@ -17,13 +17,33 @@ Covers:
 Format: half-day or full-day session.
 Price: $5-10K per session *(placeholder)*
 
-### Team / Workforce Training  (tactical, hands-on)
-Tactical and low-friction. Which buttons to press, which models to use.
-Covers:
-- Hands-on, how to actually use the tools day to day
-- Which model to reach for, for which job
-- Practical workflows built on their real data
-Price: $5K per program *(placeholder)*
+### Team / Workforce Training  (tactical, hands-on, leveled workshops)
+Tactical and hands-on. Deliberately technical, that is the point. Sold as a leveled curriculum; each level is distinct and priced separately. Pricing climbs parabolically (it accelerates, not linear), because the jump in value from automating a report to building agents is not linear either. Prices are per group.
+
+**001 - Background**  *(free, included with any paid level; still taught live by Logan)*
+- How LLMs actually work, in plain terms
+- Short history: ChatGPT release, Anthropic founding, how token costs fell, how software-engineering benchmarks (SWE-bench, etc.) climbed
+- Pure context, framed as skippable. Free with a purchase, not a standalone giveaway (it costs Logan's live time).
+
+**101 - Automate fast**  -  $2,500 / group
+*How to get your team automating things super fast.*
+- Getting the most out of agentic coding tools
+- How to save your work
+- A very light intro to Git and GitHub (so nobody loses a project)
+- Working in Claude and Codex
+
+**201 - Host & collaborate**  -  $5,000 / group
+*How to host and collaboratively work on real sites.*
+- Using GitHub well, merging projects, shipping/posting
+- Hosting real sites
+- Why databases matter
+- Security basics
+
+**301 - Build agents**  -  $10,000 / group
+*Literally agents.*
+- Teaching people to use LLMs to build custom, bespoke agents for their own company
+
+Note: 301 (teach our person to build agents) and the Custom Agents build tier (we build it for you) serve the same need from opposite ends. Most lean shops buy the build; 301 is the niche track for shops that have a builder.
 
 ### Weekly AI Update  (subscription)  [APPROVED]
 Fresh short training videos every week as new models and features drop, so the team never falls behind.

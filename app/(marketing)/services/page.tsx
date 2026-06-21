@@ -49,15 +49,15 @@ const education: Service[] = [
     icon: <GraduationCap size={32} />,
     title: "Team Training",
     description:
-      "Tactical and hands-on. Which buttons to press, which model to use, on your team's real data.",
+      "Tactical and hands-on, leveled from automating fast up to building custom agents, on your team's real data.",
     scope: [
       "Hands-on sessions, not slides",
-      "Which model to reach for, for which job",
-      "Workflows built on your team's actual data",
-      "Recorded walkthroughs for onboarding new hires",
+      "101: get your team automating fast",
+      "201: host and collaborate on real sites",
+      "301: build custom, bespoke agents",
     ],
-    timeline: "1-2 weeks",
-    price: "From $5,000",
+    timeline: "Per level",
+    price: "From $2,500",
   },
   {
     icon: <Newspaper size={32} />,
