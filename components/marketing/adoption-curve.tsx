@@ -87,12 +87,14 @@ function AnimatedValue({
   from,
   to,
   suffix,
+  singular,
   isInView,
   delay,
 }: {
   from: number
   to: number
   suffix: string
+  singular?: string
   isInView: boolean
   delay: number
 }) {
@@ -114,7 +116,7 @@ function AnimatedValue({
   return (
     <span>
       {value}
-      {suffix}
+      {value === 1 && singular ? singular : suffix}
     </span>
   )
 }
@@ -544,7 +546,7 @@ export function AdoptionCurve() {
           </p>
           <p className="mt-1 text-2xl font-semibold text-primary">
             {phase === "after" ? (
-              <AnimatedValue from={0} to={3} suffix=" weeks" isInView={phase === "after"} delay={0} />
+              <AnimatedValue from={0} to={3} suffix=" weeks" singular=" week" isInView={phase === "after"} delay={0} />
             ) : (
               <span className="text-slate-300">&mdash;</span>
             )}
