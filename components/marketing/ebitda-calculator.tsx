@@ -1,10 +1,8 @@
 "use client"
 
 import { useState, useMemo } from "react"
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { CTA } from "@/lib/constants"
-import { cn } from "@/lib/utils"
 import { RollingDollars } from "@/components/marketing/motion-kit"
 
 function formatDollars(value: number): string {
@@ -22,43 +20,11 @@ function formatPercent(value: number): string {
   return `${value.toFixed(1)}%`
 }
 
-const SCENARIOS = [
-  {
-    label: "Conservative",
-    costDescription: "Automate the weekly cost report and order entry. Stop the manual copy-paste.",
-    revenueDescription: "Faster quotes and cross-references. Win orders you were too slow for.",
-    sgaReduction: 0.025,
-    cogsReduction: 0,
-    revenueLift: 0.01,
-    saasReplacement: 0.15,
-  },
-  {
-    label: "Moderate",
-    costDescription: "Automate reporting and order entry, then flag stock to transfer between branches before a line goes down.",
-    revenueDescription: "Quote off your catalog and pricing in seconds. Answer cross-references on the spot.",
-    sgaReduction: 0.065,
-    cogsReduction: 0.015,
-    revenueLift: 0.02,
-    saasReplacement: 0.30,
-  },
-  {
-    label: "Aggressive",
-    costDescription: "Reporting, order entry, and purchasing run on their own. Vendor price variance flagged across the business.",
-    revenueDescription: "Counter and inside sales quote and cross-reference at AI speed, so orders close faster.",
-    sgaReduction: 0.10,
-    cogsReduction: 0.04,
-    revenueLift: 0.035,
-    saasReplacement: 0.50,
-  },
-] as const
-
 const PRESETS = [
-  { label: "Parts Distributor", revenue: 38_000_000, cogs: 30_000_000, sga: 5_500_000, saas: 350_000 },
-  { label: "Parts Manufacturer", revenue: 55_000_000, cogs: 36_000_000, sga: 11_000_000, saas: 700_000 },
-  { label: "Truck & Aftermarket", revenue: 72_000_000, cogs: 54_000_000, sga: 11_000_000, saas: 600_000 },
+  { label: "Parts Distributor", revenue: 38_000_000, cogs: 30_000_000, sga: 5_500_000 },
+  { label: "Parts Manufacturer", revenue: 55_000_000, cogs: 36_000_000, sga: 11_000_000 },
+  { label: "Truck & Aftermarket", revenue: 72_000_000, cogs: 54_000_000, sga: 11_000_000 },
 ] as const
-
-type View = "combined" | "cost" | "revenue"
 
 function Slider({
   label,
@@ -68,6 +34,7 @@ function Slider({
   max,
   step,
   suffix,
+  hint,
 }: {
   label: string
   value: number
@@ -76,15 +43,17 @@ function Slider({
   max: number
   step: number
   suffix?: string
+  hint?: string
 }) {
   return (
     <div>
-      <div className="mb-2 flex items-center justify-between">
+      <div className="mb-1 flex items-center justify-between">
         <label className="text-sm font-medium text-slate-700">{label}</label>
         <span className="text-sm font-semibold text-foreground">
           {suffix ? `${value}${suffix}` : formatDollars(value)}
         </span>
       </div>
+      {hint && <p className="mb-2 text-xs text-slate-400">{hint}</p>}
       <input
         type="range"
         min={min}
@@ -102,61 +71,36 @@ function Slider({
   )
 }
 
-// Mini before/after bar chart
-function EbitdaComparisonChart({
-  currentEbitda,
-  scenarios,
+// A single before/after bar.
+function Bar({
+  label,
+  value,
+  max,
+  highlight,
 }: {
-  currentEbitda: number
-  scenarios: { label: string; newEbitda: number }[]
+  label: string
+  value: number
+  max: number
+  highlight?: boolean
 }) {
-  const allValues = [currentEbitda, ...scenarios.map(s => s.newEbitda)]
-  const maxVal = Math.max(...allValues)
-
-  function barWidth(val: number): number {
-    return Math.max((val / maxVal) * 100, 2)
-  }
-
+  const width = Math.max((value / max) * 100, 3)
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-4 sm:p-5">
-      <div className="space-y-3">
-        {/* Current */}
-        <div className="flex items-center gap-3">
-          <span className="w-24 text-xs font-medium text-slate-500 flex-shrink-0 sm:w-28">Current</span>
-          <div className="flex-1">
-            <div className="flex items-center gap-2">
-              <div
-                className="h-6 rounded bg-slate-300 transition-all duration-500"
-                style={{ width: `${barWidth(currentEbitda)}%` }}
-              />
-              <span className="text-xs font-semibold text-slate-600 whitespace-nowrap">{formatDollars(currentEbitda)}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Scenarios */}
-        {scenarios.map((s, i) => {
-          const colors = ["bg-slate-500", "bg-primary", "bg-teal-500"]
-          const isModerate = i === 1
-          return (
-            <div key={s.label} className="flex items-center gap-3">
-              <span className={cn("w-24 text-xs font-medium flex-shrink-0 sm:w-28", isModerate ? "text-foreground font-semibold" : "text-slate-500")}>
-                {s.label}
-              </span>
-              <div className="flex-1">
-                <div className="flex items-center gap-2">
-                  <div
-                    className={cn("h-6 rounded transition-all duration-500", colors[i])}
-                    style={{ width: `${barWidth(s.newEbitda)}%` }}
-                  />
-                  <span className={cn("text-xs font-semibold whitespace-nowrap", isModerate ? "text-foreground" : "text-slate-600")}>
-                    {formatDollars(s.newEbitda)}
-                  </span>
-                </div>
-              </div>
-            </div>
-          )
-        })}
+    <div>
+      <div className="mb-1 flex items-center justify-between text-xs">
+        <span className={highlight ? "font-semibold text-foreground" : "text-slate-500"}>
+          {label}
+        </span>
+        <span className={highlight ? "font-semibold text-foreground" : "text-slate-500"}>
+          {formatDollars(value)}
+        </span>
+      </div>
+      <div className="h-3 overflow-hidden rounded-full bg-slate-100">
+        <div
+          className={`h-full rounded-full transition-all duration-500 ${
+            highlight ? "bg-primary" : "bg-slate-300"
+          }`}
+          style={{ width: `${width}%` }}
+        />
       </div>
     </div>
   )
@@ -166,75 +110,56 @@ export function EbitdaCalculator() {
   const [revenue, setRevenue] = useState(38_000_000)
   const [cogs, setCogs] = useState(30_000_000)
   const [sga, setSga] = useState(5_500_000)
-  const [saas, setSaas] = useState(350_000)
-  const [showSaas, setShowSaas] = useState(false)
-  const [view, setView] = useState<View>("combined")
   const [activePreset, setActivePreset] = useState<number>(0)
+
+  // Lever percentages people play with.
+  const [sales, setSales] = useState(3) // revenue lift %
+  const [lean, setLean] = useState(12) // overhead reduction %
+  const [supply, setSupply] = useState(4) // COGS reduction %
 
   function applyPreset(index: number) {
     const p = PRESETS[index]
     setRevenue(p.revenue)
     setCogs(p.cogs)
     setSga(p.sga)
-    setSaas(p.saas)
     setActivePreset(index)
   }
 
   const isValid = revenue > 0 && cogs > 0 && sga > 0 && revenue > cogs + sga
 
-  const results = useMemo(() => {
+  const r = useMemo(() => {
     if (!isValid) return null
-
-    const saasNum = showSaas ? saas : 0
     const currentEbitda = revenue - cogs - sga
     const currentMargin = (currentEbitda / revenue) * 100
+    const cogsRatio = cogs / revenue
 
-    return SCENARIOS.map((scenario) => {
-      const sgaSavings = sga * scenario.sgaReduction
-      const cogsSavings = cogs * scenario.cogsReduction
-      const saasSavings = saasNum * scenario.saasReplacement
-      const costSavings = sgaSavings + cogsSavings + saasSavings
+    const g = sales / 100
+    const e = lean / 100
+    const s = supply / 100
 
-      const revenueGain = revenue * scenario.revenueLift
-      const grossMarginPct = (revenue - cogs) / revenue
-      const revenueEbitdaImpact = revenueGain * grossMarginPct
+    const newRevenue = revenue * (1 + g)
+    const newCogs = newRevenue * cogsRatio * (1 - s) // COGS scales with revenue, then trimmed
+    const newSga = sga * (1 - e)
+    const newEbitda = newRevenue - newCogs - newSga
+    const newMargin = (newEbitda / newRevenue) * 100
 
-      const totalImpact = view === "cost" ? costSavings
-        : view === "revenue" ? revenueEbitdaImpact
-        : costSavings + revenueEbitdaImpact
-
-      const newEbitda = currentEbitda + totalImpact
-      const newRevenue = view === "cost" ? revenue : revenue + revenueGain
-      const newMargin = (newEbitda / newRevenue) * 100
-      const marginImprovement = newMargin - currentMargin
-
-      return {
-        ...scenario,
-        sgaSavings,
-        cogsSavings,
-        saasSavings,
-        costSavings,
-        revenueGain,
-        revenueEbitdaImpact,
-        totalImpact,
-        newEbitda,
-        newRevenue,
-        newMargin,
-        marginImprovement,
-        currentEbitda,
-        currentMargin,
-      }
-    })
-  }, [isValid, revenue, cogs, sga, saas, showSaas, view])
+    return {
+      currentEbitda,
+      currentMargin,
+      newEbitda,
+      newMargin,
+      delta: newEbitda - currentEbitda,
+      marginPts: newMargin - currentMargin,
+    }
+  }, [isValid, revenue, cogs, sga, sales, lean, supply])
 
   return (
     <div>
-      {/* Disclaimer */}
       <p className="mb-6 text-center text-xs text-slate-400">
         Illustrative estimates based on industry benchmarks. Actual impact varies by company and implementation scope.
       </p>
 
-      {/* Industry Presets */}
+      {/* Industry presets */}
       <div className="mb-8 flex flex-wrap justify-center gap-3">
         {PRESETS.map((p, i) => (
           <button
@@ -252,15 +177,18 @@ export function EbitdaCalculator() {
         ))}
       </div>
 
-      {/* Sliders */}
+      {/* Your numbers */}
       <div className="mx-auto max-w-lg space-y-6">
+        <p className="text-sm font-semibold uppercase tracking-wide text-slate-400">
+          Your numbers
+        </p>
         <Slider
           label="Annual Revenue"
           value={revenue}
           onChange={(v) => { setRevenue(v); setActivePreset(-1) }}
-          min={5_000_000}
-          max={1_000_000_000}
-          step={5_000_000}
+          min={10_000_000}
+          max={200_000_000}
+          step={1_000_000}
         />
         <Slider
           label="Cost of Goods Sold"
@@ -271,158 +199,88 @@ export function EbitdaCalculator() {
           step={1_000_000}
         />
         <Slider
-          label="SG&A Expenses"
+          label="Operating Costs (SG&A)"
           value={sga}
           onChange={(v) => { setSga(v); setActivePreset(-1) }}
           min={500_000}
           max={Math.max(revenue - cogs - 1_000_000, 1_000_000)}
           step={500_000}
         />
-
-        {/* SaaS toggle */}
-        {!showSaas ? (
-          <button
-            onClick={() => setShowSaas(true)}
-            className="text-sm text-primary underline-offset-4 hover:underline"
-          >
-            + Add SaaS spend
-          </button>
-        ) : (
-          <Slider
-            label="Annual SaaS Spend"
-            value={saas}
-            onChange={(v) => { setSaas(v); setActivePreset(-1) }}
-            min={0}
-            max={Math.min(sga * 0.5, 10_000_000)}
-            step={50_000}
-          />
-        )}
       </div>
 
-      {/* Results */}
-      {results && (
-        <div className="mt-12">
-          {/* View Toggle */}
-          <div className="mb-8 flex justify-center">
-            <div className="inline-flex rounded-lg bg-slate-100 p-1">
-              {(
-                [
-                  { key: "combined", label: "Combined" },
-                  { key: "cost", label: "Cost Savings" },
-                  { key: "revenue", label: "Revenue Growth" },
-                ] as const
-              ).map((tab) => (
-                <button
-                  key={tab.key}
-                  onClick={() => setView(tab.key)}
-                  className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all sm:px-4 sm:py-2 sm:text-sm ${
-                    view === tab.key
-                      ? "bg-white text-foreground shadow-sm"
-                      : "text-slate-500 hover:text-foreground"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
+      {r && (
+        <>
+          {/* Current EBITDA */}
+          <div className="mx-auto mt-10 max-w-lg rounded-lg bg-slate-100 p-4 text-center sm:p-6">
+            <p className="text-sm font-medium text-slate-500">Where you are today</p>
+            <p className="mt-1 text-2xl font-bold text-foreground sm:text-3xl">
+              <RollingDollars value={r.currentEbitda} format={formatDollars} /> EBITDA
+            </p>
+            <p className="mt-1 text-xs text-slate-500 sm:text-sm">
+              {formatPercent(r.currentMargin)} margin on {formatDollars(revenue)} revenue
+            </p>
           </div>
 
-          {/* Visual comparison chart */}
-          <div className="mb-8">
-            <EbitdaComparisonChart
-              currentEbitda={results[0].currentEbitda}
-              scenarios={results.map(r => ({ label: r.label, newEbitda: r.newEbitda }))}
+          {/* Levers */}
+          <div className="mx-auto mt-12 max-w-lg space-y-8">
+            <div className="text-center">
+              <h3 className="text-xl font-semibold text-foreground">
+                Now move the levers
+              </h3>
+              <p className="mt-1 text-sm text-slate-500">
+                Drag each one and watch what it does to your bottom line.
+              </p>
+            </div>
+            <Slider
+              label="Win more orders"
+              hint="Faster quotes and more leads lift revenue."
+              value={sales}
+              onChange={setSales}
+              min={0}
+              max={15}
+              step={1}
+              suffix="%"
+            />
+            <Slider
+              label="Run leaner"
+              hint="Automate the manual work and reclaim overhead."
+              value={lean}
+              onChange={setLean}
+              min={0}
+              max={25}
+              step={1}
+              suffix="%"
+            />
+            <Slider
+              label="Tighten the supply chain"
+              hint="Fewer stockouts and smarter buys cut your cost of goods."
+              value={supply}
+              onChange={setSupply}
+              min={0}
+              max={10}
+              step={1}
+              suffix="%"
             />
           </div>
 
-          {/* Current state */}
-          <div className="mb-8 rounded-lg bg-slate-100 p-4 text-center sm:p-6">
-            <p className="text-sm font-medium text-slate-500">Current EBITDA</p>
-            <p className="mt-1 text-2xl font-bold text-foreground sm:text-3xl">
-              <RollingDollars
-                value={results[0].currentEbitda}
-                format={formatDollars}
-              />
-            </p>
-            <p className="mt-1 text-xs text-slate-500 sm:text-sm">
-              {formatPercent(results[0].currentMargin)} margin on {formatDollars(revenue)} revenue
-            </p>
-          </div>
-
-          {/* Scenarios */}
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
-            {results.map((r, i) => (
-              <motion.div
-                key={`${r.label}-${view}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 + i * 0.15 }}
-                className="rounded-lg border border-slate-200 bg-white p-4 sm:p-6"
-              >
-                <h3 className="text-lg font-semibold text-foreground">{r.label}</h3>
-                <p className="mt-1 text-xs text-slate-500 sm:text-sm">
-                  {view === "revenue" ? r.revenueDescription
-                    : view === "cost" ? r.costDescription
-                    : r.costDescription}
-                </p>
-
-                <div className="mt-4 space-y-4 sm:mt-6">
-                  {view !== "revenue" && (
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                        Cost Savings
-                      </p>
-                      <p className="mt-1 text-xl font-bold text-foreground sm:text-2xl">
-                        {formatDollars(r.costSavings)}
-                      </p>
-                      <div className="mt-1 flex flex-wrap gap-2 text-[10px] text-slate-500 sm:gap-3 sm:text-xs">
-                        {r.sgaSavings > 0 && <span>SG&A: {formatDollars(r.sgaSavings)}</span>}
-                        {r.cogsSavings > 0 && <span>COGS: {formatDollars(r.cogsSavings)}</span>}
-                        {r.saasSavings > 0 && <span>SaaS: {formatDollars(r.saasSavings)}</span>}
-                      </div>
-                    </div>
-                  )}
-
-                  {view !== "cost" && (
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                        Revenue Acceleration
-                      </p>
-                      <p className="mt-1 text-xl font-bold text-foreground sm:text-2xl">
-                        +{formatDollars(r.revenueGain)}
-                      </p>
-                      <p className="mt-1 text-[10px] text-slate-500 sm:text-xs">
-                        {formatPercent(r.revenueLift * 100)} lift. EBITDA impact: {formatDollars(r.revenueEbitdaImpact)}
-                      </p>
-                    </div>
-                  )}
-
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                      New EBITDA Margin
-                    </p>
-                    <p className="mt-1 text-xl font-bold text-foreground sm:text-2xl">
-                      {formatPercent(r.newMargin)}
-                    </p>
-                    <p className="mt-1 text-xs text-green-600">
-                      +{formatPercent(r.marginImprovement)} improvement
-                    </p>
-                  </div>
-
-                  <div className="border-t border-slate-200 pt-4">
-                    <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                      Added to EBITDA
-                    </p>
-                    <p className="mt-1 text-xl font-bold text-primary sm:text-2xl">
-                      +{formatDollars(r.totalImpact)}
-                    </p>
-                    <p className="mt-1 text-[10px] text-slate-500 sm:text-xs">
-                      every year, from hours your team gets back
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          {/* Result */}
+          <div className="mx-auto mt-10 grid max-w-3xl gap-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 md:grid-cols-2">
+            <div className="flex flex-col justify-center gap-4">
+              <Bar label="Today" value={r.currentEbitda} max={r.newEbitda} />
+              <Bar label="With these changes" value={r.newEbitda} max={r.newEbitda} highlight />
+            </div>
+            <div className="flex flex-col justify-center border-t border-slate-200 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+              <p className="text-sm font-medium text-slate-500">New EBITDA</p>
+              <p className="text-4xl font-bold text-foreground sm:text-5xl">
+                <RollingDollars value={r.newEbitda} format={formatDollars} />
+              </p>
+              <p className="mt-2 text-lg font-semibold text-emerald-600">
+                +{formatDollars(r.delta)} a year
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                {formatPercent(r.newMargin)} margin, up {r.marginPts.toFixed(1)} points
+              </p>
+            </div>
           </div>
 
           <div className="mt-10 text-center">
@@ -430,7 +288,7 @@ export function EbitdaCalculator() {
               Run These on Your Numbers
             </Button>
           </div>
-        </div>
+        </>
       )}
     </div>
   )
