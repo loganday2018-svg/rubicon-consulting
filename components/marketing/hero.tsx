@@ -65,7 +65,7 @@ export function HeroSection() {
             transition={{ duration: 1.1, ease: EASE }}
             className="mb-4 text-sm font-semibold uppercase tracking-widest text-slate-400"
           >
-            AI for Vehicle-Parts Companies
+            AI for Parts Manufacturers &amp; Distributors
           </motion.p>
 
           <motion.div
