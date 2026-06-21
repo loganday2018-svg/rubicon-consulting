@@ -12,7 +12,24 @@ interface ServiceCardProps {
   timeline?: string
   price?: string
   scoped?: boolean
+  image?: string
   animateIcon?: boolean
+}
+
+function CardImage({ src }: { src: string }) {
+  return (
+    <>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.10] grayscale"
+        style={{ backgroundImage: `url(${src})` }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white via-white/85 to-white/40"
+      />
+    </>
+  )
 }
 
 function useIsTouchDevice() {
@@ -23,7 +40,7 @@ function useIsTouchDevice() {
   return isTouch
 }
 
-function DesktopCard({ icon, title, description, scope, timeline, price, scoped }: ServiceCardProps) {
+function DesktopCard({ icon, title, description, scope, timeline, price, scoped, image }: ServiceCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [rotateX, setRotateX] = useState(0)
   const [rotateY, setRotateY] = useState(0)
@@ -53,27 +70,32 @@ function DesktopCard({ icon, title, description, scope, timeline, price, scoped 
         translateY: { duration: 0.2 },
       }}
       style={{ perspective: 800, transformStyle: "preserve-3d" }}
-      className="rounded-lg border border-slate-200 bg-white p-8 transition-colors duration-200 hover:border-primary/40 hover:shadow-lg"
+      className="relative overflow-hidden rounded-lg border border-slate-200 bg-white p-8 transition-colors duration-200 hover:border-primary/40 hover:shadow-lg"
     >
-      <div className="mb-4 text-primary">
-        <motion.div
-          animate={isHovered ? { scale: [1, 1.15, 1], rotate: [0, -6, 6, 0] } : { scale: 1, rotate: 0 }}
-          transition={isHovered ? { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } : { duration: 0.3 }}
-        >
-          {icon}
-        </motion.div>
+      {image && <CardImage src={image} />}
+      <div className="relative">
+        <div className="mb-4 text-primary">
+          <motion.div
+            animate={isHovered ? { scale: [1, 1.15, 1], rotate: [0, -6, 6, 0] } : { scale: 1, rotate: 0 }}
+            transition={isHovered ? { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } : { duration: 0.3 }}
+          >
+            {icon}
+          </motion.div>
+        </div>
+        <h3 className="mb-3 text-xl font-semibold">{title}</h3>
+        <p className="mb-6 leading-relaxed text-slate-700">{description}</p>
+        <CardScope scope={scope} />
+        <CardBadges price={price} timeline={timeline} scoped={scoped} />
       </div>
-      <h3 className="mb-3 text-xl font-semibold">{title}</h3>
-      <p className="mb-6 leading-relaxed text-slate-700">{description}</p>
-      <CardScope scope={scope} />
-      <CardBadges price={price} timeline={timeline} scoped={scoped} />
     </motion.div>
   )
 }
 
-function MobileCard({ icon, title, description, scope, timeline, price, scoped }: ServiceCardProps) {
+function MobileCard({ icon, title, description, scope, timeline, price, scoped, image }: ServiceCardProps) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-6">
+    <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white p-6">
+      {image && <CardImage src={image} />}
+      <div className="relative">
       {/* Badges at top on mobile so price is always visible */}
       <div className="mb-4 flex flex-wrap items-center gap-2">
         {price && (
@@ -96,6 +118,7 @@ function MobileCard({ icon, title, description, scope, timeline, price, scoped }
       <h3 className="mb-2 text-lg font-semibold">{title}</h3>
       <p className="mb-5 text-sm leading-relaxed text-slate-700">{description}</p>
       <CardScope scope={scope} />
+      </div>
     </div>
   )
 }

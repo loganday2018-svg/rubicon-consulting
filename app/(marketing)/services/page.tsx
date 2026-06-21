@@ -28,6 +28,7 @@ type Service = {
   timeline?: string
   price?: string
   scoped?: boolean
+  image?: string
 }
 
 const education: Service[] = [
@@ -112,6 +113,7 @@ const support: Service[] = [
   {
     icon: <Compass size={32} />,
     title: "Guidance & Guardrails",
+    image: "/images/services/engine-bay.jpg",
     description:
       "Audits, tool selection, and a roadmap for where AI should go first.",
     scope: [
