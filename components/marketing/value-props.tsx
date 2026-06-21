@@ -31,7 +31,7 @@ export function ValueProps({ items }: ValuePropsProps) {
   return (
     <div
       ref={ref}
-      className="mt-10 overflow-hidden rounded-xl border border-slate-200 bg-white"
+      className="mt-10 rounded-xl border border-slate-200 bg-white"
     >
       {items.map((prop, i) => {
         const Icon = ICONS[prop.icon]
@@ -43,9 +43,13 @@ export function ValueProps({ items }: ValuePropsProps) {
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: reduce ? 0 : 0.5, delay: reduce ? 0 : i * 0.08, ease: EASE }}
-            className={`relative border-slate-200 transition-colors duration-300 ${
+            className={`relative border-slate-200 transition-all duration-300 first:rounded-t-xl last:rounded-b-xl ${
               i > 0 ? "border-t" : ""
-            } ${isOpen ? "bg-slate-50" : "hover:bg-slate-50/60"}`}
+            } ${
+              isOpen
+                ? "z-10 bg-gradient-to-br from-white via-slate-50 to-primary/[0.04] shadow-md"
+                : "hover:bg-slate-50/60"
+            }`}
           >
             {/* Active accent bar — draws down when the item opens */}
             <motion.span
@@ -62,11 +66,30 @@ export function ValueProps({ items }: ValuePropsProps) {
               onClick={() => setOpen(isOpen ? -1 : i)}
               className="flex w-full items-center gap-4 px-5 py-5 text-left outline-none focus-visible:bg-slate-50 md:px-7"
             >
-              <Icon
-                className={`size-5 shrink-0 transition-colors duration-300 ${
-                  isOpen ? "text-primary" : "text-slate-400"
-                }`}
-              />
+              <span className="flex shrink-0 items-center gap-2.5">
+                <span
+                  aria-hidden="true"
+                  className={`font-mono text-xs tabular-nums transition-colors duration-300 ${
+                    isOpen ? "text-primary/70" : "text-slate-300"
+                  }`}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <motion.span
+                  animate={
+                    isOpen && !reduce
+                      ? { scale: [1, 1.2, 1], rotate: [0, -8, 8, 0] }
+                      : { scale: 1, rotate: 0 }
+                  }
+                  transition={{ duration: 0.5, ease: EASE }}
+                >
+                  <Icon
+                    className={`size-5 transition-colors duration-300 ${
+                      isOpen ? "text-primary" : "text-slate-400"
+                    }`}
+                  />
+                </motion.span>
+              </span>
               <h3
                 className={`flex-1 font-semibold tracking-tight transition-colors duration-300 md:text-lg ${
                   isOpen ? "text-foreground" : "text-slate-700"
