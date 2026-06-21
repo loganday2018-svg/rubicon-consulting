@@ -33,7 +33,7 @@ type Service = {
 const education: Service[] = [
   {
     icon: <Presentation size={32} />,
-    title: "Executive Training",
+    title: "Level Up Your Leadership",
     description:
       "Strategy for the people who set it. How to actually put AI to work in your business, past the hype.",
     scope: [
@@ -78,7 +78,7 @@ const education: Service[] = [
 const build: Service[] = [
   {
     icon: <Workflow size={32} />,
-    title: "Automation + Enablement",
+    title: "Automate the Mundane",
     description:
       "Turn manual, repeatable work into something that runs itself, then teach your team to run it.",
     scope: [
@@ -93,7 +93,7 @@ const build: Service[] = [
   },
   {
     icon: <Bot size={32} />,
-    title: "Custom Agents",
+    title: "Bespoke Bots",
     description:
       "The premium tier. Systems that reason and decide, not just execute a single task.",
     scope: [
@@ -125,7 +125,7 @@ const support: Service[] = [
   },
   {
     icon: <Headphones size={32} />,
-    title: "Ongoing Support",
+    title: "Support that Sticks",
     description:
       "AI tools change fast. We track the updates so your team doesn't have to.",
     scope: [
