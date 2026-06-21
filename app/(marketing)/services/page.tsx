@@ -35,6 +35,7 @@ const education: Service[] = [
   {
     icon: <Presentation size={32} />,
     title: "Level Up Your Leadership",
+    image: "/images/services/engine-bay.jpg",
     description:
       "Strategy for the people who set it. How to actually put AI to work in your business, past the hype.",
     scope: [
@@ -49,6 +50,7 @@ const education: Service[] = [
   {
     icon: <GraduationCap size={32} />,
     title: "Team Training",
+    image: "/images/services/gears.jpg",
     description:
       "Tactical and hands-on, leveled from automating fast up to building custom agents, on your team's real data.",
     scope: [
@@ -63,6 +65,7 @@ const education: Service[] = [
   {
     icon: <Newspaper size={32} />,
     title: "Weekly AI Update",
+    image: "/images/services/gears.jpg",
     description:
       "Short training videos every week as new models and features land, so your team never falls behind.",
     scope: [
@@ -80,6 +83,7 @@ const build: Service[] = [
   {
     icon: <Workflow size={32} />,
     title: "Automate Anything",
+    image: "/images/services/engine-bay.jpg",
     description:
       "Turn manual, repeatable work into something that runs itself, then teach your team to run it.",
     scope: [
@@ -95,6 +99,7 @@ const build: Service[] = [
   {
     icon: <Bot size={32} />,
     title: "Bespoke Bots",
+    image: "/images/services/gears.jpg",
     description:
       "The premium tier. Systems that reason and decide, not just execute a single task.",
     scope: [
@@ -128,6 +133,7 @@ const support: Service[] = [
   {
     icon: <Headphones size={32} />,
     title: "Ongoing Support",
+    image: "/images/services/engine-bay.jpg",
     description:
       "AI tools change fast. We track the updates so your team doesn't have to.",
     scope: [
