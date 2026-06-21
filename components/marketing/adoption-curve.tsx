@@ -531,7 +531,7 @@ export function AdoptionCurve() {
       >
         <div className="rounded-lg border border-slate-200 bg-white p-5 text-center">
           <p className="text-sm font-medium tracking-wide text-slate-500 uppercase">
-            Without consulting
+            Organic AI adoption
           </p>
           <p className="mt-1 text-2xl font-semibold text-slate-400">
             <AnimatedValue from={0} to={12} suffix="+ months" isInView={isInView} delay={0.4} />
