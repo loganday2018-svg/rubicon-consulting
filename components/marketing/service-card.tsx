@@ -21,12 +21,12 @@ function CardImage({ src }: { src: string }) {
     <>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.10] grayscale"
+        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.22] grayscale"
         style={{ backgroundImage: `url(${src})` }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white via-white/85 to-white/40"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white via-white/75 to-white/15"
       />
     </>
   )
