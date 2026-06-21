@@ -83,7 +83,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-6">
           <DrawRule className="mb-12" />
           <SectionHeading
-            title="Months of Fumbling vs. Weeks to Full Adoption"
+            title={`From "Let's start using AI" to "We can't imagine not using it."`}
             copy="Most teams watch a few demos, then adoption stalls. We compress the curve to weeks, not quarters."
           />
           <div className="mt-12">
