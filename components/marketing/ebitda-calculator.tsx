@@ -211,7 +211,7 @@ export function EbitdaCalculator() {
       {r && (
         <>
           {/* Current EBITDA */}
-          <div className="mx-auto mt-10 max-w-lg rounded-lg bg-slate-100 p-4 text-center sm:p-6">
+          <div className="mx-auto mt-6 max-w-lg rounded-lg bg-slate-100 p-4 text-center">
             <p className="text-sm font-medium text-slate-500">Where you are today</p>
             <p className="mt-1 text-2xl font-bold text-foreground sm:text-3xl">
               <RollingDollars value={r.currentEbitda} format={formatDollars} /> EBITDA
@@ -222,7 +222,7 @@ export function EbitdaCalculator() {
           </div>
 
           {/* Levers */}
-          <div className="mx-auto mt-12 max-w-lg space-y-8">
+          <div className="mx-auto mt-8 max-w-lg space-y-5">
             <div className="text-center">
               <h3 className="text-xl font-semibold text-foreground">
                 Now move the levers
@@ -264,7 +264,7 @@ export function EbitdaCalculator() {
           </div>
 
           {/* Result */}
-          <div className="mx-auto mt-10 grid max-w-3xl gap-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 md:grid-cols-2">
+          <div className="mx-auto mt-8 grid max-w-3xl gap-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-4">
               <Bar label="Today" value={r.currentEbitda} max={r.newEbitda} />
               <Bar label="With these changes" value={r.newEbitda} max={r.newEbitda} highlight />
@@ -283,7 +283,7 @@ export function EbitdaCalculator() {
             </div>
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-8 text-center">
             <Button size="lg" render={<a href={CTA.primary.href} target="_blank" rel="noopener noreferrer" />}>
               Run These on Your Numbers
             </Button>
