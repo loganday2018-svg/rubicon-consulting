@@ -111,6 +111,7 @@ export default function HomePage() {
       <LogoTicker />
 
       <CTASection
+        heading="Let's Put AI to Work for You"
         secondaryLabel="See how we work →"
         secondaryHref="/services"
       />
