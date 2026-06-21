@@ -544,9 +544,9 @@ export function AdoptionCurve() {
           </p>
           <p className="mt-1 text-2xl font-semibold text-primary">
             {phase === "after" ? (
-              <AnimatedValue from={12} to={3} suffix=" weeks" isInView={phase === "after"} delay={0} />
+              <AnimatedValue from={0} to={3} suffix=" weeks" isInView={phase === "after"} delay={0} />
             ) : (
-              <AnimatedValue from={0} to={12} suffix=" months" isInView={isInView} delay={0.4} />
+              <span className="text-slate-300">&mdash;</span>
             )}
           </p>
           <p className="mt-0.5 text-xs text-slate-500">to meaningful adoption</p>
