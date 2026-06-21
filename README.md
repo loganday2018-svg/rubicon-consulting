@@ -1,6 +1,6 @@
 # Rubicon AI Consulting
 
-Rubicon implements and teaches AI at auto, truck, and aftermarket parts companies. We automate the manual work, train your team, and get hours back.
+Rubicon implements and teaches AI at automotive, truck, and aftermarket parts companies. We automate the manual work, train your team, and get hours back.
 
 **Live site:** https://rubiconaiconsulting.com
 

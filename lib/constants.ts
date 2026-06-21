@@ -2,7 +2,7 @@ export const BRAND = {
   name: 'Rubicon',
   tagline: 'AI for Vehicle-Parts Manufacturers & Distributors',
   description:
-    'Rubicon implements and teaches AI at auto, truck, and aftermarket parts companies. We automate the manual work and train your team to run it.',
+    'Rubicon implements and teaches AI at automotive, truck, and aftermarket parts companies. We automate the manual work and train your team to run it.',
   email: 'loganday@rubiconaiconsulting.com',
   domain: 'rubiconaiconsulting.com',
 } as const

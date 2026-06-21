@@ -11,7 +11,7 @@ import { SectionHeading, DrawRule } from "@/components/marketing/motion-kit"
 export const metadata: Metadata = {
   title: "AI for Vehicle-Parts Manufacturers & Distributors",
   description:
-    "Rubicon implements and teaches AI at auto, truck, and aftermarket parts companies. Automate the manual work, train your team, get hours back.",
+    "Rubicon implements and teaches AI at automotive, truck, and aftermarket parts companies. Automate the manual work, train your team, get hours back.",
 }
 
 const VALUE_PROPS = [

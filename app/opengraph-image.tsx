@@ -63,7 +63,7 @@ export default function Image() {
               maxWidth: "900px",
             }}
           >
-AI for Auto and Truck Parts Companies
+AI for Parts Manufacturers &amp; Distributors
           </div>
           <div
             style={{

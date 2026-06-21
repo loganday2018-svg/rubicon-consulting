@@ -82,7 +82,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.45, ease: EASE }}
             className="mt-6 max-w-2xl rounded-xl border border-white/15 bg-white/5 p-5 text-lg text-slate-300 md:p-6 md:text-xl"
           >
-            I&apos;m Logan. I help auto, truck, and aftermarket parts companies
+            I&apos;m Logan. I help automotive, truck, and aftermarket parts companies
             put AI to work, so you do more with less: save time, cut cost, and
             put out better work without adding headcount.
           </motion.p>

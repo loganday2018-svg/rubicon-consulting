@@ -20,7 +20,7 @@ const team = [
       "Finance Leadership Development Program",
       "U.S. Army Captain (Reserve)",
     ],
-    bio: "U.S. Army Company Commander turned enterprise finance. Duke undergrad, Darden MBA. Adopted Claude Code before anyone asked him to, saw the impact, and built Rubicon to bring that edge to auto, truck, and aftermarket parts companies.",
+    bio: "U.S. Army Company Commander turned enterprise finance. Duke undergrad, Darden MBA. Adopted Claude Code before anyone asked him to, saw the impact, and built Rubicon to bring that edge to automotive, truck, and aftermarket parts companies.",
     initials: "LD",
     imageSrc: "/images/logan.jpg",
     linkedIn: "https://linkedin.com/in/loganday1",
