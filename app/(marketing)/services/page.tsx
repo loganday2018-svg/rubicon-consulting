@@ -78,7 +78,7 @@ const education: Service[] = [
 const build: Service[] = [
   {
     icon: <Workflow size={32} />,
-    title: "Automate the Mundane",
+    title: "Automate Anything",
     description:
       "Turn manual, repeatable work into something that runs itself, then teach your team to run it.",
     scope: [
@@ -111,7 +111,7 @@ const build: Service[] = [
 const support: Service[] = [
   {
     icon: <Compass size={32} />,
-    title: "Consulting & Advisory",
+    title: "Guidance & Guardrails",
     description:
       "Audits, tool selection, and a roadmap for where AI should go first.",
     scope: [
@@ -125,7 +125,7 @@ const support: Service[] = [
   },
   {
     icon: <Headphones size={32} />,
-    title: "Support that Sticks",
+    title: "Ongoing Support",
     description:
       "AI tools change fast. We track the updates so your team doesn't have to.",
     scope: [
