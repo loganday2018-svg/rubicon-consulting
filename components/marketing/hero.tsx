@@ -65,7 +65,7 @@ export function HeroSection() {
             transition={{ duration: 1.1, ease: EASE }}
             className="mb-4 text-sm font-semibold uppercase tracking-widest text-slate-400"
           >
-            AI Implementation that Sticks
+            AI for Vehicle-Parts Companies
           </motion.p>
 
           <motion.div
@@ -82,8 +82,9 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.45, ease: EASE }}
             className="mt-6 max-w-2xl text-lg text-slate-300 md:text-xl"
           >
-            I&apos;m Logan. I deploy Claude, Codex, and Copilot at companies
-            and make sure they stick.
+            I&apos;m Logan. I help auto, truck, and aftermarket parts companies
+            put AI to work, automating the jobs your team redoes by hand and
+            training them to run it.
           </motion.p>
 
           <motion.div
@@ -111,7 +112,7 @@ export function HeroSection() {
               href="/calculator"
               className="group text-sm text-slate-300 underline-offset-4 hover:text-white hover:underline"
             >
-              See Your EBITDA Impact{" "}
+              See what it saves you{" "}
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>

@@ -1,8 +1,8 @@
 export const BRAND = {
   name: 'Rubicon',
-  tagline: 'AI Implementation that Sticks',
+  tagline: 'AI for Vehicle-Parts Manufacturers & Distributors',
   description:
-    'We help companies deploy AI tools fast -- training, setup, and ongoing support that drives measurable operating leverage.',
+    'Rubicon implements and teaches AI at auto, truck, and aftermarket parts companies. We automate the manual work and train your team to run it.',
   email: 'loganday@rubiconaiconsulting.com',
   domain: 'rubiconaiconsulting.com',
 } as const
@@ -11,7 +11,6 @@ export const NAV_LINKS = [
   { label: 'Services', href: '/services' },
   { label: 'Demo', href: '/demo' },
   { label: 'ROI Calculator', href: '/calculator' },
-  { label: 'Our Playbook', href: '/batten' },
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
 ] as const

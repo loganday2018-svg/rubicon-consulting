@@ -4,11 +4,11 @@ import { useState, useEffect, useCallback, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const HEADLINES = [
-  "Turn AI Into EBITDA",
-  "Put AI on the P&L",
-  "Deploy AI and Move the Multiple",
-  "Get More Margin With the Same Headcount",
-  "Automate Operations, Grow Revenue",
+  "Kill the Weekly Report Rebuild",
+  "Catch Short Parts Before a Line Stops",
+  "Turn an Hour of Busywork Into a Minute",
+  "Automate the Work Nobody Wants to Redo",
+  "Get Your Team Hours Back Every Week",
 ]
 
 const INTERVAL = 4500

@@ -9,54 +9,54 @@ import { VideoDemo } from "@/components/marketing/video-demo"
 import { SectionHeading } from "@/components/marketing/motion-kit"
 
 export const metadata: Metadata = {
-  title: "AI Implementation that Sticks",
+  title: "AI for Vehicle-Parts Manufacturers & Distributors",
   description:
-    "Logan deploys Claude, Codex, and Copilot at companies. Training, setup, and support that sticks.",
+    "Rubicon implements and teaches AI at auto, truck, and aftermarket parts companies. Automate the manual work, train your team, get hours back.",
 }
 
 const VALUE_PROPS = [
   {
-    icon: "TrendingUp" as const,
-    title: "Your Sales Team Closes Faster",
-    description:
-      "AI handles the grunt work so your team spends time selling, not researching.",
-    useCases: [
-      "Prospect research pulled in seconds, not hours",
-      "First-draft proposals generated from your CRM data",
-      "Territory mapping and account planning done in minutes",
-    ],
-  },
-  {
     icon: "Clock" as const,
-    title: "Your Finance Team Does in Hours What Took Days",
+    title: "Your Cost Reports Build Themselves",
     description:
-      "DCFs, board decks, variance reports. AI builds the first draft so your team focuses on the analysis.",
+      "The weekly report someone rebuilds by hand, pulling labor, freight, and parts numbers out of the system, runs on its own.",
     useCases: [
-      "DCF models and scenario analysis built in minutes",
-      "Month-end close accelerated. Reconciliations, commentary, journal entries",
-      "Ad hoc analysis requests turned around same-day instead of next-week",
+      "The weekly cost report pulled together in a minute, not an hour",
+      "Labor, freight, and parts numbers reconciled without the manual copy-paste",
+      "Month-end commentary and variance drafts done same day",
     ],
   },
   {
     icon: "Cog" as const,
-    title: "Your Ops Team Stops Drowning in Manual Work",
+    title: "Stop Chasing Parts Across Locations",
     description:
-      "Contract reviews, compliance checks, inventory. AI handles the repetitive stuff so your team can focus.",
+      "See what's short at one location and sitting at another before a line goes down, instead of finding out the hard way.",
     useCases: [
-      "Vendor contracts analyzed and renegotiation opportunities flagged",
-      "Transform raw, messy data into clear options your operators can act on immediately",
-      "Benchmark every cost line against industry data without hiring a consultant",
+      "Short at one plant and sitting at another, flagged before a line stops",
+      "Reorder points and stock transfers surfaced automatically across branches",
+      "Messy inventory exports turned into clear moves your team can act on",
+    ],
+  },
+  {
+    icon: "TrendingUp" as const,
+    title: "Quote and Order Faster",
+    description:
+      "The front-office back-and-forth that ties up your people, RFQs, quotes, cross-references, handled at AI speed.",
+    useCases: [
+      "Customer quotes drafted from your catalog and pricing in seconds",
+      "Cross-references and parts lookups answered instantly",
+      "Order entry and data cleanup that used to tie up the front office",
     ],
   },
   {
     icon: "Handshake" as const,
-    title: "M&A, Procurement, and Contracts. Done Faster.",
+    title: "Tighten Purchasing and Margins",
     description:
-      "Target acquisitions, find portfolio-wide synergies, and review every contract at AI speed.",
+      "Find the money hiding in your cost lines and vendor terms without hiring an analyst to dig for it.",
     useCases: [
-      "Target potential acquisitions in minutes. Screening, comps, and preliminary valuation before the first call.",
-      "Cross-portfolio procurement synergies identified automatically. Same vendor, different prices, flagged instantly.",
-      "AI reads every contract in your portfolio and extracts key terms, renewal dates, and risk clauses in seconds",
+      "Benchmark every cost line against the market without hiring a consultant",
+      "Same part, different vendor prices across the business, flagged instantly",
+      "Vendor contracts read for terms, renewals, and risk in seconds",
     ],
   },
 ] as const
@@ -71,7 +71,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
             title="What Changes When AI Actually Works"
-            copy="Not theory. These are the workflows we set up at real companies."
+            copy="Not theory. These are the workflows we set up in real parts shops and warehouses."
           />
 
           <ValueProps items={VALUE_PROPS} />
@@ -83,7 +83,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
             title="Months of Fumbling vs. Weeks to Full Adoption"
-            copy="Most teams watch a few demos, then adoption stalls. We compress the curve — weeks, not quarters."
+            copy="Most teams watch a few demos, then adoption stalls. We compress the curve to weeks, not quarters."
           />
           <div className="mt-12">
             <AdoptionCurve />
@@ -97,8 +97,8 @@ export default function HomePage() {
       <section className="border-t border-slate-200 bg-slate-50 py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
-            title="See the Impact on Your EBITDA"
-            copy="Plug in your company's financials. See what AI could mean for margins and enterprise value."
+            title="See the Impact on Your Margins"
+            copy="Plug in your numbers. See what collapsing the manual hours does to your margin and EBITDA."
           />
           <div className="mt-12">
             <EbitdaCalculator />

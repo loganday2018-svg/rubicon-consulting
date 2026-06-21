@@ -8,7 +8,7 @@ import { AnimatedTeam } from "@/components/marketing/animated-team"
 
 export const metadata: Metadata = {
   title: "About",
-  description: `Meet Logan. An operator who deploys AI tools at companies.`,
+  description: `Meet Logan. An operator who puts AI to work at vehicle-parts companies.`,
 }
 
 const team = [
@@ -20,7 +20,7 @@ const team = [
       "Finance Leadership Development Program",
       "U.S. Army Captain (Reserve)",
     ],
-    bio: "U.S. Army Company Commander turned enterprise finance. Duke undergrad, Darden MBA. Adopted Claude Code before anyone asked him to, saw the impact, and built Rubicon to give every operator the same edge.",
+    bio: "U.S. Army Company Commander turned enterprise finance. Duke undergrad, Darden MBA. Adopted Claude Code before anyone asked him to, saw the impact, and built Rubicon to bring that edge to auto, truck, and aftermarket parts companies.",
     initials: "LD",
     imageSrc: "/images/logan.jpg",
     linkedIn: "https://linkedin.com/in/loganday1",
@@ -47,8 +47,8 @@ export default function AboutPage() {
               </p>
               <p className="mb-4 leading-relaxed text-slate-700">
                 I adopted AI tools before anyone asked me to. The productivity
-                impact was immediate. Now I help companies get the same
-                results in weeks, not quarters.
+                impact was immediate. Now I help parts manufacturers and
+                distributors get the same results in weeks, not quarters.
               </p>
               <p className="leading-relaxed text-slate-700">
                 I show up, set up the tools, train your teams, and stay until it

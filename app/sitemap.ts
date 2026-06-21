@@ -11,13 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/demo`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/calculator`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/batten`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
   ]
 
-  // All blog posts — the original hand-coded ones plus auto-synced Substack imports.
-  // (/natural-capital is intentionally excluded: it's set to noindex.)
+  // All blog posts: the original hand-coded ones plus auto-synced Substack imports.
   const posts: MetadataRoute.Sitemap = getAllPosts().map((post) => {
     const d = new Date(post.date)
     return {
