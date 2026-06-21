@@ -63,7 +63,7 @@ export function HeroSection() {
             initial={reduced ? false : { opacity: 0, letterSpacing: "0.35em" }}
             animate={{ opacity: 1, letterSpacing: "0.1em" }}
             transition={{ duration: 1.1, ease: EASE }}
-            className="mb-4 text-sm font-semibold uppercase tracking-widest text-slate-400"
+            className="mb-4 text-lg font-bold uppercase tracking-wide text-slate-200 md:text-2xl lg:text-3xl"
           >
             AI for Parts Manufacturers &amp; Distributors
           </motion.p>
