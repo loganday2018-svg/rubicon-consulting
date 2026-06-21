@@ -38,7 +38,7 @@ export function RotatingHeadline({ className }: RotatingHeadlineProps) {
       onMouseLeave={() => setPaused(false)}
     >
       <h1 className={className}>
-        <span className="block text-lg font-semibold tracking-wide text-slate-400 md:text-2xl">
+        <span className="mb-3 block text-lg font-semibold tracking-wide text-slate-400 md:mb-4 md:text-2xl">
           We Help You
         </span>
         <AnimatePresence mode="wait">
