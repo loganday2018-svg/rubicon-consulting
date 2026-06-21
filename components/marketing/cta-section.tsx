@@ -20,8 +20,17 @@ export function CTASection({
   secondaryHref,
 }: CTASectionProps) {
   return (
-    <section className="bg-primary py-16 text-center md:py-24">
-      <div className="mx-auto max-w-2xl px-6">
+    <section className="relative overflow-hidden bg-primary py-16 text-center md:py-24">
+      <div
+        aria-hidden
+        className="absolute inset-0 animate-grid-drift"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, oklch(1 0 0 / 0.07) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+      <div className="relative mx-auto max-w-2xl px-6">
         <h2 className="text-3xl font-semibold text-primary-foreground md:text-4xl">
           {heading}
         </h2>

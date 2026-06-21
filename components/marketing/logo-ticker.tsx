@@ -27,15 +27,15 @@ export function LogoTicker() {
           {TICKER_ITEMS.map((tool, i) => (
             <div
               key={`${tool.name}-${i}`}
-              className="flex shrink-0 items-center gap-3"
+              className="group flex shrink-0 items-center gap-3"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={tool.icon}
                 alt={tool.name}
-                className="size-8"
+                className="size-8 opacity-60 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0"
               />
-              <span className="whitespace-nowrap text-sm font-medium text-slate-600">
+              <span className="whitespace-nowrap text-sm font-medium text-slate-400 transition-colors duration-300 group-hover:text-slate-700">
                 {tool.name}
               </span>
             </div>

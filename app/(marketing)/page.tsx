@@ -6,7 +6,7 @@ import { ValueProps } from "@/components/marketing/value-props"
 import { AutomationSavings } from "@/components/marketing/automation-savings"
 import { AdoptionCurve } from "@/components/marketing/adoption-curve"
 import { VideoDemo } from "@/components/marketing/video-demo"
-import { SectionHeading } from "@/components/marketing/motion-kit"
+import { SectionHeading, DrawRule } from "@/components/marketing/motion-kit"
 
 export const metadata: Metadata = {
   title: "AI for Vehicle-Parts Manufacturers & Distributors",
@@ -79,8 +79,9 @@ export default function HomePage() {
       </section>
 
       {/* Adoption Curve */}
-      <section className="border-t border-slate-200 bg-slate-50 py-16 md:py-24">
+      <section className="bg-slate-50 py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6">
+          <DrawRule className="mb-12" />
           <SectionHeading
             title="Months of Fumbling vs. Weeks to Full Adoption"
             copy="Most teams watch a few demos, then adoption stalls. We compress the curve to weeks, not quarters."
@@ -94,8 +95,9 @@ export default function HomePage() {
       <VideoDemo />
 
       {/* Automation savings */}
-      <section className="border-t border-slate-200 bg-slate-50 py-16 md:py-24">
+      <section className="bg-slate-50 py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6">
+          <DrawRule className="mb-12" />
           <SectionHeading
             title="What Would You Do With the Time Back?"
             copy="One task automated each week is 52 hours a year. Slide it around and see what that time is worth."

@@ -1,6 +1,9 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { motion, useAnimationControls } from "framer-motion"
+import Link from "next/link"
+import { CTA } from "@/lib/constants"
 
 // Rough US averages (salary / 2,080 work hours). Easy to tweak.
 const ROLES = [
@@ -55,6 +58,20 @@ export function AutomationSavings() {
 
   const animHours = useCountUp(hoursYear)
   const animDollars = useCountUp(dollars)
+
+  // Soft pulse on the result card whenever an input changes (skip first render).
+  const pulse = useAnimationControls()
+  const firstRun = useRef(true)
+  useEffect(() => {
+    if (firstRun.current) {
+      firstRun.current = false
+      return
+    }
+    pulse.start({
+      scale: [1, 1.02, 1],
+      transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+    })
+  }, [hoursYear, hourly, pulse])
 
   const fmtHours = hours % 1 === 0 ? hours.toString() : hours.toFixed(1)
 
@@ -132,7 +149,10 @@ export function AutomationSavings() {
       </div>
 
       {/* Result */}
-      <div className="flex flex-col justify-center rounded-xl bg-primary p-6 text-primary-foreground md:p-8">
+      <motion.div
+        animate={pulse}
+        className="flex flex-col justify-center rounded-xl bg-primary p-6 text-primary-foreground md:p-8"
+      >
         <div>
           <p className="text-4xl font-bold tracking-tight md:text-5xl">
             {Math.round(animHours).toLocaleString()} hrs
@@ -150,7 +170,14 @@ export function AutomationSavings() {
           {HIGHER_VALUE[Math.min(Math.floor(hours), HIGHER_VALUE.length - 1)]} and
           the higher-value work only your people can do.
         </p>
-      </div>
+        <Link
+          href={CTA.primary.href}
+          className="mt-7 inline-flex w-fit items-center gap-1.5 rounded-md bg-white px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-slate-100"
+        >
+          Book a call
+          <span aria-hidden>&rarr;</span>
+        </Link>
+      </motion.div>
     </div>
   )
 }
