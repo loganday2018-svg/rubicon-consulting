@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/marketing/hero"
 import { CTASection } from "@/components/marketing/cta-section"
 import { LogoTicker } from "@/components/marketing/logo-ticker"
 import { ValueProps } from "@/components/marketing/value-props"
-import { EbitdaCalculator } from "@/components/marketing/ebitda-calculator"
+import { AutomationSavings } from "@/components/marketing/automation-savings"
 import { AdoptionCurve } from "@/components/marketing/adoption-curve"
 import { VideoDemo } from "@/components/marketing/video-demo"
 import { SectionHeading } from "@/components/marketing/motion-kit"
@@ -93,15 +93,15 @@ export default function HomePage() {
 
       <VideoDemo />
 
-      {/* EBITDA Calculator */}
+      {/* Automation savings */}
       <section className="border-t border-slate-200 bg-slate-50 py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
-            title="See the Impact on Your Margins"
-            copy="Plug in your numbers. See what collapsing the manual hours does to your margin."
+            title="What Would You Do With the Time Back?"
+            copy="One task automated each week is 52 hours a year. Slide it around and see what that time is worth."
           />
           <div className="mt-12">
-            <EbitdaCalculator />
+            <AutomationSavings />
           </div>
         </div>
       </section>
