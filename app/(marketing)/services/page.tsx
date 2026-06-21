@@ -135,7 +135,7 @@ const support: Service[] = [
       "Quick-start calls for new hires at a flat fee",
     ],
     timeline: "Ongoing monthly",
-    price: "From $2,500/mo",
+    price: "$2,500/mo",
   },
 ]
 
@@ -221,7 +221,7 @@ export default function ServicesPage() {
       <CTASection
         heading="Not Sure Which Service Fits?"
         description="Tell us where your team is spending too many hours. We'll show you how to collapse that timeline."
-        secondaryLabel="See the EBITDA impact →"
+        secondaryLabel="See the margin and hours impact →"
         secondaryHref="/calculator"
       />
     </>

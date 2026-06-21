@@ -73,7 +73,7 @@ export function RotatingHeadline({ className }: RotatingHeadlineProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="block bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent"
+            className="block text-white"
           >
             {HEADLINES[index]}
           </motion.span>

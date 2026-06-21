@@ -178,7 +178,7 @@ export default function BlogPost() {
                   </li>
                   <li>Toggle on file access and wake settings</li>
                   <li>
-                    Open the mobile app — Dispatch shows up automatically
+                    Open the mobile app, Dispatch shows up automatically
                   </li>
                 </ol>
               </div>
@@ -248,9 +248,10 @@ export default function BlogPost() {
               />
 
               <PullQuote>
-                Due diligence, portfolio reviews, market research. They all
-                involve parallel workstreams. Multi-agent workflows let one
-                analyst produce the output of a team.
+                Multi-vendor price checks, cross-reference lookups, RFQ research
+                across catalogs. They all involve parallel workstreams.
+                Multi-agent workflows let one person produce the output of a
+                team.
               </PullQuote>
             </section>
 
@@ -325,7 +326,7 @@ export default function BlogPost() {
 
       <CTASection
         heading="Want Us to Deploy These for Your Team?"
-        description="We set up Skills, Dispatch, and multi-agent workflows for companies — then train your teams to actually use them."
+        description="We set up Skills, Dispatch, and multi-agent workflows for parts companies, then train your teams to actually use them."
       />
     </>
   )

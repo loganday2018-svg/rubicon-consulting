@@ -63,7 +63,7 @@ export default function Image() {
               maxWidth: "900px",
             }}
           >
-            AI Implementation that Sticks
+AI for Auto and Truck Parts Companies
           </div>
           <div
             style={{
@@ -74,8 +74,8 @@ export default function Image() {
               maxWidth: "860px",
             }}
           >
-            Training, setup, and ongoing support that drives measurable
-            operating leverage.
+            We automate the manual work and train your team to run it, so you
+            get hours back every week.
           </div>
         </div>
 

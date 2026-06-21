@@ -28,7 +28,7 @@ export function Chart8StackedBar({ totals }: StackedBarProps) {
 
   return (
     <div>
-      <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">#8 — Revenue Decomposition Bar</h3>
+      <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">#8 Revenue Decomposition Bar</h3>
       <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
         <div className="mb-3 flex items-baseline justify-between">
           <span className="text-sm font-semibold text-slate-700">Revenue: {fmtM(totals.revenue)}</span>

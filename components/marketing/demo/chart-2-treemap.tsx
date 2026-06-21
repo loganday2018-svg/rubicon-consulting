@@ -6,7 +6,7 @@ function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`
 }
 
-// Simple treemap layout — squarified-ish algorithm
+// Simple treemap layout, squarified-ish algorithm
 function layoutTreemap(items: typeof LOCATION_DATA, width: number, height: number) {
   const total = items.reduce((s, i) => s + i.revenue, 0)
   const sorted = [...items].sort((a, b) => b.revenue - a.revenue)
@@ -57,7 +57,7 @@ export function Chart2Treemap() {
 
   return (
     <div>
-      <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">#2 — Location Treemap (size = revenue, label = margin)</h3>
+      <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">#2 Location Treemap (size = revenue, label = margin)</h3>
       <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
         <svg viewBox={`0 0 ${width} ${height}`} className="w-full" preserveAspectRatio="xMidYMid meet">
           {rects.map((r, i) => (

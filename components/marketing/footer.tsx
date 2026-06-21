@@ -10,7 +10,8 @@ export function Footer() {
           <div className="space-y-4">
             <p className="text-lg font-bold text-white">{BRAND.name}</p>
             <p className="text-sm leading-relaxed text-slate-400">
-              AI deployment &amp; adoption for companies.
+              AI for auto, truck, and aftermarket parts manufacturers and
+              distributors.
             </p>
             <a
               href={`mailto:${BRAND.email}`}

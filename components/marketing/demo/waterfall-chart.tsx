@@ -97,7 +97,7 @@ export function WaterfallChart({ totals, company }: WaterfallChartProps) {
             <div className="rounded-lg bg-slate-800 px-3 py-2 text-white shadow-lg" style={{ fontSize: 11, minWidth: 160, maxWidth: 220 }}>
               {hoveredCol.subItems ? (
                 <div className="space-y-1">
-                  <div className="font-semibold text-xs border-b border-slate-600 pb-1 mb-1">{hoveredCol.label} — {fmtM(hoveredCol.value)}</div>
+                  <div className="font-semibold text-xs border-b border-slate-600 pb-1 mb-1">{hoveredCol.label}: {fmtM(hoveredCol.value)}</div>
                   {hoveredCol.subItems.map(sub => (
                     <div key={sub.label} className="flex items-center justify-between gap-3">
                       <span className="flex items-center gap-1.5">

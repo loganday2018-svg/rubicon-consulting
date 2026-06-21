@@ -1,6 +1,6 @@
 # Rubicon AI Consulting
 
-AI implementation consulting for PE-backed portfolio companies and startups.
+Rubicon implements and teaches AI at auto, truck, and aftermarket parts companies. We automate the manual work, train your team, and get hours back.
 
 **Live site:** https://rubiconaiconsulting.com
 
@@ -20,9 +20,9 @@ npm install
 npm run dev
 ```
 
-## Pitch Deck Generator
+## Tools
 
-See `tools/README.md` for the pitch deck system (generates branded PowerPoint decks per PE firm).
+See `tools/README.md` for supporting scripts.
 
 ## Team
 

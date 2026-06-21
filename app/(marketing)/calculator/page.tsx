@@ -5,17 +5,17 @@ import { UseCaseBreakdown } from "@/components/marketing/use-case-breakdown"
 import { CTASection } from "@/components/marketing/cta-section"
 
 export const metadata: Metadata = {
-  title: "AI Impact Calculator",
+  title: "What AI Does to Your Margins",
   description:
-    "See how AI implementation could improve your company's EBITDA and enterprise value. Input your financials, get scenario-based projections.",
+    "Plug in your shop's numbers. See what collapsing the manual hours does to your margin. Scenario-based estimates for parts manufacturers and distributors.",
 }
 
 export default function CalculatorPage() {
   return (
     <>
       <PageHeader
-        title="AI Impact on EBITDA"
-        description="Plug in your company's financials. See what AI implementation could mean for margins and enterprise value."
+        title="What AI Does to Your Margins"
+        description="Plug in your shop's numbers. See what collapsing the manual hours does to your margin."
       />
 
       <section className="py-16">

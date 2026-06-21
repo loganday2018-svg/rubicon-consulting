@@ -25,8 +25,8 @@ function formatPercent(value: number): string {
 const SCENARIOS = [
   {
     label: "Conservative",
-    costDescription: "Automate reporting, data entry, and document processing.",
-    revenueDescription: "Faster proposals and analysis. Win deals you were too slow for.",
+    costDescription: "Automate the weekly cost report and order entry. Stop the manual copy-paste.",
+    revenueDescription: "Faster quotes and cross-references. Win orders you were too slow for.",
     sgaReduction: 0.025,
     cogsReduction: 0,
     revenueLift: 0.01,
@@ -34,8 +34,8 @@ const SCENARIOS = [
   },
   {
     label: "Moderate",
-    costDescription: "AI across ops, procurement, and supply chain workflows.",
-    revenueDescription: "AI-powered lead scoring, competitive analysis, and sales productivity.",
+    costDescription: "Automate reporting and order entry, then flag stock to transfer between branches before a line goes down.",
+    revenueDescription: "Quote off your catalog and pricing in seconds. Answer cross-references on the spot.",
     sgaReduction: 0.065,
     cogsReduction: 0.015,
     revenueLift: 0.02,
@@ -43,8 +43,8 @@ const SCENARIOS = [
   },
   {
     label: "Aggressive",
-    costDescription: "Full AI integration. Custom automations and team-wide adoption.",
-    revenueDescription: "New revenue streams from AI-enabled services, market insights, and speed to market.",
+    costDescription: "Reporting, order entry, and purchasing run on their own. Vendor price variance flagged across the business.",
+    revenueDescription: "Counter and inside sales quote and cross-reference at AI speed, so orders close faster.",
     sgaReduction: 0.10,
     cogsReduction: 0.04,
     revenueLift: 0.035,
@@ -53,9 +53,9 @@ const SCENARIOS = [
 ] as const
 
 const PRESETS = [
-  { label: "Healthcare", revenue: 31_000_000, cogs: 20_000_000, sga: 7_000_000, saas: 400_000 },
-  { label: "Manufacturing", revenue: 72_000_000, cogs: 42_000_000, sga: 16_000_000, saas: 1_200_000 },
-  { label: "HVAC", revenue: 42_000_000, cogs: 21_000_000, sga: 10_000_000, saas: 600_000 },
+  { label: "Parts Distributor", revenue: 38_000_000, cogs: 30_000_000, sga: 5_500_000, saas: 350_000 },
+  { label: "Parts Manufacturer", revenue: 55_000_000, cogs: 36_000_000, sga: 11_000_000, saas: 700_000 },
+  { label: "Truck & Aftermarket", revenue: 72_000_000, cogs: 54_000_000, sga: 11_000_000, saas: 600_000 },
 ] as const
 
 type View = "combined" | "cost" | "revenue"
@@ -106,11 +106,9 @@ function Slider({
 function EbitdaComparisonChart({
   currentEbitda,
   scenarios,
-  peMultiple,
 }: {
   currentEbitda: number
-  scenarios: { label: string; newEbitda: number; evImpact: number }[]
-  peMultiple: number
+  scenarios: { label: string; newEbitda: number }[]
 }) {
   const allValues = [currentEbitda, ...scenarios.map(s => s.newEbitda)]
   const maxVal = Math.max(...allValues)
@@ -155,9 +153,6 @@ function EbitdaComparisonChart({
                     {formatDollars(s.newEbitda)}
                   </span>
                 </div>
-                <span className="text-[10px] text-slate-400">
-                  EV: {formatDollars(s.evImpact)} at {peMultiple}x
-                </span>
               </div>
             </div>
           )
@@ -168,14 +163,13 @@ function EbitdaComparisonChart({
 }
 
 export function EbitdaCalculator() {
-  const [revenue, setRevenue] = useState(31_000_000)
-  const [cogs, setCogs] = useState(20_000_000)
-  const [sga, setSga] = useState(7_000_000)
-  const [saas, setSaas] = useState(400_000)
+  const [revenue, setRevenue] = useState(38_000_000)
+  const [cogs, setCogs] = useState(30_000_000)
+  const [sga, setSga] = useState(5_500_000)
+  const [saas, setSaas] = useState(350_000)
   const [showSaas, setShowSaas] = useState(false)
   const [view, setView] = useState<View>("combined")
   const [activePreset, setActivePreset] = useState<number>(0)
-  const [peMultiple, setPeMultiple] = useState(10)
 
   function applyPreset(index: number) {
     const p = PRESETS[index]
@@ -213,7 +207,6 @@ export function EbitdaCalculator() {
       const newRevenue = view === "cost" ? revenue : revenue + revenueGain
       const newMargin = (newEbitda / newRevenue) * 100
       const marginImprovement = newMargin - currentMargin
-      const evImpact = totalImpact * peMultiple
 
       return {
         ...scenario,
@@ -228,12 +221,11 @@ export function EbitdaCalculator() {
         newRevenue,
         newMargin,
         marginImprovement,
-        evImpact,
         currentEbitda,
         currentMargin,
       }
     })
-  }, [isValid, revenue, cogs, sga, saas, showSaas, view, peMultiple])
+  }, [isValid, revenue, cogs, sga, saas, showSaas, view])
 
   return (
     <div>
@@ -285,17 +277,6 @@ export function EbitdaCalculator() {
           min={500_000}
           max={Math.max(revenue - cogs - 1_000_000, 1_000_000)}
           step={500_000}
-        />
-
-        {/* PE Multiple */}
-        <Slider
-          label="EBITDA Multiple"
-          value={peMultiple}
-          onChange={setPeMultiple}
-          min={6}
-          max={18}
-          step={1}
-          suffix="x"
         />
 
         {/* SaaS toggle */}
@@ -350,8 +331,7 @@ export function EbitdaCalculator() {
           <div className="mb-8">
             <EbitdaComparisonChart
               currentEbitda={results[0].currentEbitda}
-              scenarios={results.map(r => ({ label: r.label, newEbitda: r.newEbitda, evImpact: r.evImpact }))}
-              peMultiple={peMultiple}
+              scenarios={results.map(r => ({ label: r.label, newEbitda: r.newEbitda }))}
             />
           </div>
 
@@ -431,13 +411,13 @@ export function EbitdaCalculator() {
 
                   <div className="border-t border-slate-200 pt-4">
                     <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                      Enterprise Value Impact
+                      Added to EBITDA
                     </p>
                     <p className="mt-1 text-xl font-bold text-primary sm:text-2xl">
-                      {formatDollars(r.evImpact)}
+                      +{formatDollars(r.totalImpact)}
                     </p>
                     <p className="mt-1 text-[10px] text-slate-500 sm:text-xs">
-                      at {peMultiple}x EBITDA multiple
+                      every year, from hours your team gets back
                     </p>
                   </div>
                 </div>
@@ -447,7 +427,7 @@ export function EbitdaCalculator() {
 
           <div className="mt-10 text-center">
             <Button size="lg" render={<a href={CTA.primary.href} target="_blank" rel="noopener noreferrer" />}>
-              Talk to Us About Your Portfolio
+              Run These on Your Numbers
             </Button>
           </div>
         </div>

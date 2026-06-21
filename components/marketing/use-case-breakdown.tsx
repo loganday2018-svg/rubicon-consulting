@@ -6,75 +6,75 @@ import { ChevronDown, TrendingUp, DollarSign, Cog, Users, Scale, Headphones } fr
 
 const FUNCTIONS = [
   {
-    icon: TrendingUp,
-    label: "Sales & BD",
-    impact: "Revenue acceleration",
-    useCases: [
-      "AI-powered prospect research. Financials, news, org charts pulled before every call",
-      "Custom proposals drafted in minutes from templates and CRM data",
-      "Cold outreach personalized at scale. Not generic templates",
-      "CRM enrichment and stale deal flagging on autopilot",
-      "Competitive intelligence aggregated and summarized weekly",
-    ],
-  },
-  {
     icon: DollarSign,
-    label: "Finance & FP&A",
-    impact: "SG&A reduction + speed",
+    label: "Cost Reporting & Finance",
+    impact: "Hours back every week",
     useCases: [
-      "DCF models and scenario analysis built in a fraction of the time",
-      "Month-end close acceleration. Reconciliations, journal entries, commentary",
-      "Board deck narratives drafted from raw financial data",
-      "Variance analysis automated. AI flags anomalies before you ask",
-      "Audit prep. Supporting docs pulled and organized automatically",
+      "The weekly labor, freight, and parts cost report built in a minute, not an hour",
+      "Numbers reconciled across systems without the manual copy-paste",
+      "Month-end commentary and variance drafts done the same day",
+      "Anomalies in cost lines flagged before anyone has to go looking",
+      "Plain-English answers from your own cost data, no pivot table required",
     ],
   },
   {
     icon: Cog,
-    label: "Operations",
-    impact: "COGS + SG&A reduction",
+    label: "Inventory & Parts Across Locations",
+    impact: "Fewer line-down surprises",
     useCases: [
-      "Vendor contract analysis. Read 200 contracts, flag renegotiation opportunities",
-      "Quality and compliance monitoring with real-time anomaly detection",
-      "Inventory optimization. Demand forecasting and reorder recommendations",
-      "Process documentation generated from existing workflows",
-      "Route and logistics optimization",
+      "Short at one branch and sitting at another, flagged before a line stops",
+      "Reorder points and stock transfers surfaced automatically across locations",
+      "Messy inventory exports turned into clear moves your team can act on",
+      "Slow and dead stock called out before it ties up more cash",
+      "Demand patterns read off your own history, not a guess",
     ],
   },
   {
-    icon: Users,
-    label: "HR & People",
-    impact: "SG&A reduction",
+    icon: TrendingUp,
+    label: "Quote & Order Desk",
+    impact: "Faster turnaround",
     useCases: [
-      "Job descriptions, offer letters, and policy docs drafted instantly",
-      "Resume screening and interview question generation",
-      "Employee handbook Q&A bot. Reduces HR ticket volume by 40-60%",
-      "Onboarding materials customized per role automatically",
-      "Performance review drafts from manager notes and metrics",
+      "Customer quotes drafted from your catalog and pricing in seconds",
+      "RFQs read and priced without the front office digging for line items",
+      "Cross-references and parts lookups answered instantly",
+      "Order entry and data cleanup that used to tie up your people",
+      "Quote follow-ups drafted so nothing sits in a pile",
     ],
   },
   {
     icon: Scale,
-    label: "Legal & Risk",
-    impact: "SG&A reduction + SaaS replacement",
+    label: "Purchasing & Vendors",
+    impact: "Margin recovered",
     useCases: [
-      "Contract redlining and clause extraction in minutes",
-      "Regulatory change monitoring. AI flags what matters to your industry",
-      "Due diligence document review during add-on acquisitions",
-      "NDA and standard agreement generation from templates",
-      "Replaces or reduces seats in contract management SaaS",
+      "Every cost line benchmarked against the market without hiring a consultant",
+      "Same part, different vendor prices across the business, flagged instantly",
+      "Vendor contracts read for terms, renewals, and price changes in seconds",
+      "POs checked against quotes and agreed pricing before they go out",
+      "Vendor price-increase letters summarized so you know what actually moved",
+    ],
+  },
+  {
+    icon: Users,
+    label: "Shop Floor / Production",
+    impact: "Less paperwork, steadier yield",
+    useCases: [
+      "Work-order paperwork and travelers drafted from the job, not retyped",
+      "Scrap and yield trends pulled together so problems show up early",
+      "Production schedules built around real capacity and due dates",
+      "Standard work and process notes written up from how the job actually runs",
+      "Shift and run summaries drafted from the day's numbers",
     ],
   },
   {
     icon: Headphones,
-    label: "Customer Success",
-    impact: "Revenue retention + SG&A reduction",
+    label: "Customer & Counter Service",
+    impact: "Quicker answers",
     useCases: [
-      "Support ticket triage and auto-response for common issues",
-      "Churn prediction from usage patterns and sentiment signals",
-      "Upsell opportunity identification from customer data",
-      "Customer onboarding emails and guides generated per product",
-      "QBR decks drafted from usage metrics and support history",
+      "Parts lookups and fitment questions answered from your catalog",
+      "Order status pulled together so the counter is not on hold with the back office",
+      "Returns and RMA paperwork drafted from a few details",
+      "Common customer questions answered the same way every time",
+      "Routine emails and order confirmations drafted for a quick review",
     ],
   },
 ] as const
@@ -89,8 +89,8 @@ export function UseCaseBreakdown() {
           What Drives These Numbers
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500">
-          Specific AI workflows mapped to the functions inside your portfolio
-          companies. This is what we set up.
+          Specific AI workflows mapped to the jobs your team does by hand inside
+          a parts manufacturer or distributor. This is what we set up.
         </p>
       </div>
 

@@ -22,40 +22,41 @@ export interface CompanyConfig {
   opexLabels: LabelMapping[]
 }
 
-// ─── Healthcare: Meridian Health Partners ───
-const healthcareCompany: CompanyConfig = {
-  id: "healthcare",
-  name: "Meridian Health Partners",
+// ─── Parts Manufacturer: Ridgeline Forged Components ───
+// A $70M maker of forged and machined parts selling to OEM and aftermarket channels.
+const manufacturerCompany: CompanyConfig = {
+  id: "parts-manufacturer",
+  name: "Ridgeline Forged Components",
   fiscalYear: "FY 2025",
-  industry: "Healthcare",
+  industry: "Parts Manufacturer",
   monthlyData: MONTHLY_DATA,
   locationData: LOCATION_DATA,
   revenueLabels: [
-    { key: "patientServices", label: "Patient Services" },
-    { key: "ancillaryRevenue", label: "Ancillary Revenue" },
-    { key: "otherIncome", label: "Other Income" },
+    { key: "patientServices", label: "OEM Programs" },
+    { key: "ancillaryRevenue", label: "Aftermarket" },
+    { key: "otherIncome", label: "Product Sales" },
   ],
   cogsLabels: [
-    { key: "providerComp", label: "Provider Comp" },
-    { key: "nursingStaff", label: "Nursing Staff" },
-    { key: "medicalSupplies", label: "Medical Supplies" },
-    { key: "labDiagnostic", label: "Lab & Diagnostic" },
-    { key: "pharmacy", label: "Pharmacy" },
-    { key: "facilityCosts", label: "Facility Costs" },
-    { key: "equipmentLease", label: "Equipment Lease" },
+    { key: "providerComp", label: "Raw Materials" },
+    { key: "nursingStaff", label: "Machining" },
+    { key: "medicalSupplies", label: "Heat Treat" },
+    { key: "labDiagnostic", label: "Plating" },
+    { key: "pharmacy", label: "Inbound Freight" },
+    { key: "facilityCosts", label: "Plant Labor" },
+    { key: "equipmentLease", label: "Tooling & Dies" },
   ],
   opexLabels: [
-    { key: "adminStaff", label: "Admin Staff" },
-    { key: "billingCollections", label: "Billing & Collections" },
-    { key: "itSystems", label: "IT Systems" },
-    { key: "malpracticeInsurance", label: "Malpractice Insurance" },
-    { key: "generalInsurance", label: "General Insurance" },
+    { key: "adminStaff", label: "Admin & HR" },
+    { key: "billingCollections", label: "Sales Team" },
+    { key: "itSystems", label: "IT & ERP" },
+    { key: "malpracticeInsurance", label: "Product Liability Insurance" },
+    { key: "generalInsurance", label: "Property Insurance" },
     { key: "marketing", label: "Marketing" },
-    { key: "utilities", label: "Utilities" },
+    { key: "utilities", label: "Office Utilities" },
     { key: "depreciation", label: "Depreciation" },
     { key: "professionalFees", label: "Professional Fees" },
     { key: "officeSupplies", label: "Office Supplies" },
-    { key: "staffTraining", label: "Staff Training" },
+    { key: "staffTraining", label: "Training & Safety" },
   ],
 }
 
@@ -76,40 +77,40 @@ const manufacturingMonthly: MonthlyPnL[] = [
 ]
 
 const manufacturingLocations: LocationData[] = [
-  { name: "Main Assembly Plant", type: "Assembly", revenue: 18_200_000, ebitda: 3_280_000, margin: 18.0, headcount: 85 },
-  { name: "CNC Precision Shop", type: "Machining", revenue: 14_600_000, ebitda: 2_340_000, margin: 16.0, headcount: 42 },
-  { name: "Sheet Metal Division", type: "Fabrication", revenue: 11_800_000, ebitda: 1_534_000, margin: 13.0, headcount: 38 },
-  { name: "Southside Warehouse", type: "Distribution", revenue: 8_400_000, ebitda: 1_176_000, margin: 14.0, headcount: 22 },
-  { name: "Paint & Finish Line", type: "Finishing", revenue: 9_200_000, ebitda: 736_000, margin: 8.0, headcount: 28 },
+  { name: "Forge Plant", type: "Forging", revenue: 18_200_000, ebitda: 3_280_000, margin: 18.0, headcount: 85 },
+  { name: "CNC Machining Shop", type: "Machining", revenue: 14_600_000, ebitda: 2_340_000, margin: 16.0, headcount: 42 },
+  { name: "Heat Treat Line", type: "Heat Treat", revenue: 11_800_000, ebitda: 1_534_000, margin: 13.0, headcount: 38 },
+  { name: "Plating & Coating", type: "Plating", revenue: 9_200_000, ebitda: 736_000, margin: 8.0, headcount: 28 },
+  { name: "Distribution Center", type: "Distribution", revenue: 8_400_000, ebitda: 1_176_000, margin: 14.0, headcount: 22 },
   { name: "Quality Control Lab", type: "QC", revenue: 5_500_000, ebitda: 385_000, margin: 7.0, headcount: 15 },
 ]
 
 const manufacturingCompany: CompanyConfig = {
   id: "manufacturing",
-  name: "Summit Precision Manufacturing",
+  name: "Summit Precision Parts",
   fiscalYear: "FY 2025",
-  industry: "Manufacturing",
+  industry: "Aftermarket Parts Maker",
   monthlyData: manufacturingMonthly,
   locationData: manufacturingLocations,
   revenueLabels: [
-    { key: "patientServices", label: "Product Sales" },
-    { key: "ancillaryRevenue", label: "Contract Manufacturing" },
-    { key: "otherIncome", label: "Scrap & Other" },
+    { key: "patientServices", label: "OEM Programs" },
+    { key: "ancillaryRevenue", label: "Aftermarket" },
+    { key: "otherIncome", label: "Product Sales" },
   ],
   cogsLabels: [
     { key: "providerComp", label: "Raw Materials" },
-    { key: "nursingStaff", label: "Direct Labor" },
-    { key: "medicalSupplies", label: "Machine Maintenance" },
-    { key: "labDiagnostic", label: "Plant Utilities" },
-    { key: "pharmacy", label: "Quality Control" },
-    { key: "facilityCosts", label: "Packaging" },
-    { key: "equipmentLease", label: "Freight & Shipping" },
+    { key: "nursingStaff", label: "Machining" },
+    { key: "medicalSupplies", label: "Heat Treat" },
+    { key: "labDiagnostic", label: "Plating" },
+    { key: "pharmacy", label: "Inbound Freight" },
+    { key: "facilityCosts", label: "Plant Labor" },
+    { key: "equipmentLease", label: "Tooling & Dies" },
   ],
   opexLabels: [
     { key: "adminStaff", label: "Admin & HR" },
     { key: "billingCollections", label: "Sales Team" },
     { key: "itSystems", label: "IT & ERP" },
-    { key: "malpracticeInsurance", label: "Liability Insurance" },
+    { key: "malpracticeInsurance", label: "Product Liability Insurance" },
     { key: "generalInsurance", label: "Property Insurance" },
     { key: "marketing", label: "Marketing" },
     { key: "utilities", label: "Office Utilities" },
@@ -120,7 +121,7 @@ const manufacturingCompany: CompanyConfig = {
   ],
 }
 
-// ─── HVAC: ClearAir Mechanical Services ───
+// ─── Parts Distributor: Crossroads Parts Distribution ───
 const hvacMonthly: MonthlyPnL[] = [
   { month: "Jan", patientServices: 1_480_000, ancillaryRevenue: 820_000, otherIncome: 340_000, revenue: 2_640_000, providerComp: 680_000, nursingStaff: 310_000, medicalSupplies: 185_000, labDiagnostic: 92_000, pharmacy: 48_000, facilityCosts: 72_000, equipmentLease: 55_000, totalCogs: 1_442_000, grossProfit: 1_198_000, adminStaff: 245_000, billingCollections: 165_000, itSystems: 78_000, malpracticeInsurance: 52_000, generalInsurance: 28_000, marketing: 85_000, rent: 0, utilities: 18_000, depreciation: 42_000, professionalFees: 12_000, officeSupplies: 5_000, staffTraining: 8_000, totalOpex: 738_000, ebitda: 460_000 },
   { month: "Feb", patientServices: 1_320_000, ancillaryRevenue: 780_000, otherIncome: 310_000, revenue: 2_410_000, providerComp: 645_000, nursingStaff: 298_000, medicalSupplies: 168_000, labDiagnostic: 85_000, pharmacy: 44_000, facilityCosts: 68_000, equipmentLease: 52_000, totalCogs: 1_360_000, grossProfit: 1_050_000, adminStaff: 242_000, billingCollections: 162_000, itSystems: 78_000, malpracticeInsurance: 52_000, generalInsurance: 28_000, marketing: 78_000, rent: 0, utilities: 17_000, depreciation: 42_000, professionalFees: 10_000, officeSupplies: 5_000, staffTraining: 6_000, totalOpex: 720_000, ebitda: 330_000 },
@@ -137,39 +138,39 @@ const hvacMonthly: MonthlyPnL[] = [
 ]
 
 const hvacLocations: LocationData[] = [
-  { name: "Downtown Service Hub", type: "Commercial", revenue: 9_850_000, ebitda: 1_675_000, margin: 17.0, headcount: 28 },
-  { name: "Northside Branch", type: "Residential", revenue: 7_420_000, ebitda: 1_113_000, margin: 15.0, headcount: 22 },
-  { name: "Westlake Territory", type: "Mixed", revenue: 6_180_000, ebitda: 803_000, margin: 13.0, headcount: 18 },
-  { name: "Industrial Park Center", type: "Industrial", revenue: 8_900_000, ebitda: 1_513_000, margin: 17.0, headcount: 15 },
-  { name: "Suburban East Office", type: "Residential", revenue: 5_200_000, ebitda: 416_000, margin: 8.0, headcount: 16 },
-  { name: "Airport Corridor Unit", type: "Commercial", revenue: 4_800_000, ebitda: 336_000, margin: 7.0, headcount: 12 },
+  { name: "Central DC", type: "Distribution Center", revenue: 9_850_000, ebitda: 1_675_000, margin: 17.0, headcount: 28 },
+  { name: "Northside Branch", type: "Branch", revenue: 7_420_000, ebitda: 1_113_000, margin: 15.0, headcount: 22 },
+  { name: "Westlake Branch", type: "Branch", revenue: 6_180_000, ebitda: 803_000, margin: 13.0, headcount: 18 },
+  { name: "Industrial Counter", type: "Counter", revenue: 8_900_000, ebitda: 1_513_000, margin: 17.0, headcount: 15 },
+  { name: "Suburban East Branch", type: "Branch", revenue: 5_200_000, ebitda: 416_000, margin: 8.0, headcount: 16 },
+  { name: "Online & Wholesale", type: "Channel", revenue: 4_800_000, ebitda: 336_000, margin: 7.0, headcount: 12 },
 ]
 
 const hvacCompany: CompanyConfig = {
-  id: "hvac",
-  name: "ClearAir Mechanical Services",
+  id: "parts-distributor",
+  name: "Crossroads Parts Distribution",
   fiscalYear: "FY 2025",
-  industry: "HVAC",
+  industry: "Parts Distributor",
   monthlyData: hvacMonthly,
   locationData: hvacLocations,
   revenueLabels: [
-    { key: "patientServices", label: "Service Contracts" },
-    { key: "ancillaryRevenue", label: "Installations" },
-    { key: "otherIncome", label: "Emergency Calls" },
+    { key: "patientServices", label: "Counter & Branch Sales" },
+    { key: "ancillaryRevenue", label: "Wholesale Accounts" },
+    { key: "otherIncome", label: "Online Orders" },
   ],
   cogsLabels: [
-    { key: "providerComp", label: "Technician Labor" },
-    { key: "nursingStaff", label: "Parts & Equipment" },
-    { key: "medicalSupplies", label: "Fleet & Vehicles" },
-    { key: "labDiagnostic", label: "Subcontractors" },
-    { key: "pharmacy", label: "Permits & Licensing" },
-    { key: "facilityCosts", label: "Refrigerant & Materials" },
-    { key: "equipmentLease", label: "Tool Replacement" },
+    { key: "providerComp", label: "Inventory Purchases" },
+    { key: "nursingStaff", label: "Warehouse Labor" },
+    { key: "medicalSupplies", label: "Inbound Freight" },
+    { key: "labDiagnostic", label: "Outbound Freight" },
+    { key: "pharmacy", label: "Returns & Cores" },
+    { key: "facilityCosts", label: "Warehouse Costs" },
+    { key: "equipmentLease", label: "Delivery Fleet" },
   ],
   opexLabels: [
-    { key: "adminStaff", label: "Dispatch & Admin" },
+    { key: "adminStaff", label: "Admin & Counter Staff" },
     { key: "billingCollections", label: "Sales" },
-    { key: "itSystems", label: "IT & Scheduling Software" },
+    { key: "itSystems", label: "IT & DMS Software" },
     { key: "malpracticeInsurance", label: "Liability Insurance" },
     { key: "generalInsurance", label: "Vehicle Insurance" },
     { key: "marketing", label: "Marketing" },
@@ -177,15 +178,15 @@ const hvacCompany: CompanyConfig = {
     { key: "depreciation", label: "Depreciation" },
     { key: "professionalFees", label: "Professional Fees" },
     { key: "officeSupplies", label: "Office Supplies" },
-    { key: "staffTraining", label: "Certifications & Training" },
+    { key: "staffTraining", label: "Training" },
   ],
 }
 
 // ─── Registry ───
 export const COMPANIES: CompanyConfig[] = [
-  healthcareCompany,
+  manufacturerCompany,
   manufacturingCompany,
   hvacCompany,
 ]
 
-export const DEFAULT_COMPANY = healthcareCompany
+export const DEFAULT_COMPANY = manufacturerCompany

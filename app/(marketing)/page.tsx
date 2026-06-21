@@ -98,7 +98,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
             title="See the Impact on Your Margins"
-            copy="Plug in your numbers. See what collapsing the manual hours does to your margin and EBITDA."
+            copy="Plug in your numbers. See what collapsing the manual hours does to your margin."
           />
           <div className="mt-12">
             <EbitdaCalculator />

@@ -35,26 +35,24 @@ export default function AboutPage() {
         description="I'm an operator, not a theorist. Every recommendation comes from tools I use myself, every day."
       />
 
-      {/* Why We Exist — with left accent bar */}
+      {/* Why We Exist */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
-            <div className="border-l-4 border-primary pl-8">
-              <h2 className="mb-6 text-3xl font-semibold">Why Rubicon Exists</h2>
-              <p className="mb-4 leading-relaxed text-slate-700">
-                Most AI initiatives die in the pilot. They&apos;re led by people
-                who&apos;ve never used the tools. Adoption is everything.
-              </p>
-              <p className="mb-4 leading-relaxed text-slate-700">
-                I adopted AI tools before anyone asked me to. The productivity
-                impact was immediate. Now I help parts manufacturers and
-                distributors get the same results in weeks, not quarters.
-              </p>
-              <p className="leading-relaxed text-slate-700">
-                I show up, set up the tools, train your teams, and stay until it
-                works.
-              </p>
-            </div>
+            <h2 className="mb-6 text-3xl font-semibold">Why Rubicon Exists</h2>
+            <p className="mb-4 leading-relaxed text-slate-700">
+              Most AI initiatives die in the pilot. They&apos;re led by people
+              who&apos;ve never used the tools. Adoption is everything.
+            </p>
+            <p className="mb-4 leading-relaxed text-slate-700">
+              I adopted AI tools before anyone asked me to. The productivity
+              impact was immediate. Now I help parts manufacturers and
+              distributors get the same results in weeks, not quarters.
+            </p>
+            <p className="leading-relaxed text-slate-700">
+              I show up, set up the tools, train your teams, and stay until it
+              works.
+            </p>
           </AnimatedSection>
         </div>
       </section>
@@ -75,7 +73,7 @@ export default function AboutPage() {
 
       <CTASection
         heading="Want to Work With Us?"
-        description="Pick a company. I'll analyze it live on the call and show you where AI moves the needle."
+        description="Bring your numbers. I'll analyze your shop live on the call and show you where AI moves the needle."
         secondaryLabel="See what we do →"
         secondaryHref="/services"
       />

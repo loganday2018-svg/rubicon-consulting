@@ -140,7 +140,7 @@ export default function BlogPost() {
                 By default, Claude asks permission at every single step. Which
                 is great for trust-building, but terrible for getting things
                 done. Auto Mode fixes this. Multi-step tasks run end-to-end. If
-                Claude hits something risky, it&apos;ll stop and ask — but for
+                Claude hits something risky, it&apos;ll stop and ask, but for
                 the safe stuff, it just goes.
               </p>
 
@@ -169,9 +169,9 @@ export default function BlogPost() {
               </div>
 
               <PullQuote>
-                Picture your finance team&apos;s month-end close. Claude builds
-                the variance report, pulls supporting data, and formats the
-                commentary while you grab coffee.
+                Picture your shop&apos;s month-end close. Claude builds the
+                labor, freight, and parts cost report, pulls supporting data,
+                and formats the commentary while you grab coffee.
               </PullQuote>
 
               <p className="leading-relaxed text-slate-700">

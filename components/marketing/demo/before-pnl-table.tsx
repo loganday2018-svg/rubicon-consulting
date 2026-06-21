@@ -4,13 +4,13 @@ import { type MonthlyPnL, computeTotals } from "@/lib/demo-data"
 import { type CompanyConfig } from "@/lib/demo-companies"
 
 function fmt(n: number): string {
-  if (n === 0) return "—"
+  if (n === 0) return "-"
   if (n < 0) return `(${Math.abs(n).toLocaleString("en-US")})`
   return n.toLocaleString("en-US")
 }
 
 function pct(numerator: number, denominator: number): string {
-  if (denominator === 0) return "—"
+  if (denominator === 0) return "-"
   return `${((numerator / denominator) * 100).toFixed(1)}%`
 }
 
@@ -144,7 +144,7 @@ export function BeforePnLTable({ company }: BeforePnLTableProps) {
             </tr>
             <tr>
               <th className="sticky left-0 z-20 border border-slate-300 bg-[#217346] px-2 py-1.5 text-left text-[10px] text-white min-w-[180px]">
-                {company.name} — {company.fiscalYear}
+                {company.name}, {company.fiscalYear}
               </th>
               {months.map((m) => (
                 <th key={m} className="border border-slate-300 bg-[#217346] px-2 py-1.5 text-right text-[10px] text-white min-w-[75px]">

@@ -59,8 +59,8 @@ export async function POST(request: Request) {
       summary: `${type.label}: ${BRAND.name} × ${name}`,
       description:
         `${type.label} booked via ${BRAND.domain}\n\n` +
-        `Name: ${name}\nEmail: ${email}\nCompany: ${company || "—"}\n\n` +
-        `Notes:\n${notes || "—"}`,
+        `Name: ${name}\nEmail: ${email}\nCompany: ${company || "(none)"}\n\n` +
+        `Notes:\n${notes || "(none)"}`,
       startISO: start,
       endISO,
       timeZone: tz,
