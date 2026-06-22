@@ -11,6 +11,7 @@ import {
 import { ServiceCard } from "@/components/marketing/service-card"
 import { CTASection } from "@/components/marketing/cta-section"
 import { PageHeader } from "@/components/marketing/page-header"
+import { LogoTicker } from "@/components/marketing/logo-ticker"
 import { AnimatedServicesGrid } from "@/components/marketing/animated-services-grid"
 import { StickyCTA } from "@/components/marketing/sticky-cta"
 
@@ -210,6 +211,10 @@ export default function ServicesPage() {
       <p className="mx-auto -mt-4 max-w-2xl px-6 text-center text-sm text-slate-500">
         Taught at McKinsey, PwC, and Accenture. Automated processes inside Fortune 500 companies.
       </p>
+
+      <div className="mt-10">
+        <LogoTicker />
+      </div>
 
       {groups.map((group, i) => (
         <section key={group.id} className="py-6">
