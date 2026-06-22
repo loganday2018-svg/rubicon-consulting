@@ -46,7 +46,7 @@ export function AnimatedServicesGrid({ children }: AnimatedServicesGridProps) {
           {Children.map(children, (child, i) => (
             <motion.div
               key={i}
-              className="w-[85vw] max-w-[340px] flex-shrink-0 snap-center"
+              className="h-full w-[85vw] max-w-[340px] flex-shrink-0 snap-center"
               initial={false}
               animate={triggered ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
               transition={{
@@ -73,6 +73,7 @@ export function AnimatedServicesGrid({ children }: AnimatedServicesGridProps) {
       {Children.map(children, (child, i) => (
         <motion.div
           key={i}
+          className="h-full"
           initial={false}
           animate={triggered ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{

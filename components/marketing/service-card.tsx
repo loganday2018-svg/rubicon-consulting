@@ -1,6 +1,5 @@
 "use client"
 
-import { useRef, useState, useEffect, useCallback } from "react"
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 
@@ -13,6 +12,7 @@ interface ServiceCardProps {
   price?: string
   scoped?: boolean
   image?: string
+  featured?: boolean
   animateIcon?: boolean
 }
 
@@ -21,7 +21,7 @@ function CardImage({ src }: { src: string }) {
     <>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.52]"
+        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.5]"
         style={{
           backgroundImage: `url(${src})`,
           filter: "grayscale(1) sepia(1) hue-rotate(192deg) saturate(3.2) brightness(0.8)",
@@ -29,144 +29,67 @@ function CardImage({ src }: { src: string }) {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white via-white/75 to-white/15"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white via-white/85 to-white/55"
       />
     </>
   )
 }
 
-function useIsTouchDevice() {
-  const [isTouch, setIsTouch] = useState(false)
-  useEffect(() => {
-    setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0)
-  }, [])
-  return isTouch
-}
-
-function DesktopCard({ icon, title, description, scope, timeline, price, scoped, image }: ServiceCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const [rotateX, setRotateX] = useState(0)
-  const [rotateY, setRotateY] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
-
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return
-    const rect = cardRef.current.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    const rY = ((x - rect.width / 2) / (rect.width / 2)) * 4
-    const rX = ((rect.height / 2 - y) / (rect.height / 2)) * 4
-    setRotateX(rX)
-    setRotateY(rY)
-  }, [])
-
+export function ServiceCard({
+  icon,
+  title,
+  description,
+  scope,
+  timeline,
+  price,
+  image,
+  featured,
+}: ServiceCardProps) {
   return (
     <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => { setIsHovered(false); setRotateX(0); setRotateY(0) }}
-      animate={{ rotateX, rotateY, translateY: isHovered ? -2 : 0 }}
-      transition={{
-        rotateX: { type: "spring", stiffness: 200, damping: 20 },
-        rotateY: { type: "spring", stiffness: 200, damping: 20 },
-        translateY: { duration: 0.2 },
-      }}
-      style={{ perspective: 800, transformStyle: "preserve-3d" }}
-      className="relative overflow-hidden rounded-lg border border-slate-200 bg-white p-8 transition-colors duration-200 hover:border-primary/40 hover:shadow-lg"
+      initial={false}
+      whileHover={{ y: -4 }}
+      transition={{ type: "spring", stiffness: 300, damping: 22 }}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-xl border bg-white p-7 transition-shadow duration-300 hover:shadow-xl ${
+        featured ? "border-primary/40 ring-1 ring-primary/30" : "border-slate-200"
+      }`}
     >
       {image && <CardImage src={image} />}
-      <div className="relative">
-        <div className="mb-4 text-primary">
-          <motion.div
-            animate={isHovered ? { scale: [1, 1.15, 1], rotate: [0, -6, 6, 0] } : { scale: 1, rotate: 0 }}
-            transition={isHovered ? { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } : { duration: 0.3 }}
-          >
+
+      <div className="relative flex h-full flex-col">
+        <div className="mb-5 flex items-start justify-between">
+          <div className="inline-flex w-fit rounded-xl bg-primary/10 p-3 text-primary transition-transform duration-300 group-hover:scale-105">
             {icon}
-          </motion.div>
+          </div>
+          {featured && (
+            <span className="rounded-full bg-primary px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-primary-foreground">
+              Start here
+            </span>
+          )}
         </div>
-        <h3 className="mb-3 text-xl font-semibold">{title}</h3>
-        <p className="mb-6 leading-relaxed text-slate-700">{description}</p>
-        <CardScope scope={scope} />
-        <CardBadges price={price} timeline={timeline} scoped={scoped} />
+
+        <h3 className="text-xl font-semibold text-foreground">{title}</h3>
+        <p className="mt-2 leading-relaxed text-slate-600">{description}</p>
+
+        <ul className="mt-5 space-y-2.5">
+          {scope.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-2.5 text-sm leading-snug text-slate-700"
+            >
+              <Check size={16} className="mt-0.5 shrink-0 text-primary" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-auto pt-6">
+          <div className="flex items-baseline gap-2 border-t border-slate-100 pt-4">
+            <span className="text-lg font-semibold text-primary">{price}</span>
+            {timeline && <span className="text-xs text-slate-400">&middot; {timeline}</span>}
+          </div>
+        </div>
       </div>
     </motion.div>
   )
-}
-
-function MobileCard({ icon, title, description, scope, timeline, price, scoped, image }: ServiceCardProps) {
-  return (
-    <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white p-6">
-      {image && <CardImage src={image} />}
-      <div className="relative">
-      {/* Badges at top on mobile so price is always visible */}
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        {price && (
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            {price}
-          </span>
-        )}
-        {timeline && (
-          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">
-            {timeline}
-          </span>
-        )}
-      </div>
-      {scoped && (
-        <p className="mb-4 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-          Scoped per engagement
-        </p>
-      )}
-      <div className="mb-3 text-primary">{icon}</div>
-      <h3 className="mb-2 text-lg font-semibold">{title}</h3>
-      <p className="mb-5 text-sm leading-relaxed text-slate-700">{description}</p>
-      <CardScope scope={scope} />
-      </div>
-    </div>
-  )
-}
-
-function CardScope({ scope }: { scope: string[] }) {
-  return (
-    <div>
-      <p className="mb-2 text-sm font-semibold text-slate-800">What&apos;s included:</p>
-      <ul className="space-y-2">
-        {scope.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-            <Check size={16} className="mt-0.5 shrink-0 text-primary" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-function CardBadges({ price, timeline, scoped }: { price?: string; timeline?: string; scoped?: boolean }) {
-  return (
-    <div className="mt-6">
-      <div className="flex flex-wrap items-center gap-3">
-        {price && (
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            {price}
-          </span>
-        )}
-        {timeline && (
-          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">
-            {timeline}
-          </span>
-        )}
-      </div>
-      {scoped && (
-        <p className="mt-3 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-          Scoped per engagement
-        </p>
-      )}
-    </div>
-  )
-}
-
-export function ServiceCard(props: ServiceCardProps) {
-  const isTouch = useIsTouchDevice()
-  return isTouch ? <MobileCard {...props} /> : <DesktopCard {...props} />
 }

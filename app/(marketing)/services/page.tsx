@@ -29,6 +29,7 @@ type Service = {
   price?: string
   scoped?: boolean
   image?: string
+  featured?: boolean
 }
 
 const education: Service[] = [
@@ -83,6 +84,7 @@ const build: Service[] = [
   {
     icon: <Workflow size={32} />,
     title: "Automate Anything",
+    featured: true,
     image: "/images/services/engine-bay.jpg",
     description:
       "Turn manual, repeatable work into something that runs itself, then teach your team to run it.",
@@ -202,10 +204,15 @@ export default function ServicesPage() {
         description="Education, automation, and custom agents for lean manufacturers and distributors. Every engagement is scoped, priced, and built to get your team using AI."
       />
 
-      {groups.map((group) => (
+      {groups.map((group, i) => (
         <section key={group.id} className="py-6">
           <div className="mx-auto mb-6 max-w-6xl px-6">
-            <h2 className="text-3xl font-semibold">{group.heading}</h2>
+            <div className="flex items-baseline gap-3">
+              <span className="font-mono text-sm font-medium text-primary/50">
+                0{i + 1}
+              </span>
+              <h2 className="text-3xl font-semibold">{group.heading}</h2>
+            </div>
             <p className="mt-2 max-w-2xl text-slate-600">{group.sub}</p>
           </div>
           <AnimatedServicesGrid>
@@ -227,7 +234,7 @@ export default function ServicesPage() {
       </section>
 
       <CTASection
-        heading="Not Sure Which Service Fits?"
+        heading="Not Sure Where to Start?"
         description="Tell us where your team is spending too many hours. We'll show you how to collapse that timeline."
         secondaryLabel="See the margin and hours impact →"
         secondaryHref="/calculator"
