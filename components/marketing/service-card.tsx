@@ -21,8 +21,11 @@ function CardImage({ src }: { src: string }) {
     <>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.44] grayscale"
-        style={{ backgroundImage: `url(${src})` }}
+        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.52]"
+        style={{
+          backgroundImage: `url(${src})`,
+          filter: "grayscale(1) sepia(1) hue-rotate(192deg) saturate(3.2) brightness(0.8)",
+        }}
       />
       <div
         aria-hidden
