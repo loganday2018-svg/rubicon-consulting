@@ -203,8 +203,8 @@ export default function ServicesPage() {
       />
 
       {groups.map((group) => (
-        <section key={group.id} className="py-12">
-          <div className="mx-auto mb-8 max-w-6xl px-6">
+        <section key={group.id} className="py-6">
+          <div className="mx-auto mb-6 max-w-6xl px-6">
             <h2 className="text-3xl font-semibold">{group.heading}</h2>
             <p className="mt-2 max-w-2xl text-slate-600">{group.sub}</p>
           </div>
