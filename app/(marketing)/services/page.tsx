@@ -12,7 +12,7 @@ import { ServiceCard } from "@/components/marketing/service-card"
 import { CTASection } from "@/components/marketing/cta-section"
 import { PageHeader } from "@/components/marketing/page-header"
 import { AnimatedServicesGrid } from "@/components/marketing/animated-services-grid"
-import { AnimatedSteps } from "@/components/marketing/animated-steps"
+import { StickyCTA } from "@/components/marketing/sticky-cta"
 
 export const metadata: Metadata = {
   title: "Services",
@@ -155,18 +155,21 @@ const groups = [
     heading: "Education",
     sub: "Get your leadership and your team fluent, from strategy down to which buttons to press.",
     items: education,
+    accent: "text-sky-600",
   },
   {
     id: "build",
     heading: "Build",
     sub: "Scoped to your workflow and quoted after a short call. Every build comes with the training to own it.",
     items: build,
+    accent: "text-teal-600",
   },
   {
     id: "support",
     heading: "Advisory & Support",
     sub: "Point the effort in the right direction, and keep it running once it is.",
     items: support,
+    accent: "text-indigo-500",
   },
 ]
 
@@ -204,11 +207,15 @@ export default function ServicesPage() {
         description="Education, automation, and custom agents for lean manufacturers and distributors. Every engagement is scoped, priced, and built to get your team using AI."
       />
 
+      <p className="mx-auto -mt-4 max-w-2xl px-6 text-center text-sm text-slate-500">
+        Taught at McKinsey, PwC, and Accenture. Automated processes inside Fortune 500 companies.
+      </p>
+
       {groups.map((group, i) => (
         <section key={group.id} className="py-6">
           <div className="mx-auto mb-6 max-w-6xl px-6">
             <div className="flex items-baseline gap-3">
-              <span className="font-mono text-sm font-medium text-primary/50">
+              <span className={`font-mono text-sm font-medium ${group.accent}`}>
                 0{i + 1}
               </span>
               <h2 className="text-3xl font-semibold">{group.heading}</h2>
@@ -223,13 +230,40 @@ export default function ServicesPage() {
         </section>
       ))}
 
+      {/* Guarantee */}
+      <section className="bg-primary py-12 text-center md:py-14">
+        <div className="mx-auto max-w-3xl px-6">
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+            My guarantee
+          </p>
+          <p className="mt-3 text-xl font-semibold text-primary-foreground md:text-2xl">
+            One short call and I&apos;ll find at least one process worth automating in
+            your business. If I can&apos;t, no charge.
+          </p>
+        </div>
+      </section>
+
       {/* How It Works */}
-      <section className="bg-slate-50 py-16">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="mb-8 text-center text-3xl font-semibold">
-            How It Works
-          </h2>
-          <AnimatedSteps steps={steps} />
+      <section className="bg-slate-50 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-12 text-center text-3xl font-semibold">How It Works</h2>
+          <div className="relative grid gap-10 md:grid-cols-4">
+            <div
+              aria-hidden
+              className="absolute left-[12.5%] right-[12.5%] top-5 hidden h-px bg-slate-200 md:block"
+            />
+            {steps.map((s) => (
+              <div key={s.number} className="relative text-center">
+                <div className="mx-auto mb-4 flex size-10 items-center justify-center rounded-full border border-slate-200 bg-white font-mono text-sm font-semibold text-primary">
+                  {String(s.number).padStart(2, "0")}
+                </div>
+                <h3 className="font-semibold text-foreground">{s.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                  {s.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -239,6 +273,7 @@ export default function ServicesPage() {
         secondaryLabel="See the margin and hours impact →"
         secondaryHref="/calculator"
       />
+      <StickyCTA />
     </>
   )
 }

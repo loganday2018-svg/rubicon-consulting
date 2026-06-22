@@ -21,7 +21,7 @@ function CardImage({ src }: { src: string }) {
     <>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.5]"
+        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.5] transition-transform duration-700 ease-out group-hover:scale-105"
         style={{
           backgroundImage: `url(${src})`,
           filter: "grayscale(1) sepia(1) hue-rotate(192deg) saturate(3.2) brightness(0.8)",
@@ -72,14 +72,18 @@ export function ServiceCard({
         <p className="mt-2 leading-relaxed text-slate-600">{description}</p>
 
         <ul className="mt-5 space-y-2.5">
-          {scope.map((item) => (
-            <li
+          {scope.map((item, i) => (
+            <motion.li
               key={item}
+              initial={{ opacity: 0, x: -6 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }}
               className="flex items-start gap-2.5 text-sm leading-snug text-slate-700"
             >
               <Check size={16} className="mt-0.5 shrink-0 text-primary" />
               <span>{item}</span>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
