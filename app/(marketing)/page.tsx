@@ -6,6 +6,7 @@ import { ValueProps } from "@/components/marketing/value-props"
 import { AutomationSavings } from "@/components/marketing/automation-savings"
 import { AdoptionCurve } from "@/components/marketing/adoption-curve"
 import { VideoDemo } from "@/components/marketing/video-demo"
+import { ChannelBuilds } from "@/components/marketing/channel-builds"
 import { SectionHeading, DrawRule } from "@/components/marketing/motion-kit"
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ const VALUE_PROPS = [
     description:
       "The weekly report someone rebuilds by hand, pulling labor, freight, and parts numbers out of the system, runs on its own.",
     useCases: [
-      "The weekly cost report pulled together in a minute, not an hour",
+      "The weekly cost report pulls itself together while the coffee brews",
       "Labor, freight, and parts numbers reconciled without the manual copy-paste",
       "Month-end commentary and variance drafts done same day",
     ],
@@ -71,8 +72,8 @@ export default function HomePage() {
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
-            title="What Changes When AI Actually Works"
-            copy="Not theory. These are the workflows we set up in real parts shops and warehouses."
+            title="What Changes When AI Starts Doing the Work"
+            copy="These are the jobs we've set up to run on their own in real parts shops and warehouses."
           />
 
           <ValueProps items={VALUE_PROPS} />
@@ -85,7 +86,7 @@ export default function HomePage() {
           <DrawRule className="mb-12" />
           <SectionHeading
             title={`From "Let's start using AI" to "We can't imagine not using it."`}
-            copy="Most teams watch a few demos, then adoption stalls. We compress the curve to weeks, not quarters."
+            copy="Most teams watch a few demos and then adoption stalls out. We get a company over that hump by building the first automation with them, on their own data."
           />
           <div className="mt-12">
             <AdoptionCurve />
@@ -94,6 +95,8 @@ export default function HomePage() {
       </section>
 
       <VideoDemo />
+
+      <ChannelBuilds />
 
       {/* Automation savings */}
       <section className="bg-slate-50 py-16 md:py-24">

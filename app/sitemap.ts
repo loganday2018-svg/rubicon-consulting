@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: fileModified('page.tsx'), changeFrequency: 'monthly', priority: 1 },
     { url: `${baseUrl}/services`, lastModified: fileModified('services/page.tsx'), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/private-equity`, lastModified: fileModified('private-equity/page.tsx'), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/demo`, lastModified: fileModified('demo/page.tsx'), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/calculator`, lastModified: fileModified('calculator/page.tsx'), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/about`, lastModified: fileModified('about/page.tsx'), changeFrequency: 'monthly', priority: 0.7 },

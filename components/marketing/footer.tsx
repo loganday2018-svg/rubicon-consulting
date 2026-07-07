@@ -36,6 +36,12 @@ export function Footer() {
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/private-equity"
+                className="text-sm text-slate-400 transition-colors hover:text-white"
+              >
+                For private equity
+              </Link>
             </nav>
           </div>
 

@@ -83,8 +83,8 @@ export function HeroSection() {
             className="mt-6 max-w-2xl rounded-xl border border-white/15 bg-white/5 p-5 text-lg text-slate-300 md:p-6 md:text-xl"
           >
             I&apos;m Logan. I help automotive, truck, and aftermarket parts companies
-            put AI to work, so you do more with less: save time, cut cost, and
-            put out better work without adding headcount.
+            put AI to work on the manual jobs that eat the week, so your team
+            gets hours back without you adding headcount to get them.
           </motion.p>
 
           <motion.div

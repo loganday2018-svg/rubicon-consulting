@@ -40,12 +40,12 @@ const education: Service[] = [
     title: "Level Up Your Leadership",
     image: "/images/services/engine-bay.jpg",
     description:
-      "Strategy for the people who set it. How to actually put AI to work in your business, past the hype.",
+      "Strategy for the people who set it. How to put AI to work in your business, past the hype.",
     scope: [
-      "How to think about leveraging AI across your operation",
+      "Where AI fits across your operation, and where it doesn't yet",
       "How to get the most out of your workforce with it",
       "The trajectory: where this is heading and how fast it is moving",
-      "Built for owners and leadership, not engineers",
+      "For owners and leadership. No technical background needed.",
     ],
     timeline: "Half or full day",
     price: "$5,000 to $10,000",
@@ -55,9 +55,9 @@ const education: Service[] = [
     title: "Team Training",
     image: "/images/services/gears.jpg",
     description:
-      "Tactical and hands-on, leveled from automating fast up to building custom agents, on your team's real data.",
+      "Working sessions on your team's real data, leveled from automating fast up to building custom agents.",
     scope: [
-      "Hands-on sessions, not slides",
+      "Sessions run inside your team's own files (nobody sits through slides)",
       "101: get your team automating fast",
       "201: host and collaborate on real sites",
       "301: build custom, bespoke agents",
@@ -72,7 +72,7 @@ const education: Service[] = [
     description:
       "Short training videos every week as new models and features land, so your team never falls behind.",
     scope: [
-      "New videos every week, no fluff",
+      "New videos every week, each a few minutes long",
       "What changed, and whether it matters to you",
       "One flat price for the whole team",
       "Cancel anytime",
@@ -105,7 +105,7 @@ const build: Service[] = [
     title: "Bespoke Bots",
     image: "/images/services/gears.jpg",
     description:
-      "The premium tier. Systems that reason and decide, not just execute a single task.",
+      "The premium tier. Systems that can reason through a whole job and decide the next step on their own.",
     scope: [
       "Knowledge agents: ask your data questions in plain English, no SQL",
       "Connect a model straight to your data, or layer onto Power BI",
@@ -210,7 +210,9 @@ export default function ServicesPage() {
       />
 
       <p className="mx-auto -mt-4 max-w-2xl px-6 text-center text-sm text-slate-500">
-        Taught at McKinsey, PwC, and Accenture. Automated processes inside Fortune 500 companies.
+        Darden MBA, a background in enterprise finance, and a YouTube channel
+        where I record the real builds. A multi-entity drivetrain-parts
+        distributor already runs its monthly reporting on a pipeline I built.
       </p>
 
       <div className="mt-10">

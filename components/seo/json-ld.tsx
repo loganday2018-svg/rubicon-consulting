@@ -96,6 +96,41 @@ export function ArticleJsonLd({ post }: { post: ArticleLike }) {
 }
 
 /**
+ * Service + WebPage graph for the /private-equity landing page. Describes the
+ * fractional-AI-operator offering and ties it back to the organization and
+ * founder. Keeps the same @id anchors so the graph stays connected.
+ */
+export function PrivateEquityJsonLd() {
+  const pageUrl = `${BASE}/private-equity`
+
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Fractional AI operator for parts and industrial portfolio companies",
+        serviceType: "AI implementation for private-equity portfolio companies",
+        url: pageUrl,
+        description:
+          "A fractional AI operator PE firms bring into asset-heavy parts and industrial portcos to automate the manual work that costs the team hours, starting with the weekly report someone rebuilds by hand.",
+        provider: {
+          "@type": "ProfessionalService",
+          "@id": ORG_ID,
+          name: ORG_NAME,
+          url: BASE,
+        },
+        areaServed: { "@type": "Country", name: "United States" },
+        audience: {
+          "@type": "BusinessAudience",
+          name: "Private-equity operating partners",
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+      }}
+    />
+  )
+}
+
+/**
  * Person + ProfilePage graph for the About page. Ties the founder to the
  * organization (worksFor) and lists the same social profiles.
  */
