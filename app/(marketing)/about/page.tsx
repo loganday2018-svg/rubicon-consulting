@@ -1,14 +1,15 @@
 import type { Metadata } from "next"
-import { BRAND } from "@/lib/constants"
 import { TeamMember } from "@/components/marketing/team-member"
 import { CTASection } from "@/components/marketing/cta-section"
 import { PageHeader } from "@/components/marketing/page-header"
 import { AnimatedSection } from "@/components/marketing/animated-section"
 import { AnimatedTeam } from "@/components/marketing/animated-team"
+import { PersonProfileJsonLd } from "@/components/seo/json-ld"
 
 export const metadata: Metadata = {
   title: "About",
   description: `Meet Logan. An operator who puts AI to work at vehicle-parts companies.`,
+  alternates: { canonical: "/about" },
 }
 
 const team = [
@@ -28,8 +29,16 @@ const team = [
 ]
 
 export default function AboutPage() {
+  const founder = team[0]
+
   return (
     <>
+      <PersonProfileJsonLd
+        name={founder.name}
+        jobTitle={founder.title}
+        description={founder.bio}
+        image={founder.imageSrc}
+      />
       <PageHeader
         title="About"
         description="I'm an operator, not a theorist. Every recommendation comes from tools I use myself, every day."

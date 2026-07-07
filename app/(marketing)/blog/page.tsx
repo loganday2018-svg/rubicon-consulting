@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Practical AI tips, workflows, and strategies for companies deploying AI.",
+  alternates: { canonical: "/blog" },
 }
 
 export default function BlogPage() {

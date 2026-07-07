@@ -23,6 +23,9 @@ import matter from "gray-matter"
 const FEED_URL =
   process.env.SUBSTACK_FEED_URL ?? "https://logandayai.substack.com/feed"
 const POSTS_DIR = path.join(process.cwd(), "content", "blog")
+// The site is the canonical home for imported posts, so each copy self-references
+// its own URL on this domain (not the Substack original). Keep in sync with lib/constants.ts.
+const SITE_ORIGIN = process.env.SITE_ORIGIN ?? "https://rubiconaiconsulting.com"
 
 // Slugs owned by the original hand-coded pages — never overwrite these.
 const LEGACY_SLUGS = new Set([
@@ -136,6 +139,9 @@ async function main() {
       readTime: estimateReadTime(body),
       category: "AI Tips",
       substackUrl: item.link,
+      // Self-canonical to the site's own copy so Google doesn't treat the
+      // Substack original as the duplicate winner.
+      canonical: `${SITE_ORIGIN}/blog/${slug}`,
       ...(firstImage(html) ? { cover: firstImage(html) } : {}),
     }
 

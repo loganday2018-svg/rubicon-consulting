@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Book a Call",
   description:
     "Pick a time that works. A 15-minute intro, a 30-minute deep dive, or a full live demo with your team.",
+  alternates: { canonical: "/book" },
 }
 
 export default function BookPage() {

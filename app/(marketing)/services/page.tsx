@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "AI training, advisory, automation, and custom agents for lean manufacturers and distributors.",
+  alternates: { canonical: "/services" },
 }
 
 type Service = {

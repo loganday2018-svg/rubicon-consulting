@@ -7,6 +7,7 @@ date: '2026-06-16'
 readTime: 4 min read
 category: AI Tips
 substackUrl: 'https://logandayai.substack.com/p/the-future-of-ai-at-work-is-a-button'
+canonical: 'https://rubiconaiconsulting.com/blog/the-future-of-ai-at-work-is-a-button'
 cover: >-
   https://substackcdn.com/image/fetch/$s_!9h-4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7f77ac7f-0867-4db2-a072-dc04a2b7d514_2816x1536.png
 ---

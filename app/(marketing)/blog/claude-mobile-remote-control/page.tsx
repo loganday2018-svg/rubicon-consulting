@@ -3,7 +3,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { CTASection } from "@/components/marketing/cta-section"
-import { getRelatedPosts } from "@/lib/blog"
+import { getBlogPost, getRelatedPosts, legacyPostMetadata } from "@/lib/blog"
+import { ArticleJsonLd } from "@/components/seo/json-ld"
 import {
   BlogShell,
   BlogDivider,
@@ -15,17 +16,22 @@ import {
   TldrCard,
 } from "@/components/marketing/blog-shell"
 
+const SLUG = "claude-mobile-remote-control"
+
 export const metadata: Metadata = {
   title: "Claude Mobile & Remote Control: Start on Desktop, Finish From Your Phone",
   description:
     "Your AI doesn't clock out when you leave your desk. Here's how to run Claude from your phone and keep work moving from anywhere.",
+  ...legacyPostMetadata(SLUG),
 }
 
 export default function BlogPost() {
-  const related = getRelatedPosts("claude-mobile-remote-control")
+  const post = getBlogPost(SLUG)
+  const related = getRelatedPosts(SLUG)
 
   return (
     <>
+      {post && <ArticleJsonLd post={post} />}
       <BlogShell>
         <article className="py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-6">

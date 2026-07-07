@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "What AI Does to Your Margins",
   description:
     "Plug in your shop's numbers. See what collapsing the manual hours does to your margin. Scenario-based estimates for parts manufacturers and distributors.",
+  alternates: { canonical: "/calculator" },
 }
 
 export default function CalculatorPage() {

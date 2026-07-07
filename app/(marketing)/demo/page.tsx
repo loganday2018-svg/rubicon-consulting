@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "From Weekly Cost Report to a Dashboard You Can Read",
   description:
     "We take the weekly cost report your team already exports from the ERP and turn it into a dashboard. Real output from a real engagement.",
+  alternates: { canonical: "/demo" },
 }
 
 export default function DemoPage() {

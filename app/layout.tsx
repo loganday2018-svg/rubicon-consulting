@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     template: `%s | ${BRAND.name}`,
   },
   description: BRAND.description,
+  // Self-referencing canonical for the homepage. Per-route pages override this
+  // with their own path (alternates.canonical) so every URL points at itself.
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -36,6 +41,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  // TODO(reviewer): add Google Search Console verification once Logan provides
+  // the token, e.g. verification: { google: "<token>" }.
 }
 
 export default function RootLayout({

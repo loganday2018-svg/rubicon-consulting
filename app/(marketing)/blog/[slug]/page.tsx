@@ -21,14 +21,25 @@ export async function generateMetadata({
   const post = getPostBySlug(slug)
   if (!post) return {}
 
+  // Imported posts self-canonicalize to their own URL on this domain. Fall back
+  // to the site path if an older post is missing the frontmatter field.
+  const canonical = post.canonical ?? `/blog/${post.slug}`
+  const published = new Date(post.date)
+  const publishedTime = Number.isNaN(published.getTime())
+    ? undefined
+    : published.toISOString()
+
   return {
     title: post.title,
     description: post.description,
-    alternates: post.canonical ? { canonical: post.canonical } : undefined,
+    alternates: { canonical },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
+      publishedTime,
+      modifiedTime: publishedTime,
+      authors: [post.author.name],
       images: post.cover ? [post.cover] : undefined,
     },
   }

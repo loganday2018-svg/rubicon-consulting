@@ -56,3 +56,36 @@ export const BLOG_POSTS: BlogPost[] = [
 export function getRelatedPosts(currentSlug: string): BlogPost[] {
   return BLOG_POSTS.filter((p) => p.slug !== currentSlug)
 }
+
+/** A single legacy (hand-coded) post by slug. */
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((p) => p.slug === slug)
+}
+
+/**
+ * Article-typed OpenGraph + canonical metadata for a legacy post page.
+ * Keeps every legacy page's <head> consistent: self-canonical, og:type=article,
+ * publish date, author, and an explicit article card image (no generic fallback).
+ */
+export function legacyPostMetadata(slug: string) {
+  const post = getBlogPost(slug)
+  if (!post) return {}
+
+  const d = new Date(post.date)
+  const publishedTime = Number.isNaN(d.getTime()) ? undefined : d.toISOString()
+
+  return {
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article" as const,
+      publishedTime,
+      modifiedTime: publishedTime,
+      authors: [post.author.name],
+      // No per-post cover asset exists for the legacy posts, so use the site's
+      // real OG card explicitly and mark it as an article image.
+      images: ["/opengraph-image"],
+    },
+  }
+}

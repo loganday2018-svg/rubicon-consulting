@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "AI for Vehicle-Parts Manufacturers & Distributors",
   description:
     "Rubicon implements and teaches AI at automotive, truck, and aftermarket parts companies. Automate the manual work, train your team, get hours back.",
+  alternates: { canonical: "/" },
 }
 
 const VALUE_PROPS = [

@@ -3,7 +3,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { CTASection } from "@/components/marketing/cta-section"
-import { getRelatedPosts } from "@/lib/blog"
+import { getBlogPost, getRelatedPosts, legacyPostMetadata } from "@/lib/blog"
+import { ArticleJsonLd } from "@/components/seo/json-ld"
 import { StatCallout } from "@/components/marketing/stat-callout"
 import {
   BlogShell,
@@ -17,17 +18,22 @@ import {
   TldrCard,
 } from "@/components/marketing/blog-shell"
 
+const SLUG = "claude-team-features"
+
 export const metadata: Metadata = {
   title: "3 Claude Features That 10x Your Team's Output",
   description:
     "Skills, mobile Dispatch, and multi-agent workflows: the features that fundamentally change how teams operate.",
+  ...legacyPostMetadata(SLUG),
 }
 
 export default function BlogPost() {
-  const related = getRelatedPosts("claude-team-features")
+  const post = getBlogPost(SLUG)
+  const related = getRelatedPosts(SLUG)
 
   return (
     <>
+      {post && <ArticleJsonLd post={post} />}
       <BlogShell>
         <article className="py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-6">
