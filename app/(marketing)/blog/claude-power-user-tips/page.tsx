@@ -80,7 +80,7 @@ export default function BlogPost() {
                 Plugins: Instant Domain Expertise
               </BlogHeading>
               <p className="leading-relaxed text-slate-700">
-                Here&apos;s the thing about plugins: they&apos;re basically
+                Plugins are basically
                 cheat codes. Type{" "}
                 <AccentCode>
                   /
@@ -117,7 +117,7 @@ export default function BlogPost() {
                 <div className="rounded-lg bg-slate-50 p-5">
                   <p className="font-semibold text-foreground">Productivity</p>
                   <p className="mt-1 text-sm text-slate-600">
-                    Task tracking and memory across sessions. Claude actually
+                    Task tracking and memory across sessions. Claude
                     remembers what you were working on yesterday.
                   </p>
                 </div>
@@ -192,7 +192,7 @@ export default function BlogPost() {
             {/* Scheduled Tasks */}
             <section className="space-y-4">
               <BlogHeading>
-                Scheduled Tasks: Set It and (Actually) Forget It
+                Scheduled Tasks: Set It Once and Walk Away
               </BlogHeading>
               <p className="leading-relaxed text-slate-700">
                 You know those things you tell yourself you&apos;ll do every
@@ -356,7 +356,7 @@ export default function BlogPost() {
 
       <CTASection
         heading="Want Us to Set This Up for Your Team?"
-        description="We deploy these tools across companies and train teams to actually use them."
+        description="We deploy these tools across companies and stay until the team runs them without us."
       />
     </>
   )

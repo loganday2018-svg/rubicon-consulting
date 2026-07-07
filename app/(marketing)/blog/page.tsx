@@ -19,7 +19,7 @@ export default function BlogPage() {
     <>
       <PageHeader
         title="Blog"
-        description="Practical AI tips and strategies for teams deploying AI. No theory, no fluff."
+        description="Working notes from deploying AI inside real companies."
       />
 
       <section className="py-16 md:py-24">

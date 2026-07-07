@@ -206,17 +206,17 @@ export default function BlogPost() {
             {/* Multi-Agent */}
             <section className="space-y-4">
               <BlogHeading>
-                Multi-Agent Workflows: A Team of Analysts, Not Just One
+                Multi-Agent Workflows: A Whole Team of Analysts
               </BlogHeading>
               <p className="leading-relaxed text-slate-700">
-                This is the highest-leverage feature of the three. Instead of
+                This is the feature with the biggest payoff of the three. Instead of
                 Claude working through tasks one at a time, multi-agent
                 workflows spin up multiple agents in parallel. Each one tackles
                 a different piece simultaneously. Think one person doing five
                 things sequentially vs. five people doing five things at once.
               </p>
 
-              <AccentBox label="How it actually works">
+              <AccentBox label="How it works under the hood">
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <AccentDot />
@@ -332,7 +332,7 @@ export default function BlogPost() {
 
       <CTASection
         heading="Want Us to Deploy These for Your Team?"
-        description="We set up Skills, Dispatch, and multi-agent workflows for parts companies, then train your teams to actually use them."
+        description="We set up Skills, Dispatch, and multi-agent workflows for parts companies, then train your teams until they run them without us."
       />
     </>
   )

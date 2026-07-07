@@ -14,7 +14,7 @@ export default function DemoPage() {
   return (
     <>
       <PageHeader
-        title="Same Numbers. A Report You Can Actually Read."
+        title="Same Numbers. A Report You Can Read in One Pass."
         description="This is the weekly cost report your controller already exports, rebuilt so you can see margin by channel and where the money goes. Toggle between the spreadsheet and the dashboard."
       />
 

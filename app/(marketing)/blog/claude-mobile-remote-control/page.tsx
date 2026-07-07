@@ -114,7 +114,7 @@ export default function BlogPost() {
             {/* What You Can Do */}
             <section className="space-y-4">
               <BlogHeading>
-                What You Can Actually Do From Your Phone
+                What You Can Do From Your Phone
               </BlogHeading>
               <p className="leading-relaxed text-slate-700">
                 The mobile app isn&apos;t a watered-down version. It handles
@@ -163,7 +163,7 @@ export default function BlogPost() {
                 </div>
               </div>
 
-              <AccentBox label="Photo use cases that actually save time">
+              <AccentBox label="Photo use cases that save real time">
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <AccentDot />
@@ -254,7 +254,7 @@ export default function BlogPost() {
               <BlogHeading>Real Use Cases</BlogHeading>
               <p className="leading-relaxed text-slate-700">
                 These aren&apos;t hypothetical. These are the workflows we see
-                teams actually using once they connect mobile:
+                teams using once they connect mobile:
               </p>
 
               <div className="space-y-3">
@@ -396,7 +396,7 @@ export default function BlogPost() {
 
       <CTASection
         heading="Want Us to Set This Up for Your Team?"
-        description="We deploy Claude across companies and train teams to actually use it -- mobile, desktop, and everything in between."
+        description="We deploy Claude across companies and train the teams who use it, on mobile, desktop, and everything in between."
       />
     </>
   )

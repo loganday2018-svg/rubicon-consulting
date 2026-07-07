@@ -197,7 +197,7 @@ const steps = [
     number: 4,
     title: "We Show Up and Set It Up",
     description:
-      "Hands-on deployment with your teams. We stay until it's working.",
+      "We deploy alongside your teams and stay until it's working.",
   },
 ]
 

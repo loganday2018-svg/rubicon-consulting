@@ -50,7 +50,7 @@ const FUNCTIONS = [
       "Same part, different vendor prices across the business, flagged instantly",
       "Vendor contracts read for terms, renewals, and price changes in seconds",
       "POs checked against quotes and agreed pricing before they go out",
-      "Vendor price-increase letters summarized so you know what actually moved",
+      "Vendor price-increase letters summarized so you know what moved and by how much",
     ],
   },
   {
@@ -61,7 +61,7 @@ const FUNCTIONS = [
       "Work-order paperwork and travelers drafted from the job, not retyped",
       "Scrap and yield trends pulled together so problems show up early",
       "Production schedules built around real capacity and due dates",
-      "Standard work and process notes written up from how the job actually runs",
+      "Standard work and process notes written up from how the job runs on the floor",
       "Shift and run summaries drafted from the day's numbers",
     ],
   },
